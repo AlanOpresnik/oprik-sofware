@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'tuparaisofederacion.com',
+      },{
+        protocol: 'https',
+        hostname: 'www.portaflex.com.ar'
       }
     ]
   }

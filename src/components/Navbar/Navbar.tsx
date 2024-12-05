@@ -23,7 +23,7 @@ const Navbar = () => {
     }
   ]
   return (
-    <nav className='w-full h-[39px] mt-4 flex items-center justify-between'>
+    <nav className='w-full h-[39px] mt-4 flex items-center justify-between md:px-12'>
       <div className='flex items-center'>
       <div className='md:hidden'>
         <DrawerNav />
@@ -90,7 +90,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className='flex gap-2'>
-        <Button className='px-5 py-2 !text-white border rounded-xl text-normal hover:bg-slate-50 transition-colors hover:!text-black font-semibold'>Soy cliente</Button>
+        <Button className='px-5 py-2 !text-white border bg-transparent rounded-xl text-normal hover:bg-slate-50 transition-colors hover:!text-black font-semibold'>Soy cliente</Button>
       </div>
     </nav>
   );
