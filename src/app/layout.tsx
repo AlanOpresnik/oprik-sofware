@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import { ArrowUpIcon } from "lucide-react";
 
 
 const geistSans = localFont({
@@ -30,10 +32,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-[100vh] max-w-[1580px] mx-auto bg-[#131316] px-2 md:px-0`}
       >
-        <Navbar/>
+        <Navbar />
         <div className=" max-w-[1280px] mx-auto px-2">
-        {children}
+          {children}
         </div>
+       
+        <Footer />
       </body>
     </html>
   );
