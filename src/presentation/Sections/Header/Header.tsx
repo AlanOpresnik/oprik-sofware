@@ -4,7 +4,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <header className="text-white  md:flex justify-between md:mt-20  items-center   ">
+        <header className="text-white  md:flex justify-between md:mt-16  items-center   ">
             <div className="mt-16">
                 <p className="text-xl text-[#FEF08A] font-semibold">
                     Oprik Software
