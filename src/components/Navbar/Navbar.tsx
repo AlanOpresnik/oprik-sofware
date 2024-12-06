@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button';
 import {
   NavigationMenu,
@@ -14,6 +14,10 @@ import {
 import { cn } from '@/lib/utils';
 import DrawerNav from './DrawerNav';
 const Navbar = () => {
+
+
+ 
+
   const navList = [
     {
       title: "Inicio", path: '/'
@@ -23,15 +27,15 @@ const Navbar = () => {
     }
   ]
   return (
-    <nav className='w-full h-[39px] mt-4 flex items-center justify-between md:px-12'>
-      <div className='flex items-center'>
+    <nav className={`w-full h-[39px] py-6 ml-[-10px] mt-6  flex items-center justify-between md:px-24 `}>
+      <div className='flex items-center '>
       <div className='md:hidden'>
         <DrawerNav />
       </div>
         <h1 className='text-white font-bold items-center'>OPRIK SOFTWARE</h1>
       </div>
-      <div className='hidden md:block'>
-        <ul className='flex justify-end'>
+      <div className='hidden md:block '>
+        <ul className={` flex transition-colors justify-end`}>
           {navList.map((nav) => (
             <li key={nav.title}>
               <Link className='text-white px-5 py-2 relative after:content-[""] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full' href={nav.path}> 
