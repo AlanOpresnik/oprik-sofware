@@ -26,4 +26,5 @@ export const Expectations = [
         description: "Es simple. Los clientes buscan, te encuentran, te contactan y vendés."
     },
     
+    
 ];

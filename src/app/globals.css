@@ -2,24 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.body-gradient {
+body {
   overflow-x: hidden;
-  background: rgb(0, 0, 0);
+}
+
+.body-gradient {
+  height: 100%;
+  overflow-x: hidden;
+  background: rgb(19, 19, 22);
   background: -moz-linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
+    rgb(19, 19, 22) 0%,
     rgba(13, 13, 13, 1) 51%,
     rgba(91, 91, 91, 1) 100%
   );
   background: -webkit-linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
+    rgb(19, 19, 22) 0%,
     rgba(13, 13, 13, 1) 51%,
     rgba(91, 91, 91, 1) 100%
   );
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
+    rgb(19, 19, 22) 0%,
     rgba(13, 13, 13, 1) 51%,
     rgba(91, 91, 91, 1) 100%
   );

@@ -24,7 +24,10 @@ export default function ClientSwiper() {
                 slidesPerView: 1
             },
             500: {
-                slidesPerView: 2
+                slidesPerView: 1.2
+            },
+            600:{
+              slidesPerView:2
             },
             968: {
                 slidesPerView: 3
@@ -36,7 +39,7 @@ export default function ClientSwiper() {
           clickable: true,
         }}
         modules={[Pagination,Autoplay]}
-        className="mySwiper h-[550px] md:h-[480px]"
+        className="mySwiper h-[550px] md:h-[480px] px-12"
       >
         {cardData.map((client) => (
           <SwiperSlide key={client.name}>

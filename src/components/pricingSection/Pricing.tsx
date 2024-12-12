@@ -1,8 +1,11 @@
 import { PropsWithChildren } from "react";
+import pricingPlans from "./pricingData";
+import Circles from "./Circles";
+import Link from "next/link";
 
-const Pricing = () => {
+export const Pricing = () => {
   return (
-    <section className="relative  text-white pb-12 pt-20 ">
+    <section className="relative text-white pb-12 pt-20">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -15,181 +18,63 @@ const Pricing = () => {
               </h2>
               <p className="text-base text-body-color dark:text-dark-6">
                 Contamos con diferentes planes para desarrollar una web, estos
-                son los mas elejidos por nuestros clientes,x
+                son los más elegidos por nuestros clientes.
               </p>
             </div>
           </div>
         </div>
 
         <div className="-mx-4 flex flex-wrap justify-center">
-          <div className="-mx-4 flex flex-wrap">
+          {pricingPlans.map((plan, index) => (
             <PricingCard
-              clasName={"mb-12"}
-              active={false}
-              type="Personal"
-              price="$79.990"
-              subscription="unico pago"
-              description="Perfecto para un sitio web personal, por ejemplo un portfolio web"
-              buttonText="Plan Personal"
+              key={index}
+              className={plan.className}
+              active={plan.active}
+              type={plan.type}
+              price={plan.price}
+              recomended={plan.recomended}
+              subscription={plan.subscription}
+              description={plan.description}
+              buttonText={plan.buttonText}
             >
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Diseño personalizado{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Dominio .com / .com.ar{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Certificado de Seguridad SSL{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Boton de Watshapp en la pagina{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Formulario de contacto por correo{" "}
-              </div>
-
-              <div className="flex gap-2">
-                <XIcon className={"text-red-500"} />
-                Panel de adminsitracion{" "}
-              </div>
-              <div className="flex gap-2">
-                <XIcon className={"text-red-500"} />
-                Ecommerce / Tienda online{" "}
-              </div>
+              {plan.features.map((feature, i) => (
+                <div key={i} className="flex gap-2">
+                  {feature.available ? (
+                    <CheckIcon className="text-green-500" />
+                  ) : (
+                    <XIcon className="text-red-500" />
+                  )}
+                  {feature.text}
+                </div>
+              ))}
             </PricingCard>
-            <PricingCard
-              className={"md:top-[-80px]"}
-              type="Emprendimiento"
-              price="$170.000"
-              subscription="Unico pago"
-              description="Perfecto para una tienda Online, para poder gestionar ventas, ordenes y stock"
-              buttonText="Plan Emprendimiento"
-              active
-            >
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Diseño personalizado{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Dominio .com / .com.ar{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Certificado de Seguridad SSL{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Boton de Watshapp en la pagina{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Formulario de contacto por correo{" "}
-              </div>
-
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Panel de adminsitracion{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Ecommerce / Tienda online{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Mercado pago{" "}
-              </div>
-              <div className="flex gap-2">
-                <XIcon className={"text-red-500"} />
-                Sistema de cotizacion de envios{" "}
-              </div>
-              <div className="flex gap-2">
-                <XIcon className={"text-red-500"} />
-                Sistema de descuento por cupones{" "}
-              </div>
-            </PricingCard>
-            <PricingCard
-              active={false}
-              type="Personalizado"
-              price="Precio a cotizar"
-              subscription=""
-              description="Perfecto para empresas o emprendimientos que necesiten un sitio web con todas las prestaciones"
-              buttonText="Choose Professional"
-            >
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Diseño personalizado{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Dominio .com / .com.ar{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Certificado de Seguridad SSL{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Boton de Watshapp en la pagina{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Formulario de contacto por correo{" "}
-              </div>
-
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Panel de adminsitracion{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Ecommerce / Tienda online{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Mercado pago{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Sistema de cotizacion de envios{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />
-                Sistema de descuento por cupones{" "}
-              </div>
-              <div className="flex gap-2">
-                <CheckIcon className={"text-green-500"} />Y mucho mas...{" "}
-              </div>
-            </PricingCard>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default Pricing;
 
-const PricingCard = ({
+
+export const PricingCard = ({
   children,
   description,
   price,
   type,
+  recomended,
   subscription,
   buttonText,
+  className1,
   className,
   active,
 }: any) => {
   return (
     <>
-      <div className={`${className}  w-full px-4 md:w-1/2 lg:w-1/3`}>
+      <div className={`${className1} relative  w-full md:px-4 md:w-1/2 lg:w-1/3`}>
+        <div className={`absolute ${recomended ? 'right-0 top-[-15px]  md:right-[-10px] md:top-[-95px] z-10 bg-primary' : ''} text-black p-2 rounded-full`}><p className='font-semibold'>{recomended ? '¡Plan mas elejido!' : ''}</p></div>
         <div
-          className={`${className} relative z-10 mb-10 overflow-hidden rounded-[10px] border-2 border-stroke px-8 py-10 shadow-pricing dark:border-dark-3 dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]`}
+          className={`${className} relative  mb-10 overflow-hidden rounded-[10px] border-2 border-stroke px-8 py-10 shadow-pricing dark:border-dark-3 dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]`}
         >
           <span className="mb-3 block text-lg font-semibold text-primary">
             {type}
@@ -204,16 +89,15 @@ const PricingCard = ({
             {description}
           </p>
           <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-          <a
-            href="/#"
-            className={` ${
-              active
-                ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-semibold text-black transition hover:bg-opacity-90"
-                : "block w-full rounded-md border border-stroke bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary  dark:border-dark-3"
-            } `}
+          <Link
+            href={`/plans/${type}`}
+            className={` ${active
+              ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-semibold text-black transition hover:bg-opacity-90"
+              : "block w-full rounded-md border border-stroke bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary  dark:border-dark-3"
+              } `}
           >
             {buttonText}
-          </a>
+          </Link>
           <div>
             <span className="absolute right-0 top-7 z-[-1]">
               <svg
@@ -240,238 +124,7 @@ const PricingCard = ({
               </svg>
             </span>
             <span className="absolute right-4 top-4 z-[-1]">
-              <svg
-                width={41}
-                height={89}
-                viewBox="0 0 41 89"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="38.9138"
-                  cy="87.4849"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 87.4849)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="38.9138"
-                  cy="74.9871"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 74.9871)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="38.9138"
-                  cy="62.4892"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 62.4892)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="38.9138"
-                  cy="38.3457"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 38.3457)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="38.9138"
-                  cy="13.634"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 13.634)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="38.9138"
-                  cy="50.2754"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 50.2754)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="38.9138"
-                  cy="26.1319"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 26.1319)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="38.9138"
-                  cy="1.42021"
-                  r="1.42021"
-                  transform="rotate(180 38.9138 1.42021)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="87.4849"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 87.4849)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="74.9871"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 74.9871)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="62.4892"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 62.4892)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="38.3457"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 38.3457)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="13.634"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 13.634)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="50.2754"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 50.2754)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="26.1319"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 26.1319)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="26.4157"
-                  cy="1.4202"
-                  r="1.42021"
-                  transform="rotate(180 26.4157 1.4202)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="87.4849"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 87.4849)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="74.9871"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 74.9871)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="62.4892"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 62.4892)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="38.3457"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 38.3457)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="13.634"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 13.634)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="50.2754"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 50.2754)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="26.1319"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 26.1319)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="13.9177"
-                  cy="1.42019"
-                  r="1.42021"
-                  transform="rotate(180 13.9177 1.42019)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="87.4849"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 87.4849)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="74.9871"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 74.9871)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="62.4892"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 62.4892)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="38.3457"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 38.3457)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="13.634"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 13.634)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="50.2754"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 50.2754)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="26.1319"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 26.1319)"
-                  fill="#3056D3"
-                />
-                <circle
-                  cx="1.41963"
-                  cy="1.4202"
-                  r="1.42021"
-                  transform="rotate(180 1.41963 1.4202)"
-                  fill="#3056D3"
-                />
-              </svg>
+              <Circles />
             </span>
           </div>
         </div>

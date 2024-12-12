@@ -12,11 +12,12 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { cn } from '@/lib/utils';
-import DrawerNav from './DrawerNav';
+import DrawerNav from './DrawerMobile/DrawerNav';
+
 const Navbar = () => {
 
 
- 
+
 
   const navList = [
     {
@@ -29,17 +30,17 @@ const Navbar = () => {
   return (
     <nav className={`w-full h-[39px] py-6 ml-[-10px] mt-6  flex items-center justify-between md:px-24 `}>
       <div className='flex items-center '>
-      <div className='md:hidden'>
-        <DrawerNav />
-      </div>
+        <div className='md:hidden'>
+          <DrawerNav />
+        </div>
         <h1 className='text-white font-bold items-center'>OPRIK SOFTWARE</h1>
       </div>
       <div className='hidden md:block '>
         <ul className={` flex transition-colors justify-end`}>
           {navList.map((nav) => (
             <li key={nav.title}>
-              <Link className='text-white px-5 py-2 relative after:content-[""] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full' href={nav.path}> 
-                  {nav.title}
+              <Link className='text-white px-5 py-2 relative after:content-[""] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full' href={nav.path}>
+                {nav.title}
               </Link>
             </li>
           ))}
@@ -47,35 +48,34 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className='bg-transparent text-white py-0 fo'>Planes de desarrollo</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className='bg-transparent text-white focus:!bg-transparent focus:!text-white py-0 fo'>Planes de desarrollo</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <a
                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                            href="/"
+                            href="/plans/Emprendimiento"
                           >
 
                             <div className="mb-2 mt-4 text-lg font-medium">
-                              shadcn/ui
+                              Plan Emprendimiento
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              Beautifully designed components that you can copy and
-                              paste into your apps. Accessible. Customizable. Open
-                              Source.
+                              esta web cuenta con todo lo el plan Personal pero tambien se le incluye un Panel
+                               de adminsitracion, donde podras gestionar tus productos, stock y ordenes desde la web,
                             </p>
                           </a>
                         </NavigationMenuLink>
                       </li>
-                      <ListItem href="/docs" title="Introduction">
-                        Re-usable components built using Radix UI and Tailwind CSS.
+                      <ListItem className='' href="/plans/Personal" title="Plan Personal">
+                      este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo
                       </ListItem>
-                      <ListItem href="/docs/installation" title="Installation">
-                        How to install dependencies and structure your app.
+                      <ListItem href="/plans/Personalizado" title="Plan Personalizado">
+                        Con este plan tenes todos los beneficios de los demas planes , y contas con una capa extra de personalizacion y podemos agregar funcionalidades que necesites
                       </ListItem>
-                      <ListItem href="/docs/primitives/typography" title="Typography">
-                        Styles for headings, paragraphs, lists...etc
+                      <ListItem href="/contacto" title="Contacto">
+                        Necesitas mas Informacion ? contactanos dando click aca
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
