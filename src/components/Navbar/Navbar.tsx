@@ -16,6 +16,9 @@ import DrawerNav from './DrawerMobile/DrawerNav';
 
 const Navbar = () => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
 
 
@@ -63,13 +66,13 @@ const Navbar = () => {
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
                               esta web cuenta con todo lo el plan Personal pero tambien se le incluye un Panel
-                               de adminsitracion, donde podras gestionar tus productos, stock y ordenes desde la web,
+                              de adminsitracion, donde podras gestionar tus productos, stock y ordenes desde la web,
                             </p>
                           </a>
                         </NavigationMenuLink>
                       </li>
                       <ListItem className='' href="/plans/Personal" title="Plan Personal">
-                      este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo
+                        este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo
                       </ListItem>
                       <ListItem href="/plans/Personalizado" title="Plan Personalizado">
                         Con este plan tenes todos los beneficios de los demas planes , y contas con una capa extra de personalizacion y podemos agregar funcionalidades que necesites
@@ -94,7 +97,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className='flex gap-2'>
-        <Button className='px-5 py-2 !text-white border bg-transparent rounded-xl text-normal hover:bg-slate-50 transition-colors hover:!text-black font-semibold'>Soy cliente</Button>
+        <Link href={'/login/client'} className='px-5 py-2 !text-white  border bg-transparent rounded-xl text-sm hover:bg-slate-50 transition-colors hover:!text-black font-semibold'>Soy cliente</Link>
       </div>
     </nav>
   );
