@@ -1,47 +1,53 @@
-import NextAuth from "next-auth"
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import bcryptjs from "bcryptjs";
 import { connectDB } from "@/lib/mongodb";
 import Client from "@/models/Client";
-import bcryptjs from 'bcryptjs'
-import type { NextAuthOptions } from "next-auth"
-const handler = NextAuth({
+
+export const authOptions = {
     providers: [
         CredentialsProvider({
-            name: 'Credentials',
+            name: "Credentials",
             credentials: {
-
-                email: { label: 'Email', type: 'email', placeholder: 'Enter your email' },
-                password: { label: 'Password', type: 'password', placeholder: 'Enter your password' },
+                email: { label: "Email", type: "email" },
+                password: { label: "Password", type: "password" },
             },
-            async authorize(credentials, req) {
-                await connectDB()
-                console.log(credentials)
-                const clientFound = await Client.findOne({ email: credentials?.email })
-                if (!clientFound) throw new Error('invalid credentials');
-                const passwordMatch = await bcryptjs.compare(credentials!.password, clientFound.password)
-                if (!passwordMatch) throw new Error('password mismatch')
+            async authorize(credentials) {
+                await connectDB();
+                const clientFound = await Client.findOne({ email: credentials?.email });
+                if (!clientFound) throw new Error("Invalid credentials");
+                const passwordMatch = await bcryptjs.compare(credentials!.password, clientFound.password);
+                if (!passwordMatch) throw new Error("Password mismatch");
 
-                return clientFound
+                return {
+                    id: clientFound._id.toString(), // Convertir el ObjectId a string
+                    email: clientFound.email,
+                    name: clientFound.name,
+                };
             },
-        })
+        }),
     ],
     callbacks: {
-        jwt({ account, token, user, profile, session }) {
-
-            if (user) token.user = user
-
-            return token
+        // Callback para añadir el ID al token JWT
+        jwt({ token, user }) {
+            if (user) {
+                token.id = user.id; // Guardar el ID en el token JWT
+            }
+            return token;
         },
+        // Callback para añadir el ID al objeto session.user
         session({ session, token }) {
-            console.log(session, token)
-            session.user = token.user as any
-            return session
-        }
+            session.user = {
+                ...session.user,
+                id: token.id, // Añadir el ID al objeto `session.user`
+            };
+            return session;
+        },
     },
     pages: {
-        signIn: '/login',
+        signIn: "/login",
+    },
+};
 
-    }
-})
-
-export { handler as GET, handler as POST }
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };

@@ -1,20 +1,19 @@
+'use client'
 import Link from "next/link"
 import { LayoutDashboard, Box, FormInput, Table, BarChart, ImagesIcon as Icons, Users, AlertCircle, FileText } from 'lucide-react'
 import { Dashboard } from "./dashboard"
+import { signOut } from "next-auth/react"
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
-  { name: "Basic UI Elements", href: "/ui", icon: Box },
-  { name: "Form Elements", href: "/forms", icon: FormInput },
-  { name: "Tables", href: "/tables", icon: Table },
-  { name: "Charts", href: "/charts", icon: BarChart },
-  { name: "Icons", href: "/icons", icon: Icons },
-  { name: "User Pages", href: "/users", icon: Users },
+  { name: "Watshapp", href: "/ui", icon: Box },
+  { name: "Mensajes del desarrollador", href: "/forms", icon: FormInput },
+
 ]
 
 const more = [
-  { name: "Error Pages", href: "/error", icon: AlertCircle },
-  { name: "Documentation", href: "/docs", icon: FileText },
+  { name: "Inicio", href: "/error", icon: FileText },
+  { name: "Cerrar sesion", icon: AlertCircle , fn: () =>  signOut() },
 ]
 
 export function Sidebar() {
@@ -47,8 +46,9 @@ export function Sidebar() {
           </h2>
           {more.map((item) => (
             <Link
+             onClick={item.fn ? item.fn : null}
               key={item.name}
-              href={item.href}
+              href={item.href ? item.href : '/'}
               className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
             >
               <item.icon className="h-4 w-4" />

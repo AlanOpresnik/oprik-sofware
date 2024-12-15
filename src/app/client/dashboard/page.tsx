@@ -1,21 +1,25 @@
 
 import React from 'react'
-import {getServerSession} from 'next-auth/next'
+import { getServerSession } from 'next-auth/next'
 import api from '@/api/api'
 import { cookies } from 'next/headers'
 import { Dashboard } from '@/components/dashboard'
 import { Sidebar } from '@/components/sidebar'
+import { getSession } from 'next-auth/react'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 const DashboardPage = async () => {
-    const cookieStore = await cookies()
-    const session = await getServerSession()
-    if (!session?.user?.email) {
-        return <div>You must be logged in to access this page.</div>
-    }
-   const client = await api.getUserByEmail(session.user.email)
-    
+
+  const session = await getServerSession(authOptions); // Verifica sesión en el servidor
+
+  if (!session?.user?.id) {
+      return <div className="mt-24 text-white">You must be logged in to access this page.</div>;
+  }
+  console.log(session)
+
+
   return (
     <div className='mt-12 w-full text-white'>
-      <Dashboard/>
+      <Dashboard userId={session.user.id} />
     </div>
   )
 }
