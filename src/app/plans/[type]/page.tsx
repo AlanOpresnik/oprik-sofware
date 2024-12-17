@@ -69,7 +69,7 @@ const PlanPage = async ({ params }: PlanPageProps) => {
             <p className="font-semibold">{plan.recomended ? 'Plan más elegido' : ''}</p>
           </div>
           <PricingCard
-            recomended={Boolean(plan.recomended)}
+             
             key={plan.type}
             className={`!w-full`}
             className1={`!px-0 md:!px-4 !w-full`}

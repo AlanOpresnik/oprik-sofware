@@ -92,7 +92,7 @@ interface PricingCardProps {
   description: string;
   price: string;
   type: string;
-  recomended: boolean;
+  recomended?: boolean;
   subscription: string;
   buttonText: string;
   className1?: string;
