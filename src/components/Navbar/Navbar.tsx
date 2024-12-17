@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-import { Button } from '../ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,9 +12,11 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from '@/lib/utils';
 import DrawerNav from './DrawerMobile/DrawerNav';
+import { useSession } from 'next-auth/react';
 
 const Navbar = () => {
-
+  const session = useSession()
+  console.log(session)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
@@ -97,7 +98,23 @@ const Navbar = () => {
         </ul>
       </div>
       <div className='flex gap-2'>
-        <Link href={'/login/client'} className='px-5 py-2 !text-white  border bg-transparent rounded-xl text-sm hover:bg-slate-50 transition-colors hover:!text-black font-semibold'>Soy cliente</Link>
+        {session.status === 'unauthenticated'  ? (
+          <div className=''>
+            <Link href={'/login'}
+              className='px-5 py-2 !text-white  border bg-transparent rounded-xl text-sm hover:bg-slate-50 transition-colors
+       hover:!text-black font-semibold'>
+              Contactar
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <Link href={'/client/dashboard'}
+              className='px-5 py-2 !text-white  border bg-transparent rounded-xl text-sm hover:bg-slate-50 transition-colors
+          hover:!text-black font-semibold'>
+              Dashboard
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );

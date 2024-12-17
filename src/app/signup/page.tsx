@@ -80,7 +80,7 @@ const SignUpPage = () => {
 
                             <div className="my-6 pb-4 sm:my-10 border-b text-center">
                                 <div className="leading-none px-2 inline-block text-sm  tracking-wide font-medium dark:text-white transform translate-y-1/2">
-                                    O inicia sesion completando el formulario
+                                    O Registrate completando el formulario
                                 </div>
                             </div>
 
@@ -124,13 +124,13 @@ const SignUpPage = () => {
                                         <path d="M20 8v6M23 11h-6" />
                                     </svg>
 
-                                    <span className="ml-3">Iniciar Sesion</span>
+                                    <span className="ml-3">Registrarse</span>
                                 </button>
                                 <p className="text-sm  mt-6">
-                                    Si no tienes una cuenta{" "}
-                                    <Link href={"/signup"} className="text-primary ml-1">
+                                    Si ya tienes una cuenta{" "}
+                                    <Link href={"/login"} className="text-primary ml-1">
                                         {" "}
-                                        Crea una cuenta
+                                       Iniciar sesion
                                     </Link>
                                 </p>
                                 <p className="mt-6 text-xs  text-center text-white">

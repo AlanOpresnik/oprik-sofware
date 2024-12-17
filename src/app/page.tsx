@@ -1,4 +1,4 @@
-
+'use client'
 import ClientSwiper from "@/components/Clients/ClientSwiper.tsx/ClientSwiper";
 import { Pricing } from "@/components/pricingSection/Pricing";
 import ContactSection from "@/presentation/Sections/Contact/ContactSection";
@@ -14,21 +14,20 @@ import { ArrowUpIcon } from "lucide-react";
 
 
 
-export default async function Home() {
+export default  function Home() {
 
 
   return (
     <>
       <Header />
-      <section id="clientes" className="mt-44">
-        <p className="text-3xl  text-white mb-12 font-semibold">Nuestros clientes dicen</p>
+      <section  className="mt-44">
         <ClientSwiper />
       </section>
-      <div className="mt-6">
+      <div className="mt-6 ">
         <p className="text-3xl text-white font-semibold">Que vamos a conseguir</p>
         <Expectation />
       </div>
-      <section id="precio" className="px-4 md:px-0 overflow-x-hidden">
+      <section id="precio" className="px-4 md:px-0 ">
         <Pricing />
       </section>
       <section id="todo para tu app" className="mt-0 mb-24">

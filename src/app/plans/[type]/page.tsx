@@ -78,6 +78,7 @@ const PlanPage = async ({ params }: PlanPageProps) => {
             subscription={plan.subscription}
             description={plan.description}
             buttonText={`Contratar Plan ${plan.type}`}
+            href={`/plans/${plan.type}/select-Method-to-buy`}
           >
             {plan.features.map((feature, i) => (
               <div key={i} className="flex gap-2">

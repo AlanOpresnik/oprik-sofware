@@ -7,7 +7,7 @@ import { signOut } from "next-auth/react"
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
   { name: "Watshapp", href: "/ui", icon: Box },
-  { name: "Mensajes del desarrollador", href: "/forms", icon: FormInput },
+  { name: "Mensajes del desarrollador", href: "/client/dashboard/messages", icon: FormInput },
 
 ]
 

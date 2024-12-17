@@ -1,11 +1,36 @@
+'use client'
 import { Person2Outlined } from '@mui/icons-material'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 import { MessageCircle } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Inovation = () => {
+    useEffect(() => {
+        // Registra el plugin de ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+    
+     
+        gsap.fromTo(
+    
+         '#inova',
+          { opacity: 0, y: -200 }, 
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: '#inova',
+              start: "top 26%", // Inicia la animación cuando el 80% del viewport alcanza el componente
+              toggleActions: "play none none none", // Solo reproduce la animación una vez
+            },
+          }
+        );
+      }, []);
     return (
-        <div className='flex flex-col gap-4 md:grid grid-cols-2 items-center place-items-center mb-12'>
+        <div id='inova' className='flex flex-col gap-4 md:grid grid-cols-2 items-center place-items-center mb-12'>
             <div>
                 <Image src={'/ilustrarion2.png'} alt='ilustration' width={550} height={400} />
             </div>

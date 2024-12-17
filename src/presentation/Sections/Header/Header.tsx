@@ -1,14 +1,38 @@
-
+'use client'
 import { Code, Globe } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { gsap } from "gsap";
 
 
-const Header = async () => {
- 
+
+const Header = () => {
+
+    useEffect(() => {
+        // Animación para que #header entre desde la izquierda
+        gsap.fromTo(
+            "#header",
+            { x: "-100%", opacity: 0 }, // Estado inicial
+            { x: "0%", opacity: 1, duration: 1.5, ease: "power3.out" } // Estado final
+          );
+      
+          // Animación para que #code entre desde la derecha
+          gsap.fromTo(
+            "#code",
+            { y: "100%", opacity: 0 }, // Estado inicial (fuera de pantalla derecha)
+            { y: "0%", opacity: 1, duration: 1.5, ease: "power3.out", delay: 0.5, onComplete: () => {
+                const code = document.querySelector("#code")
+                if(code) code.classList.add('shake-animation')
+            }  } // Estado final
+            
+          );
+        }, []);
+    
+
+
     return (
-        <header className="text-white  md:flex justify-between md:mt-16  items-center   ">
-            <div className="mt-16">
+        <header className="text-white header md:flex justify-between md:mt-16   items-center   ">
+            <div id='header' className="mt-16">
                 <h1 className="text-xl text-[#FEF08A] font-semibold">
                     Oprik Software
                 </h1>
@@ -29,7 +53,7 @@ const Header = async () => {
                     </button>
                 </div>
             </div>
-            <div className="relative shake-animation">
+            <div id='code' className=" ">
                 <div>
                     <Image alt="Imagen codigo" src={'/code1.png'} width={550} height={500} />
                 </div>

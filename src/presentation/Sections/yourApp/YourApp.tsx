@@ -1,6 +1,30 @@
+'use client'
+
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all"
+import { useEffect } from "react"
+
 export default function YourApp() {
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+      
+        gsap.from('#all-app', {
+          opacity: 0, 
+          x: -100,
+          duration: 2, 
+          ease: "power3.out", 
+          scrollTrigger: {
+            trigger: '#all-app',
+            
+            start: "top 80%", // La animación comienza cuando el 100% del trigger esté en la vista
+            toggleActions: "play none none reverse", // Se activa solo cuando el trigger entra en la vista y vuelve cuando sale
+          }
+        });
+      }, []);
+      
+
     return (
-        <div className=" py-24 sm:pb-12">
+        <div id="all-app" className=" py-24 sm:pb-12 overflow-x-hidden">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
                 <h2 className="text-center text-base/7 font-semibold text-primary">Consigue tu web rapido</h2>
                 <h3 className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">

@@ -1,8 +1,32 @@
-import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import React, { useEffect } from "react";
 
 const ContactSection = () => {
+    useEffect(() => {
+        // Registra el plugin de ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+    
+     
+        gsap.fromTo(
+    
+         '#form',
+          { opacity: 0, y: 200 }, 
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: '#form',
+              start: "top 76%", // Inicia la animación cuando el 80% del viewport alcanza el componente
+              toggleActions: "play none none none", // Solo reproduce la animación una vez
+            },
+          }
+        );
+      }, []);
     return (
-        <div className="relative flex justify-center p-12 bg-white bg-opacity-10 rounded-xl  sm:items-center pb-14">
+        <div id="form" className="relative flex justify-center p-12 bg-white bg-opacity-10 rounded-xl  sm:items-center pb-14">
             <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div className="mt-8 overflow-hidden">
                     <div className="grid grid-cols-1 md:grid-cols-2">

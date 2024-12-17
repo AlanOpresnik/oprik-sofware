@@ -1,11 +1,39 @@
-import { PropsWithChildren } from "react";
+'use client'
+import { PropsWithChildren, useEffect } from "react";
 import pricingPlans from "./pricingData";
 import Circles from "./Circles";
 import Link from "next/link";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
 
 export const Pricing = () => {
+
+  useEffect(() => {
+    // Registra el plugin de ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+ 
+    gsap.fromTo(
+
+     '#pricing',
+      { opacity: 0, y: 200 }, 
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: '#pricing',
+          start: "top 55%", // Inicia la animación cuando el 80% del viewport alcanza el componente
+          toggleActions: "play none none none", // Solo reproduce la animación una vez
+        },
+      }
+    );
+  }, []);
+  
+
   return (
-    <section className="relative text-white pb-12 pt-20">
+    <section id="pricing" className="relative text-white pb-12 pt-20">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -36,6 +64,7 @@ export const Pricing = () => {
               subscription={plan.subscription}
               description={plan.description}
               buttonText={plan.buttonText}
+              href={`/plans/${plan.type}`}
             >
               {plan.features.map((feature, i) => (
                 <div key={i} className="flex gap-2">
@@ -68,6 +97,7 @@ export const PricingCard = ({
   className1,
   className,
   active,
+  href
 }: any) => {
   return (
     <>
@@ -90,7 +120,7 @@ export const PricingCard = ({
           </p>
           <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
           <Link
-            href={`/plans/${type}`}
+            href={href}
             className={` ${active
               ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-semibold text-black transition hover:bg-opacity-90"
               : "block w-full rounded-md border border-stroke bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary  dark:border-dark-3"

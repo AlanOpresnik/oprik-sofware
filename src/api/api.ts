@@ -44,7 +44,7 @@ const getOrderById = async (userId: string): Promise<OrderDBResponse | null> => 
         console.log(res.data)
         return res.data;
     } catch (error) {
-        console.error('Error en getOrderByUserId:', error);
+        console.log('Error en getOrderByUserId:', error);
         return null;
     }
 }
