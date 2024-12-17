@@ -10,12 +10,12 @@ import Link from "next/link";
 import Image from "next/image"; */}
 export async function Dashboard({ userId }: { userId: string }) {
   {
-    const order = await api.getOrderById(userId);
-    const { data: orden } = order;
+   // const order = await api.getOrderById(userId);
+   // const { data: orden } = order;
 
-    if (!orden) return "no hay orden";
-    const payment_method = orden.client.order.payment_method === "MERCADO_PAGO" ? "Mercado pago" : orden.client.order.payment_method
-    const payment_status = orden.client.order.payment_status === "PENDING" ? "Pendiente" : orden.client.order.payment_status === 'COMPLETED' ? 'Completado' : "Fallo"
+  //  if (!orden) return "no hay orden";
+   // const payment_method = orden.client.order.payment_method === "MERCADO_PAGO" ? "Mercado pago" : orden.client.order.payment_method
+   // const payment_status = orden.client.order.payment_status === "PENDING" ? "Pendiente" : orden.client.order.payment_status === 'COMPLETED' ? 'Completado' : "Fallo"
     return (
       <p>proximamente</p>
     )

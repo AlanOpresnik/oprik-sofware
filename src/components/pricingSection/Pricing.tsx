@@ -201,9 +201,3 @@ function XIcon(props: any) {
     </svg>
   );
 }
-
-const List = ({ children }: PropsWithChildren) => {
-  return (
-    <p className="text-base text-body-color dark:text-dark-6">{children}</p>
-  );
-};

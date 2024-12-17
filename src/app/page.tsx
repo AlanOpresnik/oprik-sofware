@@ -8,7 +8,6 @@ import Header from "@/presentation/Sections/Header/Header";
 import InovationSection from "@/presentation/Sections/Inovation/InovationSection";
 import UsInformationSection from "@/presentation/Sections/UsInformation/UsInformationSection";
 import YourApp from "@/presentation/Sections/yourApp/YourApp";
-import { ArrowUpIcon } from "lucide-react";
 
 
 

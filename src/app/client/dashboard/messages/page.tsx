@@ -1,8 +1,8 @@
-import { getServerSession } from "next-auth"
+{/*import { getServerSession } from "next-auth"
 import ChatComponent from "./(components)/ChatComponent"
 import api from "@/api/api"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import Link from "next/link";
+import Link from "next/link";*/}
 
 export default async function Page() {
     return <p>a</p>

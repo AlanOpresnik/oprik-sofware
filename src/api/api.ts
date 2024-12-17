@@ -1,4 +1,4 @@
-import { Order, OrderDBResponse } from "@/interface/orderIterface";
+import { OrderDBResponse } from "@/interface/orderIterface";
 import { UserDBResponse } from "@/interface/userInterface";
 import axios from "axios";
 
