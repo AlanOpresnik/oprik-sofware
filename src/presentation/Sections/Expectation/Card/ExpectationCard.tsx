@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-
+// Define the types for the props
 type Props = {
   id: string;
   image: React.ReactNode;
@@ -8,7 +8,7 @@ type Props = {
   overview: string;
 };
 
-
+// Define the component with forwardRef
 const ExpectationCard = forwardRef<HTMLDivElement, Props>(({ id, image, title, overview }: Props, ref) => {
   return (
     <div
@@ -24,5 +24,8 @@ const ExpectationCard = forwardRef<HTMLDivElement, Props>(({ id, image, title, o
     </div>
   );
 });
+
+// Set the display name for the component
+ExpectationCard.displayName = "ExpectationCard";
 
 export default ExpectationCard;
