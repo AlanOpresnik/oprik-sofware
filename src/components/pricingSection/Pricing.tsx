@@ -102,7 +102,7 @@ interface PricingCardProps {
   children: React.ReactNode;  // Tipo más adecuado para los hijos
 }
 
-const PricingCard = ({
+export const PricingCard = ({
   children,
   description,
   price,

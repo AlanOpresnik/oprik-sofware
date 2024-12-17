@@ -16,7 +16,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function ClientSwiper() {
-  const sectionRef = useRef()
+  const sectionRef = useRef<HTMLElement | null>(null)
 
   const [isMobile, setIsMobile] = useState(false);
 

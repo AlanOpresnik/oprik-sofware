@@ -113,23 +113,25 @@ export default function YourApp() {
                                             <div className="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
                                         </div>
                                     </div>
-                                    <code className="text-white ">
-                                        import {<span className="text-[#7dd3fc]">useState</span>} from <span className="text-emerald-300">&apos;react&apos;</span><br />
-                                        import {<span className="text-[#7dd3fc]">Switch</span>} from <span className="text-emerald-300">&apos;@headlessui/react&apos;</span><br /><br />
+                                    <code className="text-white">
+                                        import {'{'}<span className="text-[#7dd3fc]">useState</span>{'}'} from <span className="text-emerald-300">&apos;react&apos;</span><br />
+                                        import {'{'}<span className="text-[#7dd3fc]">Switch</span>{'}'} from <span className="text-emerald-300">&apos;@headlessui/react&apos;</span><br /><br />
 
                                         <span className="text-indigo-400">function Example</span>() &#123;<br />
                                         &nbsp;&nbsp;const [<span className="text-[#7dd3fc]">enabled</span>, <span className="text-[#7dd3fc]">setEnabled</span>] = useState(<span className="text-[#7dd3fc]">true</span>)<br /><br />
 
                                         &nbsp;&nbsp;return (<br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-indigo-400">form</span> action="/<span className="text-emerald-300">notification-settings</span>" method="<span className="text-emerald-300">post</span>"&gt;<br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-indigo-400">Switch</span> checked=&#123;<span className="text-[#7dd3fc]">enabled</span>&#125; onChange=&#123;<span className="text-[#7dd3fc]">setEnabled</span>&#125; name="<span className="text-emerald-300">notifications</span>"&gt;<br />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&#123;<span className="text-gray-500">/* ... */</span>&#125;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-indigo-400">form</span> action=/<span className="text-emerald-300">notification-settings</span> method=<span className="text-emerald-300">post</span>&gt;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-indigo-400">Switch</span> checked=&#123;<span className="text-[#7dd3fc]">enabled</span>&#125; onChange=&#123;<span className="text-[#7dd3fc]">setEnabled</span>&#125; name=<span className="text-emerald-300">notifications</span>&gt;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&#123;<span className="text-gray-500">{/* ... */}</span>&#125;
+
                                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span className="text-indigo-400">Switch</span>&gt;<br />
                                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-indigo-400">button</span>&gt;Submit&lt;/<span className="text-indigo-400">button</span>&gt;<br />
                                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span className="text-indigo-400">form</span>&gt;<br />
                                         &nbsp;&nbsp;)<br />
                                         &#125;
                                     </code>
+
 
 
                                 </div>

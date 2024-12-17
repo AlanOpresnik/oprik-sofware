@@ -2,8 +2,9 @@
 import React from 'react'
 import { getServerSession } from 'next-auth/next'
 import { Dashboard } from '@/components/dashboard'
+import { authOptions } from '@/lib/authOptions';
 
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+
 const DashboardPage = async () => {
 
   const session = await getServerSession(authOptions); // Verifica sesión en el servidor

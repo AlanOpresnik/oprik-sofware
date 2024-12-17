@@ -1,8 +1,9 @@
 import pricingData from '@/components/pricingSection/pricingData';
 import { CheckIcon, XIcon } from 'lucide-react';
-import { PricingCard } from '@/components/pricingSection/Pricing';
+
 import Image from 'next/image';
 import FadeInWrapper from '@/components/fadeInWrapper/FadeInWrapper';
+import { PricingCard } from '@/components/pricingSection/Pricing';
 
 
 interface PlanPageProps {
@@ -60,15 +61,15 @@ const PlanPage = async ({ params }: PlanPageProps) => {
         </div>
         <div className="col-span-1 w-full mt-6 relative">
           <div
-            className={`${
-              plan.recomended
+            className={`${plan.recomended
                 ? 'absolute right-0 top-[-20px] z-10 bg-primary text-black p-2 rounded-full'
                 : ''
-            }`}
+              }`}
           >
             <p className="font-semibold">{plan.recomended ? 'Plan más elegido' : ''}</p>
           </div>
           <PricingCard
+            recomended={Boolean(plan.recomended)}
             key={plan.type}
             className={`!w-full`}
             className1={`!px-0 md:!px-4 !w-full`}

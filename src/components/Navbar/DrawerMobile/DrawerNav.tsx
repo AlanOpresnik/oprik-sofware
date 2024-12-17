@@ -87,7 +87,7 @@ export default function DrawerNav() {
           </ListItemButton>
         </ListItem>
       </List>
-      <p className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0 absolute bottom-10" href="/">@ 2024 Oprik Software. derechos reservados.</p>
+      <p className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0 absolute bottom-10">@ 2024 Oprik Software. derechos reservados.</p>
     </Box>
   );
 
