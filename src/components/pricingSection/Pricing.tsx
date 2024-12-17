@@ -60,7 +60,7 @@ export const Pricing = () => {
               active={plan.active}
               type={plan.type}
               price={plan.price}
-              recomended={plan.recomended}
+              recomended={plan.recomended ?? false}
               subscription={plan.subscription}
               description={plan.description}
               buttonText={plan.buttonText}
@@ -86,7 +86,23 @@ export const Pricing = () => {
 
 
 
-export const PricingCard = ({
+
+
+interface PricingCardProps {
+  description: string;
+  price: string;
+  type: string;
+  recomended: boolean;
+  subscription: string;
+  buttonText: string;
+  className1: string;
+  className: string;
+  active: boolean;
+  href: string;
+  children: React.ReactNode;  // Tipo más adecuado para los hijos
+}
+
+const PricingCard = ({
   children,
   description,
   price,
@@ -98,72 +114,69 @@ export const PricingCard = ({
   className,
   active,
   href
-}: any) => {
+}: PricingCardProps) => {
   return (
-    <>
-      <div className={`${className1} relative  w-full md:px-4 md:w-1/2 lg:w-1/3`}>
-        <div className={`absolute ${recomended ? 'right-0 top-[-15px]  md:right-[-10px] md:top-[-95px] z-10 bg-primary' : ''} text-black p-2 rounded-full`}><p className='font-semibold'>{recomended ? '¡Plan mas elejido!' : ''}</p></div>
-        <div
-          className={`${className} relative  mb-10 overflow-hidden rounded-[10px] border-2 border-stroke px-8 py-10 shadow-pricing dark:border-dark-3 dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]`}
-        >
-          <span className="mb-3 block text-lg font-semibold text-primary">
-            {type}
+    <div className={`${className1} relative  w-full md:px-4 md:w-1/2 lg:w-1/3`}>
+      <div className={`absolute ${recomended ? 'right-0 top-[-15px]  md:right-[-10px] md:top-[-95px] z-10 bg-primary' : ''} text-black p-2 rounded-full`}>
+        <p className='font-semibold'>{recomended ? '¡Plan más elegido!' : ''}</p>
+      </div>
+      <div className={`${className} relative  mb-10 overflow-hidden rounded-[10px] border-2 border-stroke px-8 py-10 shadow-pricing dark:border-dark-3 dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]`}>
+        <span className="mb-3 block text-lg font-semibold text-primary">{type}</span>
+        <h2 className="mb-5 text-[40px] font-bold text-dark dark:text-white">
+          {price}
+          <span className="text-base font-medium text-body-color dark:text-dark-6">
+            / {subscription}
           </span>
-          <h2 className="mb-5 text-[40px] font-bold text-dark dark:text-white">
-            {price}
-            <span className="text-base font-medium text-body-color dark:text-dark-6">
-              / {subscription}
-            </span>
-          </h2>
-          <p className="mb-8 border-b border-stroke pb-8 text-base text-body-color dark:border-dark-3 dark:text-dark-6">
-            {description}
-          </p>
-          <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-          <Link
-            href={href}
-            className={` ${active
-              ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-semibold text-black transition hover:bg-opacity-90"
-              : "block w-full rounded-md border border-stroke bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary  dark:border-dark-3"
-              } `}
-          >
-            {buttonText}
-          </Link>
-          <div>
-            <span className="absolute right-0 top-7 z-[-1]">
-              <svg
-                width={77}
-                height={172}
-                viewBox="0 0 77 172"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx={86} cy={86} r={86} fill="url(#paint0_linear)" />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear"
-                    x1={86}
-                    y1={0}
-                    x2={86}
-                    y2={172}
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#3056D3" stopOpacity="0.09" />
-                    <stop offset={1} stopColor="#C4C4C4" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </span>
-            <span className="absolute right-4 top-4 z-[-1]">
-              <Circles />
-            </span>
-          </div>
+        </h2>
+        <p className="mb-8 border-b border-stroke pb-8 text-base text-body-color dark:border-dark-3 dark:text-dark-6">
+          {description}
+        </p>
+        <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
+        <Link
+          href={href}
+          className={` ${active
+            ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-semibold text-black transition hover:bg-opacity-90"
+            : "block w-full rounded-md border border-stroke bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary  dark:border-dark-3"
+            } `}
+        >
+          {buttonText}
+        </Link>
+        <div>
+          <span className="absolute right-0 top-7 z-[-1]">
+            <svg
+              width={77}
+              height={172}
+              viewBox="0 0 77 172"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx={86} cy={86} r={86} fill="url(#paint0_linear)" />
+              <defs>
+                <linearGradient
+                  id="paint0_linear"
+                  x1={86}
+                  y1={0}
+                  x2={86}
+                  y2={172}
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#3056D3" stopOpacity="0.09" />
+                  <stop offset={1} stopColor="#C4C4C4" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span className="absolute right-4 top-4 z-[-1]">
+            <Circles />
+          </span>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-function CheckIcon(props: any) {
+
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -182,7 +195,7 @@ function CheckIcon(props: any) {
   );
 }
 
-function XIcon(props: any) {
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

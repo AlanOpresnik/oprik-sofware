@@ -27,7 +27,7 @@ const ClientCard = ({
         <div className="flex justify-center items-center h-[120px]">
           <Image loading="eager" src={image} alt={name} width={200} height={300} />
         </div>
-        <p className="">" {overview} "</p>
+        <p className="">&quot;{overview}&quot;</p> {/* Comillas escapadas aquí */}
         <p className="font-semibold text-xl">{name}</p>
         <div className="flex justify-center gap-1">
           <p>{founder}</p>
