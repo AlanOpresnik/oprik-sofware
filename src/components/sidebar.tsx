@@ -46,7 +46,9 @@ export function Sidebar() {
           </h2>
           {more.map((item) => (
             <Link
-             onClick={item.fn ? item.fn : null}
+
+             onClick={item.fn ? () => item.fn() : undefined}
+
               key={item.name}
               href={item.href ? item.href : '/'}
               className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"

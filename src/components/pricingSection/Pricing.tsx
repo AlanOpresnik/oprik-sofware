@@ -95,8 +95,8 @@ interface PricingCardProps {
   recomended: boolean;
   subscription: string;
   buttonText: string;
-  className1: string;
-  className: string;
+  className1?: string;
+  className?: string | undefined;
   active: boolean;
   href: string;
   children: React.ReactNode;  // Tipo más adecuado para los hijos
