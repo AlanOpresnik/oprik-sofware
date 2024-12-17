@@ -1,4 +1,4 @@
-import api from "@/api/api";
+//import api from "@/api/api";
 {/*import { Sidebar } from "./sidebar";
 import { ProjectList } from "./project-list";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,7 +8,7 @@ import { formatDateToDDMMYYYY } from '@/lib/format/formatDate'
 import { formatCurrency } from "@/lib/format/formatMoney";
 import Link from "next/link";
 import Image from "next/image"; */}
-export async function Dashboard({ userId }: { userId: string }) {
+export async function Dashboard(/*{ userId }: { userId: string }}*/) {
   {
    // const order = await api.getOrderById(userId);
    // const { data: orden } = order;

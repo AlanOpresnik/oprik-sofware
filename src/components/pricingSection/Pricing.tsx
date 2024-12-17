@@ -1,5 +1,5 @@
 'use client'
-import { PropsWithChildren, useEffect } from "react";
+import { useEffect } from "react";
 import pricingPlans from "./pricingData";
 import Circles from "./Circles";
 import Link from "next/link";
