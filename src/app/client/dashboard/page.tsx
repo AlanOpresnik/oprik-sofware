@@ -1,11 +1,8 @@
 
 import React from 'react'
 import { getServerSession } from 'next-auth/next'
-import api from '@/api/api'
-import { cookies } from 'next/headers'
 import { Dashboard } from '@/components/dashboard'
-import { Sidebar } from '@/components/sidebar'
-import { getSession } from 'next-auth/react'
+
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 const DashboardPage = async () => {
 

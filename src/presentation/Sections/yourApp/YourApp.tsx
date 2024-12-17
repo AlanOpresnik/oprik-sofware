@@ -7,21 +7,21 @@ import { useEffect } from "react"
 export default function YourApp() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-      
+
         gsap.from('#all-app', {
-          opacity: 0, 
-          x: -100,
-          duration: 2, 
-          ease: "power3.out", 
-          scrollTrigger: {
-            trigger: '#all-app',
-            
-            start: "top 80%", // La animación comienza cuando el 100% del trigger esté en la vista
-            toggleActions: "play none none reverse", // Se activa solo cuando el trigger entra en la vista y vuelve cuando sale
-          }
+            opacity: 0,
+            x: -100,
+            duration: 2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: '#all-app',
+
+                start: "top 80%", // La animación comienza cuando el 100% del trigger esté en la vista
+                toggleActions: "play none none reverse", // Se activa solo cuando el trigger entra en la vista y vuelve cuando sale
+            }
         });
-      }, []);
-      
+    }, []);
+
 
     return (
         <div id="all-app" className=" py-24 sm:pb-12 overflow-x-hidden">
@@ -114,8 +114,8 @@ export default function YourApp() {
                                         </div>
                                     </div>
                                     <code className="text-white ">
-                                        import {<span className="text-[#7dd3fc]">useState</span>} from <span className="text-emerald-300">'react'</span><br />
-                                        import {<span className="text-[#7dd3fc]">Switch</span>} from <span className="text-emerald-300">'@headlessui/react'</span><br /><br />
+                                        import {<span className="text-[#7dd3fc]">useState</span>} from <span className="text-emerald-300">&apos;react&apos;</span><br />
+                                        import {<span className="text-[#7dd3fc]">Switch</span>} from <span className="text-emerald-300">&apos;@headlessui/react&apos;</span><br /><br />
 
                                         <span className="text-indigo-400">function Example</span>() &#123;<br />
                                         &nbsp;&nbsp;const [<span className="text-[#7dd3fc]">enabled</span>, <span className="text-[#7dd3fc]">setEnabled</span>] = useState(<span className="text-[#7dd3fc]">true</span>)<br /><br />
@@ -130,6 +130,7 @@ export default function YourApp() {
                                         &nbsp;&nbsp;)<br />
                                         &#125;
                                     </code>
+
 
                                 </div>
                             </div>

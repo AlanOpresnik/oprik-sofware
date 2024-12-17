@@ -1,6 +1,5 @@
 import { model, models } from "mongoose";
-
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const PlanSchema = new mongoose.Schema({
     name: {

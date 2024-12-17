@@ -1,7 +1,7 @@
 'use client';
 import { Expectations } from './ExpectationData';
 import ExpectationCard from './Card/ExpectationCard';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 

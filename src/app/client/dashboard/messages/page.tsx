@@ -5,7 +5,8 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Link from "next/link";
 
 export default async function Page() {
-    const session = await getServerSession(authOptions);
+    return <p>a</p>
+    {/* const session = await getServerSession(authOptions);
 
     if (!session?.user?.id) {
         return <div className="mt-24 text-white">You must be logged in to access this page.</div>;
@@ -23,7 +24,7 @@ export default async function Page() {
                     <button className="bg-primary font-semibold text-black p-2 rounded-xl">Contactate con Oprik software</button>
                 </div>
             </div>
-        </div>
-    )
+    </div> */}
+    
 }
 

@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
-import { LayoutDashboard, Box, FormInput, Table, BarChart, ImagesIcon as Icons, Users, AlertCircle, FileText } from 'lucide-react'
-import { Dashboard } from "./dashboard"
+import { LayoutDashboard, Box, FormInput,  ImagesIcon as AlertCircle, FileText } from 'lucide-react'
+
 import { signOut } from "next-auth/react"
 
 const navigation = [

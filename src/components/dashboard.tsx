@@ -1,13 +1,13 @@
-import { Sidebar } from "./sidebar";
+import api from "@/api/api";
+{/*import { Sidebar } from "./sidebar";
 import { ProjectList } from "./project-list";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert } from "@mui/material";
-import api from "@/api/api";
 import { getServerSession } from "next-auth";
 import { formatDateToDDMMYYYY } from '@/lib/format/formatDate'
 import { formatCurrency } from "@/lib/format/formatMoney";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/image"; */}
 export async function Dashboard({ userId }: { userId: string }) {
   {
     const order = await api.getOrderById(userId);

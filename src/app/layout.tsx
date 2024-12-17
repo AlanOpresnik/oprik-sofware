@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import { ArrowUpIcon } from "lucide-react";
 import Providers from "./Providers";
 
 

@@ -1,5 +1,4 @@
 'use client'
-import api from '@/api/api';
 import Link from 'next/link';
 import React, { FormEvent, useState } from 'react'
 import axios, { AxiosError } from 'axios'
