@@ -27,7 +27,7 @@ const Navbar = () => {
       title: "Inicio", path: '/'
     },
     {
-      title: 'Clientes', path: '/clientes'
+      title: 'Clientes', path: '#clientes'
     }
   ]
   return (
@@ -88,7 +88,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href='#'
+              href='https://wa.me/1123498925'
               className='text-white px-5 py-2 relative after:content-[""] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full'
             >
               Contacto

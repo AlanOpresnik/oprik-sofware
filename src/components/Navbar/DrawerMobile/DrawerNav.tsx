@@ -11,6 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { Twirl as Hamburger } from 'hamburger-react';
 import { Collapse } from '@mui/material';
 import { ArrowDown } from 'lucide-react';
+import Link from 'next/link';
 
 export default function DrawerNav() {
   const [open, setOpen] = React.useState(false);
@@ -42,48 +43,65 @@ export default function DrawerNav() {
       <div className="px-4 py-6">
         <h1 className="text-2xl font-bold">Oprik <span className='text-primary'>software</span></h1>
       </div>
-        <Divider sx={{background: 'white'}}/>
+      <Divider sx={{ background: 'white' }} />
       <List>
         <ListItem disablePadding>
           <ListItemButton onClick={closeDrawer}>
-            <ListItemText primary="Inicio" />
+            <Link href={'/'}>
+              Inicio
+            </Link>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton onClick={closeDrawer}>
-            <ListItemText primary="Clientes" />
+            <ListItemText  />
+            <Link href={'#clientes'}>
+              Clientes
+              </Link>
           </ListItemButton>
         </ListItem>
-        
+
         <ListItem disablePadding onClick={handleSubMenuToggle}>
           <ListItemButton>
-            <ListItemText primary="Planes de desarrollo" />
+      
+            <Link href={'#pricing'}>
+            Planes de desarrollo
+            </Link>
             <ArrowDown />
           </ListItemButton>
         </ListItem>
-        <Collapse in={openSubMenu} timeout="auto"  unmountOnExit>
-          <List  component="div" disablePadding sx={{ pl: 2 }}>
+        <Collapse in={openSubMenu} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding sx={{ pl: 2 }}>
             <ListItem disablePadding>
               <ListItemButton onClick={closeDrawer}>
-                <ListItemText primary="Plan Personal" />
+               
+                <Link href={'/plans/personal'}>
+                Plan personal
+                </Link>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton onClick={closeDrawer}>
-                <ListItemText primary="Plan Emprendimiento" />
+              <Link href={'/plans/emprendimiento'}>
+                Plan emprendimiento
+                </Link>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton onClick={closeDrawer}>
-                <ListItemText  primary="Plan Personalizado" />
+              <Link href={'/plans/personalizado'}>
+                Plan personalizado
+                </Link>
               </ListItemButton>
             </ListItem>
           </List>
         </Collapse>
-      
+
         <ListItem disablePadding>
           <ListItemButton onClick={closeDrawer}>
-            <ListItemText primary="Contacto" />
+          <Link href={'https://wa.me/1123498925'}>
+               Contacto
+                </Link>
           </ListItemButton>
         </ListItem>
       </List>
@@ -98,7 +116,7 @@ export default function DrawerNav() {
       </Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
-        
+
       </Drawer>
     </div>
   );
