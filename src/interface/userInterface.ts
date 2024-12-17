@@ -5,7 +5,7 @@ export interface UserDBResponse {
     name: string;
     email: string;
     password: string;
-    plan: any[];
+    plan: string[];
     order: Order; 
     createdAt: Date;
 }
