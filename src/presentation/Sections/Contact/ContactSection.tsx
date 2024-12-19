@@ -4,10 +4,11 @@ import React, { useState, useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import emailjs from '@emailjs/browser';
+import { Email, Phone } from '@mui/icons-material';
 
 interface FormData {
   user_name: string;
-  phone: number
+  phone: string;
   user_email: string;
   message: string;
 }
@@ -15,11 +16,12 @@ interface FormData {
 const ContactSection = () => {
   const [formData, setFormData] = useState<FormData>({
     user_name: '',
-    phone: 0,
+    phone: '',
     user_email: '',
     message: '',
   });
   const [isSent, setIsSent] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false); // Nuevo estado
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -47,10 +49,12 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setHasSubmitted(true); // Indicar que el usuario ha intentado enviar el formulario
 
     const { user_name, user_email, message, phone } = formData;
 
-    if( user_name === '' || user_email === '' || message === '' || phone.toLocaleString().length < 10) {
+    // Validar campos
+    if (user_name === '' || user_email === '' || message === '' || phone.toString().length < 10) {
       setIsSent(false);
       return;
     }
@@ -60,9 +64,8 @@ const ContactSection = () => {
       user_name,
       user_email,
       message,
-      phone
+      phone,
     };
-
 
     emailjs
       .send(
@@ -95,6 +98,12 @@ const ContactSection = () => {
               <p className="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
                 Completa el formulario y envia tu consulta
               </p>
+              <p className="text-normal mt-4 flex items-end gap-2  sm:text-xl font-medium text-gray-600 dark:text-gray-400 ">
+                <Email /> opriksoftware@gmail.com
+              </p>
+              <p className="text-normal flex items-center gap-1 sm:text-xl font-medium text-gray-600 dark:text-gray-400 mt-4">
+                <Phone /> +54 11 2349-8925
+              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="p-6 flex flex-col justify-center">
@@ -110,14 +119,14 @@ const ContactSection = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="phone" className="hidden">Nombre completo</label>
+                <label htmlFor="phone" className="hidden">Número de teléfono</label>
                 <input
                   type="number"
                   name="phone"
                   value={formData.phone}
-                  placeholder="Numero de telefono"
+                  placeholder="Número de teléfono"
                   onChange={handleChange}
-                  className="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  className="w-full mt-4 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
               <div className="flex flex-col mt-2">
@@ -148,8 +157,8 @@ const ContactSection = () => {
                 Enviar
               </button>
 
-              {isSent && <div className="text-green-500 mt-2">¡Mensaje enviado correctamente!</div>}
-              {!isSent && <div className="text-red-500 mt-2">Hubo un error al enviar el mensaje. Intenta de nuevo.</div>}
+              {hasSubmitted && isSent && <div className="text-green-500 mt-2">¡Mensaje enviado correctamente!</div>}
+              {hasSubmitted && !isSent && <div className="text-red-500 mt-2">Hubo un error al enviar el mensaje. Intenta de nuevo.</div>}
             </form>
           </div>
         </div>
