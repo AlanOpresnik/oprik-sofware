@@ -16,7 +16,7 @@ interface PricingPlan {
 const pricingPlans: PricingPlan[] = [
     {
         type: "Personal",
-        price: "$79.990",
+        price: "$98.990",
         subscription: "unico pago",
         description: "Perfecto para un sitio web personal, por ejemplo un portfolio web",
         largeDescription: "este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo , el diseño es completamente responsivo para telefonos moviles y cuenta con un SEO agradable para posicionar tu web en los pimeros resultados de google",
