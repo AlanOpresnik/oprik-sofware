@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  env: {
+    EMAIL_USER: process.env.EMAIL_USER,
+    EMAIL_PASS: process.env.EMAIL_PASS,
+    BREVO_API_KEY: process.env.BREVO_API_KEY,
+  },
   /* config options here */
   images: {
     remotePatterns: [

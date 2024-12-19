@@ -8,7 +8,7 @@ import { formatDateToDDMMYYYY } from '@/lib/format/formatDate'
 import { formatCurrency } from "@/lib/format/formatMoney";
 import Link from "next/link";
 import Image from "next/image"; */}
-export async function Dashboard(/*{ userId }: { userId: string }}*/) {
+export async function Dashboard(/*{ userId }: { userId: string }}*/) { 
   {
    // const order = await api.getOrderById(userId);
    // const { data: orden } = order;
@@ -21,6 +21,8 @@ export async function Dashboard(/*{ userId }: { userId: string }}*/) {
     )
   }
   {
+    
+
 
     /*
     <div className="flex w-full">

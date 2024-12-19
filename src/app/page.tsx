@@ -1,8 +1,7 @@
-'use client'
+
 import ClientSwiper from "@/components/Clients/ClientSwiper.tsx/ClientSwiper";
 import { Pricing } from "@/components/pricingSection/Pricing";
 import ContactSection from "@/presentation/Sections/Contact/ContactSection";
-
 import Expectation from "@/presentation/Sections/Expectation/Expectation";
 import Header from "@/presentation/Sections/Header/Header";
 import InovationSection from "@/presentation/Sections/Inovation/InovationSection";
@@ -20,7 +19,7 @@ export default  function Home() {
     <>
       <Header />
       <section  className="mt-44">
-        <ClientSwiper />
+        <ClientSwiper/>
       </section>
       <div className="mt-6 ">
         <p className="text-3xl text-white font-semibold">Que vamos a conseguir</p>

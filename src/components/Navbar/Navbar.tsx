@@ -31,7 +31,7 @@ const Navbar = () => {
     }
   ]
   return (
-    <nav className={`w-full h-[39px] py-6 ml-[-10px] mt-6  flex items-center justify-between md:px-24 `}>
+    <nav className={`w-full h-[99px] py-6 ml-[-10px]   flex items-center justify-between md:px-24 `}>
       <div className='flex items-center '>
         <div className='md:hidden'>
           <DrawerNav />
