@@ -123,7 +123,7 @@ export const PricingCard = ({
   const router = useTransitionRouter();
   const pathname = usePathname();
 
-  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>) => {
     e.preventDefault();
 
     // Evitar animación y navegación si ya estamos en la página del plan
