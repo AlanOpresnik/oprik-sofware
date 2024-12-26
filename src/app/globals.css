@@ -111,3 +111,9 @@ body {
 .scale-fade-in {
   animation: scaleFadeIn 0.5s ease-out forwards;
 }
+
+/* Estado inicial de los elementos con data-view-transition */
+[data-view-transition="card"] {
+  position: relative;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}

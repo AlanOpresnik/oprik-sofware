@@ -2,21 +2,24 @@
 import { useEffect } from "react";
 import pricingPlans from "./pricingData";
 import Circles from "./Circles";
-import Link from "next/link";
+
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { useTransitionRouter } from "next-view-transitions";
+import { usePathname } from "next/navigation";
 
 export const Pricing = () => {
+
 
   useEffect(() => {
     // Registra el plugin de ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
- 
+
     gsap.fromTo(
 
-     '#pricing',
-      { opacity: 0, y: 200 }, 
+      '#pricing',
+      { opacity: 0, y: 200 },
       {
         opacity: 1,
         y: 0,
@@ -30,7 +33,7 @@ export const Pricing = () => {
       }
     );
   }, []);
-  
+
 
   return (
     <section id="pricing" className="relative text-white pb-12 pt-20">
@@ -64,6 +67,7 @@ export const Pricing = () => {
               subscription={plan.subscription}
               description={plan.description}
               buttonText={plan.buttonText}
+              data-view-transition={`card-${plan.type}`}
               href={`/plans/${plan.type}`}
             >
               {plan.features.map((feature, i) => (
@@ -113,10 +117,47 @@ export const PricingCard = ({
   className1,
   className,
   active,
+
   href
 }: PricingCardProps) => {
+  const router = useTransitionRouter();
+  const pathname = usePathname();
+
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+
+    // Evitar animación y navegación si ya estamos en la página del plan
+    if (pathname === `/plans/${type}`) {
+      router.push(href || `/plans/${type}`); // Navegar sin animación
+      return;
+    }
+
+    // Animación de salida
+    gsap.to(`[data-view-transition="card-${type}"]`, {
+      y: '-50%',
+      x: '50%',
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power3.out',
+    });
+
+    // Navegar después de un pequeño delay para completar la animación
+    setTimeout(() => {
+      router.push(`/plans/${type}`);
+    }, 100);
+  };
+
+  useEffect(() => {
+    // Animación de entrada
+    gsap.fromTo(
+      `[data-view-transition="card-${type}"]`,
+      { y: '50%', x: '-50%', opacity: 1 },
+      { y: '0%', x: '0%', opacity: 1, duration: 1, ease: 'power3.out' }
+    );
+  }, [type]);
+
   return (
-    <div className={`${className1} relative  w-full md:px-4 md:w-1/2 lg:w-1/3`}>
+    <div data-view-transition={`card-${type}`} className={`${className1} relative  w-full md:px-4 md:w-1/2 lg:w-1/3`}>
       <div className={`absolute ${recomended ? 'right-0 top-[-15px]  md:right-[-10px] md:top-[-95px] z-10 bg-primary' : ''} text-black p-2 rounded-full`}>
         <p className='font-semibold'>{recomended ? '¡Plan más elegido!' : ''}</p>
       </div>
@@ -132,15 +173,16 @@ export const PricingCard = ({
           {description}
         </p>
         <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-        <Link
-          href={href}
+        <button
+
+          onClick={handleCardClick}
           className={` ${active
             ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-semibold text-black transition hover:bg-opacity-90"
             : "block w-full rounded-md border border-stroke bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary  dark:border-dark-3"
             } `}
         >
           {buttonText}
-        </Link>
+        </button>
         <div>
           <span className="absolute right-0 top-7 z-[-1]">
             <svg

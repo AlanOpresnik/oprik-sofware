@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link';
+
 import React, { useEffect } from 'react'
 import {
   NavigationMenu,
@@ -12,6 +12,7 @@ import {
 import { cn } from '@/lib/utils';
 import DrawerNav from './DrawerMobile/DrawerNav';
 import { useSession } from 'next-auth/react';
+import { Link } from 'next-view-transitions';
 
 const Navbar = () => {
   const session = useSession()

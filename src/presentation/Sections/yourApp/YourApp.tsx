@@ -8,16 +8,18 @@ export default function YourApp() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.from('#all-app', {
-            opacity: 0,
-            x: -100,
+        gsap.fromTo('#all-app', 
+        { opacity: 0, x: -100 }, 
+        {
+            opacity: 1,
+            x: 0,
             duration: 2,
             ease: "power3.out",
             scrollTrigger: {
                 trigger: '#all-app',
 
-                start: "top 80%", // La animación comienza cuando el 100% del trigger esté en la vista
-                toggleActions: "play none none reverse", // Se activa solo cuando el trigger entra en la vista y vuelve cuando sale
+                start: "top 50%", // La animación comienza cuando el 100% del trigger esté en la vista
+              
             }
         });
     }, []);

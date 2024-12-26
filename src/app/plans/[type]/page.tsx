@@ -1,18 +1,17 @@
+'use client';
+
+import { useEffect } from 'react';
+import { useParams } from 'next/navigation';
 import pricingData from '@/components/pricingSection/pricingData';
 import { CheckIcon, XIcon } from 'lucide-react';
-
 import Image from 'next/image';
 import FadeInWrapper from '@/components/fadeInWrapper/FadeInWrapper';
 import { PricingCard } from '@/components/pricingSection/Pricing';
+import gsap from 'gsap';
 
-
-interface PlanPageProps {
-  params: Promise<{ type: string }>;
-}
-
-const PlanPage = async ({ params }: PlanPageProps) => {
-  const resolvedParams = await params;
-  const plan = pricingData.find((item) => item.type === resolvedParams.type);
+const PlanPage = () => {
+  const params = useParams();
+  const plan = pricingData.find((item) => item.type === params.type);
 
   if (!plan) {
     return (
@@ -22,9 +21,12 @@ const PlanPage = async ({ params }: PlanPageProps) => {
     );
   }
 
+
+
   return (
     <FadeInWrapper>
       <div className="mt-6 md:mt-12 flex flex-col md:grid md:grid-cols-2 md:gap-12 text-white">
+        {/* Información del plan */}
         <div className="pr-4">
           <p className="text-4xl font-semibold mb-2">
             Plan <span className="text-primary">{plan.type}</span>
@@ -59,17 +61,24 @@ const PlanPage = async ({ params }: PlanPageProps) => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 w-full mt-6 relative">
+
+        {/* Tarjeta del plan */}
+        <div
+          data-view-transition={`card-${plan.type}`}
+          className="col-span-1 w-full mt-6 relative"
+        >
           <div
-            className={`${plan.recomended
+            className={`${
+              plan.recomended
                 ? 'absolute right-0 top-[-20px] z-10 bg-primary text-black p-2 rounded-full'
                 : ''
-              }`}
+            }`}
           >
-            <p className="font-semibold">{plan.recomended ? 'Plan más elegido' : ''}</p>
+            <p className="font-semibold">
+              {plan.recomended ? 'Plan más elegido' : ''}
+            </p>
           </div>
           <PricingCard
-             
             key={plan.type}
             className={`!w-full`}
             className1={`!px-0 md:!px-4 !w-full`}
@@ -93,6 +102,8 @@ const PlanPage = async ({ params }: PlanPageProps) => {
             ))}
           </PricingCard>
         </div>
+
+        {/* Tecnologías en pantallas pequeñas */}
         <div className="md:hidden">
           <div className="pt-4">
             <p className="text-2xl font-semibold">Tecnologías que se usarán</p>

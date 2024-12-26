@@ -37,22 +37,15 @@ export default function RootLayout({
         <div
           className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
         ></div>
-
         <Providers>
-          {/* Navbar */}
           <div className="max-w-[1580px] mx-auto px-2 md:px-0">
-          <Navbar />
+            <Navbar />
           </div>
-
-          {/* Contenido principal */}
           <div className="max-w-[1480px] mx-auto px-2 md:px-12">
             {children}
           </div>
-
-          {/* Footer */}
           <div className="max-w-[1580px] mx-auto px-2 md:px-0">
-
-          <Footer />
+            <Footer />
           </div>
         </Providers>
       </body>

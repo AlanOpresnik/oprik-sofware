@@ -1,14 +1,17 @@
 'use client'
 import { SessionProvider } from 'next-auth/react'
+import { ViewTransitions } from 'next-view-transitions'
 interface Props {
     children: React.ReactNode
 }
 
 const Providers = ({ children }: Props) => {
     return (
-        <SessionProvider>
-            {children}
-        </SessionProvider>
+        <ViewTransitions>
+            <SessionProvider>
+                {children}
+            </SessionProvider>
+        </ViewTransitions>
     )
 }
 
