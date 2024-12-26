@@ -134,10 +134,10 @@ export const PricingCard = ({
 
     // Animación de salida
     gsap.to(`[data-view-transition="card-${type}"]`, {
-      y: '-50%',
+      y: '-100%',
       x: '50%',
       opacity: 1,
-      duration: 0.6,
+      duration: 6,
       ease: 'power3.out',
     });
 
