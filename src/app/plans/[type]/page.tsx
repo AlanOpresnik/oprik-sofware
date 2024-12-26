@@ -1,15 +1,45 @@
-'use client';
 
-import { useParams } from 'next/navigation';
+
 import pricingData from '@/components/pricingSection/pricingData';
 import { CheckIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import FadeInWrapper from '@/components/fadeInWrapper/FadeInWrapper';
 import { PricingCard } from '@/components/pricingSection/Pricing';
+import { Metadata, ResolvingMetadata } from 'next';
 
-const PlanPage = () => {
-  const params = useParams();
-  const plan = pricingData.find((item) => item.type === params.type);
+
+type Props = {
+  params: Promise<{ type: string }>
+  type: string
+}
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const type = (await params).type
+
+  // fetch data
+  const data = pricingData.find(p => p.type === type)
+
+
+
+  return {
+    title: `Plan web ${data?.type} OPRIK SOFTWARE`,
+
+  }
+}
+
+const PlanPage = async ({
+  params,
+}: {
+  params: Promise<{ type: string }>
+}) => {
+  const type = (await params).type
+ 
+ 
+    const plan = pricingData.find((item) => item.type === type);
+  
 
   if (!plan) {
     return (
@@ -66,11 +96,10 @@ const PlanPage = () => {
           className="col-span-1 w-full mt-6 relative"
         >
           <div
-            className={`${
-              plan.recomended
+            className={`${plan.recomended
                 ? 'absolute right-0 top-[-20px] z-10 bg-primary text-black p-2 rounded-full'
                 : ''
-            }`}
+              }`}
           >
             <p className="font-semibold">
               {plan.recomended ? 'Plan más elegido' : ''}
