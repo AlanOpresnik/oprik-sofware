@@ -1,13 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import pricingData from '@/components/pricingSection/pricingData';
 import { CheckIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import FadeInWrapper from '@/components/fadeInWrapper/FadeInWrapper';
 import { PricingCard } from '@/components/pricingSection/Pricing';
-import gsap from 'gsap';
 
 const PlanPage = () => {
   const params = useParams();

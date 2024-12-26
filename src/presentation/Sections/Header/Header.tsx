@@ -1,12 +1,12 @@
 'use client'
 import { Code, Globe } from 'lucide-react'
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { gsap } from "gsap";
-import { usePathname } from 'next/navigation';
+
 
 const Header = () => {
-    const url = usePathname()
+
     useEffect(() => {
         // Animación para que #header entre desde la izquierda
         gsap.fromTo("#header", { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1, duration: 1.5, ease: "power3.out" });
