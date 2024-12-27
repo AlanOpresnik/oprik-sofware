@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Providers from "./Providers";
-
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     {
       url: "/OSLOGO.jpeg",
       sizes: "192x192",
+
       type: "image/jpeg",
     },
 
@@ -62,6 +63,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} relative  bg-neutral-950 antialiased `}
       >
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '939633891052997');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=939633891052997&ev=PageView&noscript=1"
+            alt="Pixel tracking"
+          />
+        </noscript>
         {/* Fondo con gradiente violeta */}
         <div
           className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
