@@ -5,7 +5,7 @@ import { CheckIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import FadeInWrapper from '@/components/fadeInWrapper/FadeInWrapper';
 import { PricingCard } from '@/components/pricingSection/Pricing';
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 
 type Props = {
