@@ -16,8 +16,8 @@ interface PricingPlan {
 const pricingPlans: PricingPlan[] = [
     {
         type: "Personal",
-        price: "$98.990",
-        subscription: "unico pago",
+        price: "$99",
+        subscription: "Primer precio",
         description: "Perfecto para un sitio web personal, por ejemplo un portfolio web",
         largeDescription: "este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo , el diseño es completamente responsivo para telefonos moviles y cuenta con un SEO agradable para posicionar tu web en los pimeros resultados de google",
         buttonText: "Plan Personal",
@@ -47,8 +47,8 @@ const pricingPlans: PricingPlan[] = [
     },
     {
         type: "Emprendimiento",
-        price: "$170.000",
-        subscription: "Unico pago",
+        price: "$189",
+        subscription: "Primer precio",
         description:
             "Perfecto para una tienda Online, para poder gestionar ventas, ordenes y stock",
         largeDescription: 'Este plan cuenta con secciones hasta 10 secciones dentro de la Pagina web, esta web cuenta con todo lo el plan Personal pero tambien se le incluye un Panel de adminsitracion, donde podras gestionar tus productos, stock y ordenes desde la web, tendras la posibilidad de subir la cantidad de productos que necesites, este plan puede agrandarse dependiendo lo que necesite el cliente ',
