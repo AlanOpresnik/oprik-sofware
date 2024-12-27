@@ -5,29 +5,26 @@ import { CheckIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import FadeInWrapper from '@/components/fadeInWrapper/FadeInWrapper';
 import { PricingCard } from '@/components/pricingSection/Pricing';
-import { Metadata } from 'next';
+import { Metadata} from 'next';
 
 
 type Props = {
   params: Promise<{ type: string }>
-  type: string
 }
 export async function generateMetadata(
-  { params }: Props,
+  { params }: Props
 ): Promise<Metadata> {
   // read route params
-  const type = (await params).type
+  const type = (await params).type;
 
   // fetch data
-  const data = pricingData.find(p => p.type === type)
-
-
+  const data = pricingData.find(p => p.type === type);
 
   return {
     title: `Plan web ${data?.type} OPRIK SOFTWARE`,
-
-  }
+  };
 }
+
 
 const PlanPage = async ({
   params,
