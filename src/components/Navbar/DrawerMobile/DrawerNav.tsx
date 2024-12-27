@@ -7,7 +7,6 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import { Twirl as Hamburger } from 'hamburger-react';
 import { Collapse } from '@mui/material';
 import { ArrowDown } from 'lucide-react';
