@@ -54,7 +54,7 @@ export default function DrawerNav() {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton onClick={closeDrawer}>
-            <ListItemText  />
+         
             <Link href={'#clientes'}>
               Clientes
               </Link>
