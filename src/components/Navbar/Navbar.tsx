@@ -53,7 +53,7 @@ const Navbar = () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className='bg-transparent text-white focus:!bg-transparent focus:!text-white py-0 fo'>Planes de desarrollo</NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent className=''>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
@@ -66,14 +66,14 @@ const Navbar = () => {
                               Plan Emprendimiento
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              esta web cuenta con todo lo el plan Personal pero tambien se le incluye un Panel
+                              Esta web cuenta con todo lo el plan Personal pero tambien se le incluye un Panel
                               de adminsitracion, donde podras gestionar tus productos, stock y ordenes desde la web,
                             </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
                       <ListItem className='' href="/plans/Personal" title="Plan Personal">
-                        este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo
+                        Este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo
                       </ListItem>
                       <ListItem href="/plans/Personalizado" title="Plan Personalizado">
                         Con este plan tenes todos los beneficios de los demas planes , y contas con una capa extra de personalizacion y podemos agregar funcionalidades que necesites

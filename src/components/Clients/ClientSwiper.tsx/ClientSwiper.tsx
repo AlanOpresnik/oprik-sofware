@@ -78,7 +78,10 @@ export default function ClientSwiper() {
           }
         }}
         loop={true}
-        autoplay={true}
+        autoplay={{
+          delay: 8000,
+          disableOnInteraction: true, 
+        }}
         pagination={{
           clickable: true,
         }}
@@ -99,5 +102,6 @@ export default function ClientSwiper() {
         ))}
       </Swiper>
     </section>
+    
   );
 }
