@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Providers from "./Providers";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -86,6 +87,7 @@ export default function RootLayout({
             alt="Pixel tracking"
           />
         </noscript>
+        <Analytics/>
         {/* Fondo con gradiente violeta */}
         <div
           className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
