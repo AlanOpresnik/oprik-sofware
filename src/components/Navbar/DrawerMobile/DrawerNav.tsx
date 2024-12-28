@@ -27,7 +27,10 @@ export default function DrawerNav() {
     setOpenSubMenu(!openSubMenu);
   };
 
-  const closeDrawer = () => setOpen(false);
+  const closeDrawer = () => {
+      setOpen(false);
+      setOpenHamburger(false);
+  }
 
   const DrawerList = (
     <Box
@@ -74,21 +77,21 @@ export default function DrawerNav() {
             <ListItem disablePadding>
               <ListItemButton onClick={closeDrawer}>
                
-                <Link href={'/plans/personal'}>
+                <Link href={'/plans/Personal'}>
                 Plan personal
                 </Link>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton onClick={closeDrawer}>
-              <Link href={'/plans/emprendimiento'}>
+              <Link href={'/plans/Emprendimiento'}>
                 Plan emprendimiento
                 </Link>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton onClick={closeDrawer}>
-              <Link href={'/plans/personalizado'}>
+              <Link href={'/plans/Personalizado'}>
                 Plan personalizado
                 </Link>
               </ListItemButton>
@@ -98,7 +101,7 @@ export default function DrawerNav() {
 
         <ListItem disablePadding>
           <ListItemButton onClick={closeDrawer}>
-          <Link href={'https://wa.me/1123498925'}>
+          <Link href={'https://wa.me/+541123498925'}>
                Contacto
                 </Link>
           </ListItemButton>

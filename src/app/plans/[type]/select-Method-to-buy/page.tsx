@@ -26,7 +26,7 @@ const SelectMethodToBuy = async ({ params }: Props) => {
     .join("\n")}`
   );
 
-  const whatsappUrl = `https://wa.me/1123498925?text=${planMessage}`;
+  const whatsappUrl = `https://wa.me/+541123498925?text=${planMessage}`;
 
   return (
     <div

@@ -36,7 +36,7 @@ const Footer = () => {
                         </div>
                         <div className='flex gap-1'>
                             <p>Correo:</p>
-                            <p>alanopk328@gmail.com</p>
+                            <p>opriksoftware@gmail.com</p>
                             
                         </div>
                     </div>
