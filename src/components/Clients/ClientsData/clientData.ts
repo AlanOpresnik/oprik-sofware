@@ -40,7 +40,7 @@ export const cardData = [
         image: 'https://tuparaisofederacion.com/img/logo1.png',
         personRole: 'Tu paraiso Federacion',
         founder:'Fundador de ',
-        web: 'tuparaisofederacion.com',
+        web: 'https://www.tuparaisofederacion.com',
         webImg: '/federacion.jpeg',
         plan: 'Plan Personal',
         images: [
