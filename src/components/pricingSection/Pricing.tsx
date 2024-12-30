@@ -27,7 +27,7 @@ export const Pricing = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: '#pricing',
-          start: "top 55%", // Inicia la animación cuando el 80% del viewport alcanza el componente
+          start: "top 70%", // Inicia la animación cuando el 80% del viewport alcanza el componente
           toggleActions: "play none none none", // Solo reproduce la animación una vez
         },
       }

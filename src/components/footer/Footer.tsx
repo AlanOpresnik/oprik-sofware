@@ -5,26 +5,44 @@ import React from 'react'
 const Footer = () => {
     const LINKS = [
         {
-            title: "Inicio",
-            items: ["Acerca de nosotros", "Nos diferenciamos"],
-        },
-
-        {
-            title: "Clientes",
-            items: ["Quiero ser cliente", "Panel de administracion de cliente"],
+          title: "Inicio",
+          items: [
+            { label: "Acerca de nosotros", href: "#informacion-nuestra" },
+            { label: "Nos diferenciamos", href: "#nos-diferenciamos" },
+          ],
         },
         {
-            title: "Planes de desarrollo",
-            items: ["Personal", "Emprendimiento", "Personalizado"],
+          title: "Clientes",
+          items: [
+            { label: "Quiero ser cliente", href: "/clientes/quiero-ser-cliente" },
+            { label: "Panel de administración de cliente", href: "/clientes/panel-administracion" },
+          ],
         },
-    ];
+        {
+          title: "Servicios",
+          items: [
+            { label: "Tiendas web", href: "/servicios/tiendas-web" },
+            { label: "Web Gestión de turnos", href: "/servicios/web-gestion-turnos" },
+            { label: "Marketing y Anuncios", href: "/servicios/marketing-anuncios" },
+          ],
+        },
+        {
+          title: "Planes de desarrollo",
+          items: [
+            { label: "Personal", href: "/planes-desarrollo/personal" },
+            { label: "Emprendimiento", href: "/planes-desarrollo/emprendimiento" },
+            { label: "Personalizado", href: "/planes-desarrollo/personalizado" },
+          ],
+        },
+      ];
+      
 
 
 
     return (
         <footer className="relative w-full  p-4 border-t pt-12  text-white my-12">
             <div className="mx-auto w-full  md:px-8">
-                <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
+                <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-3">
                     <div className='flex flex-col'>
                         <p className="mb-6 text-2xl font-semibold">
                             Oprik Software
@@ -40,7 +58,7 @@ const Footer = () => {
                             
                         </div>
                     </div>
-                    <div className="grid md:grid-cols-3 justify-between gap-4">
+                    <div className="grid col-span-2 w-full md:grid-cols-4 justify-between gap-12">
                         {LINKS.map(({ title, items }) => (
                             <ul key={title}>
                                 <Link
@@ -51,13 +69,13 @@ const Footer = () => {
                                     {title}
                                 </Link>
                                 {items?.map((link) => (
-                                    <li className='py-0.5' key={link}>
+                                    <li className='py-0.5' key={link.label}>
                                         <Link
-                                            href="#"
+                                            href={link.href}
                                             color="gray"
                                             className="mb-2 font-normal transition-colors hover:opacity-75"
                                         >
-                                            {link}
+                                            {link.label}
                                         </Link>
                                     </li>
                                 ))}

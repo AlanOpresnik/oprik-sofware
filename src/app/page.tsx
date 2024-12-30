@@ -1,51 +1,61 @@
-
 import ClientSwiper from "@/components/Clients/ClientSwiper.tsx/ClientSwiper";
+import DividerDays from "@/components/dividerDays/DividerDays";
 import { Pricing } from "@/components/pricingSection/Pricing";
 import ContactSection from "@/presentation/Sections/Contact/ContactSection";
 import Expectation from "@/presentation/Sections/Expectation/Expectation";
 import Header from "@/presentation/Sections/Header/Header";
 import InovationSection from "@/presentation/Sections/Inovation/InovationSection";
+import Services from "@/presentation/Sections/Services/Services";
 import UsInformationSection from "@/presentation/Sections/UsInformation/UsInformationSection";
 import YourApp from "@/presentation/Sections/yourApp/YourApp";
 
-
-
-
-
-export default  function Home() {
-
-
+export default function Home() {
   return (
     <>
       <Header />
-      <section  className="mt-44">
-        <ClientSwiper/>
+      <section className="mt-44">
+        <ClientSwiper />
       </section>
       <div className="mt-6 ">
-        <p className="text-3xl text-white font-semibold">Que vamos a conseguir</p>
+        <p className="text-3xl text-white font-semibold">
+          Que vamos a conseguir
+        </p>
         <Expectation />
+      </div>
+      <div>
+        <DividerDays/>
       </div>
       <section id="precio" className="px-4 md:px-0 ">
         <Pricing />
+      </section>
+      <section>
+        <Services/>
       </section>
       <section id="todo para tu app" className="mt-0 mb-24">
         <div>
           <YourApp />
         </div>
       </section>
-      <section id="informacion nuestra" className="max-w-[1280px] mx-auto">
+      <section id="informacion-nuestra" className="max-w-[1280px] mx-auto">
         <div>
           <UsInformationSection />
         </div>
       </section>
-      <section id="nos diferenciamos" className="mt-24 mb-24 max-w-[1280px] mx-auto">
+      <section
+        id="nos-diferenciamos"
+        className="mt-24 mb-24 max-w-[1280px] mx-auto"
+      >
         <div>
           <InovationSection />
         </div>
       </section>
-      <section id="nos diferenciamos" className="mt-24 mb-24 max-w-[1280px] mx-auto">
+      <section
+        className="mt-24 mb-24 max-w-[1280px] mx-auto"
+      >
         <div className="flex flex-col justify-center items-center gap-2">
-          <p className="text-4xl text-white font-bold text-center mb-2">Te quedo alguna duda?</p>
+          <p className="text-4xl text-white font-bold text-center mb-2">
+            Te quedo alguna duda?
+          </p>
           <div>
             <ContactSection />
           </div>

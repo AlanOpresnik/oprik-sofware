@@ -19,7 +19,7 @@ const pricingPlans: PricingPlan[] = [
         price: "$99",
         subscription: "Primer precio",
         description: "Perfecto para un sitio web personal, por ejemplo un portfolio web",
-        largeDescription: "este plan cuenta con mas de 5 secciones dentro de la misma pagina, cuenta con un formulario de contacto, boton de Watshapp y contacto por correo electronico directo , el diseño es completamente responsivo para telefonos moviles y cuenta con un SEO agradable para posicionar tu web en los pimeros resultados de google",
+        largeDescription: "Este plan incluye más de 5 secciones dentro de la misma página. Contiene un formulario de contacto, un botón de WhatsApp y contacto directo por correo electrónico. El diseño es completamente responsivo para dispositivos móviles y cuenta con un SEO optimizado para posicionar tu web en los primeros resultados de Google.",
         buttonText: "Plan Personal",
         active: false,
         images: [
@@ -50,8 +50,8 @@ const pricingPlans: PricingPlan[] = [
         price: "$189",
         subscription: "Primer precio",
         description:
-            "Perfecto para una tienda Online, para poder gestionar ventas, ordenes y stock",
-        largeDescription: 'Este plan cuenta con secciones hasta 10 secciones dentro de la Pagina web, esta web cuenta con todo lo el plan Personal pero tambien se le incluye un Panel de adminsitracion, donde podras gestionar tus productos, stock y ordenes desde la web, tendras la posibilidad de subir la cantidad de productos que necesites, este plan puede agrandarse dependiendo lo que necesite el cliente ',
+            "Perfecto para una tienda online, para gestionar ventas, órdenes y stock.",
+        largeDescription: "Este plan incluye hasta 10 secciones dentro de la página web. Además de todas las funcionalidades del plan Personal, incorpora un panel de administración donde podrás gestionar tus productos, stock y órdenes directamente desde la web. Tendrás la posibilidad de subir la cantidad de productos que necesites. Este plan puede ampliarse según las necesidades del cliente.",
         buttonText: "Plan Emprendimiento",
         active: true,
         recomended: true,
@@ -91,7 +91,7 @@ const pricingPlans: PricingPlan[] = [
         subscription: "",
         description:
             "Perfecto para empresas o emprendimientos que necesiten un sitio web con todas las prestaciones",
-        largeDescription: 'Este plan es personalizado , completamente pensado para lo que necesite un cliente muy exigente, para marcas ya alojadas en la industria con un trafico de gente alto en sus redes, este plan cuenta con todas las comodidades que necesites en tu web , esta hecho 100% a tu medida.',
+        largeDescription: "Este plan es personalizado y completamente diseñado para satisfacer las necesidades de los clientes más exigentes. Está pensado para marcas consolidadas en la industria, con un alto tráfico en sus redes. Este plan incluye todas las funcionalidades que requieras para tu web y está desarrollado 100% a tu medida.",
         buttonText: "Plan Personalizado",
         active: false,
         images: [

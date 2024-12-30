@@ -12,7 +12,7 @@ const Expectation = () => {
     useEffect(() => {
         // Detectamos si es mobile o desktop
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 996); // Puedes ajustar el valor para el breakpoint de mobile
+            setIsMobile(window.innerWidth <= 996); 
         };
 
         handleResize(); // Ejecutamos una vez al cargar la página
@@ -21,7 +21,7 @@ const Expectation = () => {
         return () => window.removeEventListener('resize', handleResize); // Limpiamos el listener
     }, []);
     useEffect(() => {
-        // Registra el plugin de ScrollTrigger
+     
         gsap.registerPlugin(ScrollTrigger);
         const startPosition = isMobile ? "top 100%" : "top 75%";
         // Animación de aparición secuencial para todas las tarjetas
