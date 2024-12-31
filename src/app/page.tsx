@@ -11,7 +11,7 @@ import YourApp from "@/presentation/Sections/yourApp/YourApp";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden overflow-y-hidden">
       <Header />
       <section className="mt-44">
         <ClientSwiper />
@@ -23,13 +23,13 @@ export default function Home() {
         <Expectation />
       </div>
       <div>
-        <DividerDays/>
+        <DividerDays />
       </div>
       <section id="precio" className="px-4 md:px-0 ">
         <Pricing />
       </section>
       <section>
-        <Services/>
+        <Services />
       </section>
       <section id="todo para tu app" className="mt-0 mb-24">
         <div>
@@ -64,6 +64,6 @@ export default function Home() {
       {/* <div className={` ${isScrolled ? 'opacity-100' : "opacity-0"} transition-all bg-primary z-30 p-2 hover:opacity-80 rounded-full flex items-center right-5 bottom-5 md:right-10 md:bottom-10 fixed`}>
         <button onClick={scrollToTop}><ArrowUpIcon /></button>
       </div> */}
-    </>
+    </div>
   );
 }

@@ -6,6 +6,7 @@ import Footer from "@/components/footer/Footer";
 import Providers from "./Providers";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
+import WspLogo from "@/components/WspLogo/WspLogo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -99,6 +100,8 @@ export default function RootLayout({
           <div className="max-w-[1480px] mx-auto px-2 md:px-12">
             {children}
           </div>
+        
+          <WspLogo/>
           <div className="max-w-[1580px] mx-auto px-2 md:px-0">
             <Footer />
           </div>
