@@ -2,7 +2,7 @@
 import { ExternalLink, Phone } from "lucide-react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 

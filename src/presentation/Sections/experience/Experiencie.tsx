@@ -1,6 +1,5 @@
 
 import { CalendarDays, ClipboardEdit, Handshake } from 'lucide-react';
-import Link from 'next/link';
 import React from 'react'
 import FeaturesList from './FeatureList';
 
