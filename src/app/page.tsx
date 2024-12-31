@@ -7,6 +7,7 @@ import Header from "@/presentation/Sections/Header/Header";
 import InovationSection from "@/presentation/Sections/Inovation/InovationSection";
 import Services from "@/presentation/Sections/Services/Services";
 import UsInformationSection from "@/presentation/Sections/UsInformation/UsInformationSection";
+import Experiencie from "@/presentation/Sections/experience/Experiencie";
 import YourApp from "@/presentation/Sections/yourApp/YourApp";
 
 export default function Home() {
@@ -36,6 +37,9 @@ export default function Home() {
           <YourApp />
         </div>
       </section>
+      <div>
+        <Experiencie/>
+      </div>
       <section id="informacion-nuestra" className="max-w-[1280px] mx-auto">
         <div>
           <UsInformationSection />
