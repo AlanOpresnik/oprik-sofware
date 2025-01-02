@@ -1,9 +1,9 @@
-interface PricingPlan {
-    type: string;
+export interface PricingPlan {
+    type?: string;
     price: string;
     subscription: string;
     description: string;
-    largeDescription: string;
+    largeDescription?: string;
     buttonText: string;
     active: boolean;
     recomended?: boolean;

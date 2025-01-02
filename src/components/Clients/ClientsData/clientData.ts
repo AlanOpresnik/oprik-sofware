@@ -4,10 +4,12 @@ export const cardData = [
         name: 'Matias Robles',
         personRole: 'RoblesRender',
         founder:'Fundador de ',
+        web_image: 'https://res.cloudinary.com/db3krhfka/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1735818915/lorecunas_rjpfnx.jpg',
         image:'https://roblesrender.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoPng.0b2e58d5.png&w=256&q=75',
         web: 'https://roblesrender.com',
         webImg: '/roblesrender.jpeg',
         plan: 'Plan Personal',
+        category: 'Personal',
         images: [
             'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/2078px-Vitejs-logo.svg.png',
             'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
@@ -25,6 +27,7 @@ export const cardData = [
         web: 'https://www.lorecunas.com.ar',
         webImg: '/lorecunas.jpeg',
         plan: 'Plan Emprendimiento',
+        category: 'Emprendimiento',
         images: [
             'https://www.cdnlogo.com/logos/n/80/next-js.svg',
             'https://icons-for-free.com/iff/png/512/mongodb+plain+wordmark-1324760553130770870.png',
@@ -43,6 +46,7 @@ export const cardData = [
         web: 'https://www.tuparaisofederacion.com',
         webImg: '/federacion.jpeg',
         plan: 'Plan Personal',
+        category: 'Personal',
         images: [
             'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/2078px-Vitejs-logo.svg.png',
             'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
@@ -60,6 +64,7 @@ export const cardData = [
      web: 'https://www.portaflex.com.ar',
      webImg: '/portaflex.jpeg',
      plan: 'Plan Emprendimiento',
+     category: 'Emprendimiento',
      images: [
         'https://www.cdnlogo.com/logos/n/80/next-js.svg',
         'https://icons-for-free.com/iff/png/512/mongodb+plain+wordmark-1324760553130770870.png',

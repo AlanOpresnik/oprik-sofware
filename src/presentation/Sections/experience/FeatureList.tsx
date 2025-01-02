@@ -25,25 +25,32 @@ const FeaturesList: React.FC<FeaturesListProps> = ({ features }) => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-
+  
     const cards = containerRef.current.querySelectorAll(".feature-card");
-
-    // GSAP Animation with ScrollTrigger
-    gsap.from(cards, {
-      y: 50, // Animación inicial desde abajo
-      opacity: 0, // Comienzan invisibles
-      stagger: 0.2, // Un pequeño retraso entre cada tarjeta
-      scrollTrigger: {
-        trigger: containerRef.current, // El contenedor activa la animación
-        start: "top 100%", // Inicia cuando el contenedor está al 80% de la ventana
-        end: "bottom 0%", // Termina cuando el contenedor está al 20%
-        toggleActions: "play none none none", // Se reproduce solo una vez
-        markers: false, // Puedes poner "true" para ver los marcadores de ScrollTrigger mientras desarrollas
-        
+  
+    // GSAP Animation with ScrollTrigger using fromTo
+    gsap.fromTo(
+      cards,
+      {
+        y: 50, // Estado inicial (debajo)
+        opacity: 0, // Estado inicial (invisible)
       },
-    });
-
+      {
+        y: 0, // Estado final (sin desplazamiento)
+        opacity: 1, // Estado final (totalmente visible)
+        stagger: 0.2, // Un pequeño retraso entre cada tarjeta
+        scrollTrigger: {
+          trigger: containerRef.current, // El contenedor activa la animación
+          start: "top 100%", // Inicia cuando el contenedor está al 80% de la ventana
+          end: "bottom 0%", // Termina cuando el contenedor está al 20%
+          toggleActions: "play none none none", // Se reproduce solo una vez
+          markers: false, // Puedes poner "true" para ver los marcadores de ScrollTrigger mientras desarrollas
+        },
+      }
+    );
+  
   }, []);
+  
 
   return (
     <div

@@ -1,11 +1,12 @@
-
-
 import pricingData from '@/components/pricingSection/pricingData';
-import { CheckIcon, XIcon } from 'lucide-react';
 import Image from 'next/image';
 import FadeInWrapper from '@/components/fadeInWrapper/FadeInWrapper';
-import { PricingCard } from '@/components/pricingSection/Pricing';
 import { Metadata} from 'next';
+import TechsPlan from '@/components/techsPlan/TechsPlan';
+import PricingCardPlan from '@/components/PricingCardPlan/PricingCardPlan';
+import { cardData } from '@/components/Clients/ClientsData/clientData';
+import { ExternalLink } from 'lucide-react';
+import { Link } from 'next-view-transitions';
 
 
 type Props = {
@@ -35,15 +36,19 @@ const PlanPage = async ({
  
  
     const plan = pricingData.find((item) => item.type === type);
-  
-
-  if (!plan) {
-    return (
-      <div className="text-white">
+    
+    
+    if (!plan) {
+      return (
+        <div className="text-white">
         <p>El plan especificado no existe.</p>
       </div>
     );
   }
+  
+  const CATEGORY_CLIENTS_MATCH = cardData.filter((i) => i.category === plan.type);
+
+  if(!CATEGORY_CLIENTS_MATCH) return 'No hay proyectos realizados con este plan'
 
 
 
@@ -72,59 +77,12 @@ const PlanPage = async ({
                 />
               ))}
             </div>
-            <div className="mt-4">
-              {plan.techs.map((tech, i) => (
-                <div key={i} className="my-6">
-                  <div className="flex gap-2 items-center">
-                    <p className="text-xl font-semibold text-primary border-b">{tech.title}:</p>
-                    <p className="mt-1 text-orange-200">{tech.for}</p>
-                  </div>
-                  <p>{tech.description}</p>
-                </div>
-              ))}
-            </div>
+         <TechsPlan plan={plan} />
           </div>
         </div>
 
         {/* Tarjeta del plan */}
-        <div
-          data-view-transition={`card-${plan.type}`}
-          className="col-span-1 w-full mt-6 relative"
-        >
-          <div
-            className={`${plan.recomended
-                ? 'absolute right-0 top-[-20px] z-10 bg-primary text-black p-2 rounded-full'
-                : ''
-              }`}
-          >
-            <p className="font-semibold">
-              {plan.recomended ? 'Plan más elegido' : ''}
-            </p>
-          </div>
-          <PricingCard
-            key={plan.type}
-            className={`!w-full`}
-            className1={`!px-0 md:!px-4 !w-full`}
-            active={plan.active}
-            type={plan.type}
-            price={plan.price}
-            subscription={plan.subscription}
-            description={plan.description}
-            buttonText={`Contratar Plan ${plan.type}`}
-            href={`/plans/${plan.type}/select-Method-to-buy`}
-          >
-            {plan.features.map((feature, i) => (
-              <div key={i} className="flex gap-2">
-                {feature.available ? (
-                  <CheckIcon className="text-green-500" />
-                ) : (
-                  <XIcon className="text-red-500" />
-                )}
-                {feature.text}
-              </div>
-            ))}
-          </PricingCard>
-        </div>
+        <PricingCardPlan plan={plan}/>
 
         {/* Tecnologías en pantallas pequeñas */}
         <div className="md:hidden">
@@ -155,9 +113,31 @@ const PlanPage = async ({
             ))}
           </div>
         </div>
+        <div className='mt-2'>
+          <p className='text-4xl font-semibold'>Proyectos Realizados con este plan</p>
+          <div className='flex items-center gap-6 mt-6'>
+            {CATEGORY_CLIENTS_MATCH.map((c) => (
+              <div className='hover:border p-2 rounded-xl'>
+              <Link target='_blank' href={c.web} className='  rounded-xl'>
+                <Image className='rounded-md ' src={c.webImg} width={600} height={400} alt={c.name} />
+                <div className='flex flex-col gap-1 '>
+                  <div className='flex justify-between items-center'>
+                  <p className='text-xl font-semibold mt-4'>{c.personRole}</p>
+                  <ExternalLink size={20} className='mr-2 mt-2'/>
+                  </div>
+                  <p className='text-primary'>{c.plan}</p>
+                  <p className='line-clamp-3'>{c.overview}</p>
+                  <p className='text-primary font-semibold hover:underline'>Visitar web</p>
+                </div>
+              </Link>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </FadeInWrapper>
   );
 };
+
 
 export default PlanPage;

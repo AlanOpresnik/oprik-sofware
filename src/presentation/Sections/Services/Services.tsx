@@ -1,10 +1,11 @@
 'use client'
-import { ExternalLink, Phone } from "lucide-react";
-import { Link } from "next-view-transitions";
+import { Phone } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import serviceData from "@/mock/serviceData";
+import ServiceLink from "./ServiceLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,27 +18,37 @@ const Services = () => {
         trigger: '#text-service', // Elemento que dispara la animación
         start: "top 80%", // Inicia cuando el elemento está al 80% de la ventana
         end: "bottom 20%", // Termina al 20%
-        toggleActions: "play none none none", // Opciones: onEnter, onLeave, onEnterBack, onLeaveBack
       },
     });
-
+  
     // Animación para el texto (desde la izquierda)
-    tl.from('#text-service', {
-      x: -100, // Desde la izquierda
-      opacity: 0, // Inicialmente invisible
-      stagger: 0.2, // Aparece en secuencia
-    });
-
-    // Animación para la imagen (desde la derecha)
-    tl.from(
-      '#image-service',
+    tl.fromTo(
+      '#text-service', 
       {
-        x: 100, // Desde la derecha
-        opacity: 0, // Inicialmente invisible
+        x: -100, // Estado inicial (desde la izquierda)
+        opacity: 0, // Estado inicial (invisible)
       },
-      "-=0.5" // Solapamos un poco las animaciones
+      {
+        x: 0, // Estado final (sin desplazamiento)
+        opacity: 1, // Estado final (completamente visible)
+        stagger: 0.2, // Aparece en secuencia
+      }
+    );
+  
+    // Animación para la imagen (desde la derecha)
+    tl.fromTo(
+      '#image-service', 
+      {
+        x: 100, // Estado inicial (desde la derecha)
+        opacity: 0, // Estado inicial (invisible)
+      },
+      {
+        x: 0, // Estado final (sin desplazamiento)
+        opacity: 1, // Estado final (completamente visible)
+      }
     );
   }, []);
+  
 
   return (
     <div className="flex flex-col-reverse md:grid place-items-center md:h-[80vh] md:grid-cols-2">
@@ -51,27 +62,9 @@ const Services = () => {
           situacion.
         </p>
         <div className="flex flex-col text-sm md:text-base gap-4">
-          <Link
-            href={"/services/e-commerce-complete"}
-            className="md:hover-effect flex gap-2 text-primary font-semibold mt-4"
-          >
-            Servicio creacion de Tienda Web / E-commerce completo
-            <ExternalLink size={16} />
-          </Link>
-          <Link
-            href={"/services/turnos-app"}
-            className="md:hover-effect text-primary flex gap-2 font-semibold mt-2"
-          >
-            Servicio creacion Web/App Para gestión de turnos
-            <ExternalLink size={16} />
-          </Link>
-          <Link
-            href={"/services/marketing-digital-ads"}
-            className="md:hover-effect text-primary flex gap-2 font-semibold mt-2"
-          >
-            Marketing digital / Facebook ADS / Campañas de anuncios
-            <ExternalLink size={16} />
-          </Link>
+          {serviceData.map((service) => (
+            <ServiceLink key={service.id} service={service}/>
+          ))}
           <button className="before:ease relative mt-2 md:w-[500px] p-2 py-3 flex justify-center overflow-hidden bg-primary md:bg-primary/70 font-semibold transition-all before:absolute before:top-full before:h-0 before:w-[900px] before:origin-center before:-translate-x-0 before:rotate-45 before:bg-primary before:duration-500 rounded-xl hover:text-black hover:before:h-[600px] hover:before:-translate-y-64 !before:!w-full">
             <span className="relative flex items-center gap-2">
               <Phone size={20} /> Contactar a WhatsApp por un servicio personalizado

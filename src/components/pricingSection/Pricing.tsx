@@ -92,7 +92,7 @@ export const Pricing = () => {
 
 
 
-interface PricingCardProps {
+export interface PricingCardProps {
   description: string;
   price: string;
   type: string;
