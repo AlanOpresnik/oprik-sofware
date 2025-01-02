@@ -1,13 +1,13 @@
 import React from "react";
-import { PricingCard } from "../pricingSection/Pricing";
 import { CheckIcon, XIcon } from "lucide-react";
 import { PricingPlan } from "../pricingSection/pricingData";
+import { ServiceCard } from "./ServiceCard";
 
 interface Props {
     plan: PricingPlan
 }
 
-const PricingCardPlan = ({plan}: Props) => {
+const ServiceCardPlan = ({plan}: Props) => {
   return (
     <div
       data-view-transition={`card-${plan.type}`}
@@ -24,17 +24,18 @@ const PricingCardPlan = ({plan}: Props) => {
           {plan.recomended ? "Plan más elegido" : ""}
         </p>
       </div>
-      <PricingCard
+      <ServiceCard
         key={plan.type}
         className={`!w-full`}
         className1={`!px-0 md:!px-4 !w-full`}
         active={plan.active}
         type={plan.type!}
+        id={plan.id}
         price={plan.price}
         subscription={plan.subscription}
         description={plan.description}
-        buttonText={`Contratar Plan ${plan.type}`}
-        href={`/plans/${plan.type!.replace(/[\s/]+/g, '-')}/select-Method-to-buy`}
+        buttonText={`Contratar servicio ${plan.type}`}
+        href={`/service/${plan.type!.replace(/[\s/]+/g, '-')}/select-Method-to-buy`}
       >
         {plan.features.map((feature, i) => (
           <div key={i} className="flex gap-2">
@@ -46,9 +47,9 @@ const PricingCardPlan = ({plan}: Props) => {
             {feature.text}
           </div>
         ))}
-      </PricingCard>
+      </ServiceCard>
     </div>
   );
 };
 
-export default PricingCardPlan;
+export default ServiceCardPlan;

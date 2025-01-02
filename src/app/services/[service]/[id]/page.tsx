@@ -2,8 +2,8 @@ import Image from "next/image";
 import FadeInWrapper from "@/components/fadeInWrapper/FadeInWrapper";
 import { Metadata } from "next";
 import TechsPlan from "@/components/techsPlan/TechsPlan";
-import PricingCardPlan from "@/components/PricingCardPlan/PricingCardPlan";
 import serviceData from "@/mock/serviceData";
+import ServiceCardPlan from "@/components/serviceCard/ServiceCardPlan";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -72,7 +72,7 @@ const ServicePage = async ({
         </div>
 
         {/* Tarjeta del plan */}
-        <PricingCardPlan plan={servicio} />
+        <ServiceCardPlan plan={servicio} />
 
         {/* Tecnologías en pantallas pequeñas */}
         <div className="md:hidden">

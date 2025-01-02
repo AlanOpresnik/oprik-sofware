@@ -2,7 +2,7 @@ import { serviceInterface } from "@/interface/serviceInterface";
 
 const serviceData: serviceInterface[] = [
   {
-    id: 1,
+    id: "1",
     type: "Tienda web / E-commerce completo",
     description:
       "🎯 Te ayudamos a crear una tienda online profesional y personalizada, ideal para hacer crecer tu negocio. Incluye:\n" +

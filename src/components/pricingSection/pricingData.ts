@@ -1,6 +1,7 @@
 export interface PricingPlan {
     type?: string;
     price: string;
+    id?: string;
     subscription: string;
     description: string;
     largeDescription?: string;

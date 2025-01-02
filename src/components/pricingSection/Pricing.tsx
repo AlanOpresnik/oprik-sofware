@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import pricingPlans from "./pricingData";
 import Circles from "./Circles";
-
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import { useTransitionRouter } from "next-view-transitions";
@@ -59,6 +58,7 @@ export const Pricing = () => {
           {pricingPlans.map((plan, index) => (
             <PricingCard
               key={index}
+              id={plan.id}
               className={plan.className}
               active={plan.active}
               type={plan.type!}
@@ -96,6 +96,7 @@ export interface PricingCardProps {
   description: string;
   price: string;
   type: string;
+  id?: string;
   recomended?: boolean;
   subscription: string;
   buttonText: string;
@@ -117,7 +118,6 @@ export const PricingCard = ({
   className1,
   className,
   active,
-
   href
 }: PricingCardProps) => {
   const router = useTransitionRouter();
@@ -126,24 +126,34 @@ export const PricingCard = ({
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>) => {
     e.preventDefault();
 
-    // Evitar animación y navegación si ya estamos en la página del plan
-    if (pathname === `/plans/${type}`) {
-      router.push(href || `/plans/${type}`); // Navegar sin animación
+    // Reemplazar espacios y barras en `type` para las URLs
+    const formattedType = type!.replace(/[\s/]+/g, '-');
+
+    // Evitar animación y navegación si ya estamos en la página del plan o servicio
+    if (
+      pathname === `/plans/${formattedType}` ||
+      pathname === `/services/${formattedType}`
+    ) {
+      // Si estás en la página de servicio, redirige a la página select-method-to-buy
+      if (pathname === `/services/${formattedType}`) {
+        router.push('/select-method-to-buy');
+      } else {
+        router.push(href || `/plans/${formattedType}`); // Navegar sin animación
+      }
       return;
     }
-
     // Animación de salida
-    gsap.to(`[data-view-transition="card-${type}"]`, {
+    gsap.to(`[data-view-transition="card-${formattedType}"]`, {
       y: '-100%',
       x: '50%',
       opacity: 1,
       duration: 6,
       ease: 'power3.out',
     });
-
+    
     // Navegar después de un pequeño delay para completar la animación
     setTimeout(() => {
-      router.push(`/plans/${type}`);
+      router.push(`/plans/${formattedType}`);
     }, 100);
   };
 
@@ -174,7 +184,6 @@ export const PricingCard = ({
         </p>
         <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
         <button
-
           onClick={handleCardClick}
           className={` ${active
             ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-semibold text-black transition hover:bg-opacity-90"

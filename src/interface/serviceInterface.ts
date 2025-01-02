@@ -1,5 +1,5 @@
 export interface serviceInterface {
-  id: number;
+  id: string;
   img?: string;
   type: string;
   description: string;

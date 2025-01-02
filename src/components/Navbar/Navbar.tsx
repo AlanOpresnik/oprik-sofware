@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className='md:hidden'>
           <DrawerNav />
         </div>
-        <h1 className='text-white font-bold items-center'>OPRIK SOFTWARE</h1>
+        <Link href={'/'} className='text-white font-bold items-center'>OPRIK SOFTWARE</Link>
       </div>
       <div className='hidden md:block '>
         <ul className={` flex transition-colors justify-end`}>
