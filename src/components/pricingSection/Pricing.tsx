@@ -61,7 +61,7 @@ export const Pricing = () => {
               key={index}
               className={plan.className}
               active={plan.active}
-              type={plan.type}
+              type={plan.type!}
               price={plan.price}
               recomended={plan.recomended ?? false}
               subscription={plan.subscription}
