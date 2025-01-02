@@ -11,43 +11,40 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
 
-
-  useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#text-service', // Elemento que dispara la animación
-        start: "top 80%", // Inicia cuando el elemento está al 80% de la ventana
-        end: "bottom 20%", // Termina al 20%
-      },
-    });
+    useEffect(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#text-service', // Elemento que dispara la animación
+          start: "top 75%", // Inicia cuando el elemento está al 80% de la ventana
+          end: "bottom 20%", // Termina al 20%
+        },
+      });
   
-    // Animación para el texto (desde la izquierda)
-    tl.fromTo(
-      '#text-service', 
-      {
-        x: -100, // Estado inicial (desde la izquierda)
-        opacity: 0, // Estado inicial (invisible)
-      },
-      {
-        x: 0, // Estado final (sin desplazamiento)
-        opacity: 1, // Estado final (completamente visible)
-        stagger: 0.2, // Aparece en secuencia
-      }
-    );
-  
-    // Animación para la imagen (desde la derecha)
-    tl.fromTo(
-      '#image-service', 
-      {
-        x: 100, // Estado inicial (desde la derecha)
-        opacity: 0, // Estado inicial (invisible)
-      },
-      {
-        x: 0, // Estado final (sin desplazamiento)
-        opacity: 1, // Estado final (completamente visible)
-      }
-    );
-  }, []);
+      // Animaciones simultáneas (texto e imagen)
+      tl.fromTo(
+        '#text-service', 
+        {
+          x: -100, // Estado inicial (desde la izquierda)
+          opacity: 0, // Estado inicial (invisible)
+        },
+        {
+          x: 0, // Estado final (sin desplazamiento)
+          opacity: 1, // Estado final (completamente visible)
+        },
+        0 // Este parámetro asegura que ambas animaciones comiencen al mismo tiempo
+      ).fromTo(
+        '#image-service', 
+        {
+          x: 100, // Estado inicial (desde la derecha)
+          opacity: 0, // Estado inicial (invisible)
+        },
+        {
+          x: 0, // Estado final (sin desplazamiento)
+          opacity: 1, // Estado final (completamente visible)
+        },
+        0 // El mismo tiempo de inicio que el texto
+      );
+    }, []);
   
 
   return (
