@@ -115,7 +115,7 @@ const PlanPage = async ({
         </div>
         <div className='mt-2'>
           <p className='text-4xl font-semibold'>Proyectos Realizados con este plan</p>
-          <div className='flex items-center gap-6 mt-6'>
+          <div className='flex flex-col  md:flex-row items-center gap-6 mt-6'>
             {CATEGORY_CLIENTS_MATCH.map((c) => (
               <div key={c.name} className='hover:border p-2 rounded-xl'>
               <Link target='_blank' href={c.web} className='  rounded-xl'>
