@@ -13,7 +13,7 @@ const ServiceLink = ({ service }: Props) => {
       href={`/services/${href}/${service.id}`}
       className="md:hover-effect flex gap-2 text-primary font-semibold mt-4"
     >
-      Servicio creacion de Tienda Web / E-commerce completo
+      {service.type}
       <ExternalLink size={16} />
     </Link>
   );

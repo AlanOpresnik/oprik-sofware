@@ -31,7 +31,6 @@ const Services = () => {
           x: 0, // Estado final (sin desplazamiento)
           opacity: 1, // Estado final (completamente visible)
         },
-        0 // Este parámetro asegura que ambas animaciones comiencen al mismo tiempo
       ).fromTo(
         '#image-service', 
         {
@@ -42,7 +41,7 @@ const Services = () => {
           x: 0, // Estado final (sin desplazamiento)
           opacity: 1, // Estado final (completamente visible)
         },
-        0 // El mismo tiempo de inicio que el texto
+       
       );
     }, []);
   
@@ -62,11 +61,10 @@ const Services = () => {
           {serviceData.map((service) => (
             <ServiceLink key={service.id} service={service}/>
           ))}
-          <button className="before:ease relative mt-2 md:w-[500px] p-2 py-3 flex justify-center overflow-hidden bg-primary md:bg-primary/70 font-semibold transition-all before:absolute before:top-full before:h-0 before:w-[900px] before:origin-center before:-translate-x-0 before:rotate-45 before:bg-primary before:duration-500 rounded-xl hover:text-black hover:before:h-[600px] hover:before:-translate-y-64 !before:!w-full">
+          <button className="relative mt-2 md:w-[500px] p-2 py-3 flex justify-center bg-primary font-semibold rounded-xl hover:text-black">
             <span className="relative flex items-center gap-2">
               <Phone size={20} /> Contactar a WhatsApp por un servicio personalizado
             </span>
-            <div className="absolute inset-0 z-0 animate-shine"></div>
           </button>
         </div>
       </div>
@@ -79,6 +77,7 @@ const Services = () => {
             className="drop-shadow-xl fade-out-image mt-6 shadow-primary"
             src={"/mujer-services.png"}
             width={400}
+            loading="eager"
             height={600}
             alt="work girl"
           />
