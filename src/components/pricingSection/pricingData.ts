@@ -33,8 +33,8 @@ const pricingPlans: PricingPlan[] = [
         techs: [
             {title: 'vitejs', for:'FrontEnd, diseño' , description: 'Vite es un builder y servidor de desarrollo ultrarrápido para aplicaciones web modernas,'},
             { title: 'React.js', for: 'FrontEnd code', description: ' se utiliza para construir interfaces de usuario interactivas y dinámicas. ' },
-            { title: 'Material UI', for: 'Componentes frontEnd', description: 'es una biblioteca de componentes de interfaz de usuario para React que implementa el lenguaje de diseño Material Design de Google. Es una de las herramientas más populares para crear aplicaciones web modernas,' },
-            { title: 'Typescript', for: 'experiencia de desarrollo', description: 'TypeScript es un superset de JavaScript desarrollado por Microsoft, que añade tipado estático y otras características avanzadas al lenguaje.' }
+            { title: 'Material UI', for: 'Componentes frontEnd', description: 'es una biblioteca de componentes de interfaz de usuario para React que implementa el lenguaje de diseño Material Design de Google. ' },
+            { title: 'Typescript', for: 'Desarrollo', description: 'TypeScript es un superset de JavaScript desarrollado por Microsoft, que añade tipado estático y otras características avanzadas al lenguaje.' }
         ],
         features: [
             { text: "Diseño personalizado", available: true },
@@ -65,12 +65,12 @@ const pricingPlans: PricingPlan[] = [
             'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png'
         ],
         techs: [
-            { title: 'Next.js', for: 'FrontEnd, diseño', description: 'Next.js es un framework de desarrollo web basado en React, creado por Vercel, que se utiliza para construir aplicaciones web modernas y rápidas. Ofrece características avanzadas que simplifican el desarrollo de aplicaciones web, tanto del lado del cliente (frontend) como del lado del servidor (backend).' },
+            { title: 'Next.js', for: 'FrontEnd, diseño', description: 'Next.js es un framework de desarrollo web basado en React, creado por Vercel, que se utiliza para construir aplicaciones web modernas y rápidas. ' },
             { title: 'MongoDB', for: 'Base de datos', description: 'MongoDB es un sistema de gestión de bases de datos NoSQL, diseñado para escalar horizontalmente y proporcionar una gran cantidad de capacidad de almacenamiento.' },
             { title: 'Node.js', for: 'Backend code', description: 'Node.js es un entorno de ejecución de JavaScript en tiempo de ejecución multiplataforma, diseñado para construir servicios de red escalables y aplicaciones de back-end.' },
             { title: 'React.js', for: 'FrontEnd code', description: ' se utiliza para construir interfaces de usuario interactivas y dinámicas. ' },
-            { title: 'Material UI', for: 'Componentes frontEnd', description: 'es una biblioteca de componentes de interfaz de usuario para React que implementa el lenguaje de diseño Material Design de Google. Es una de las herramientas más populares para crear aplicaciones web modernas,' },
-            { title: 'Typescript', for: 'experiencia de desarrollo', description: 'TypeScript es un superset de JavaScript desarrollado por Microsoft, que añade tipado estático y otras características avanzadas al lenguaje.' }
+            { title: 'Material UI', for: 'Componentes frontEnd', description: 'es una biblioteca de componentes de interfaz de usuario para React que implementa el lenguaje de diseño Material Design de Google.' },
+            { title: 'Typescript', for: 'Desarrollo', description: 'TypeScript es un superset de JavaScript desarrollado por Microsoft, que añade tipado estático y otras características avanzadas al lenguaje.' }
         ],
         features: [
             { text: "Diseño personalizado", available: true },

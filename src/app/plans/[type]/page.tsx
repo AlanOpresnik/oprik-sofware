@@ -5,8 +5,7 @@ import { Metadata} from 'next';
 import TechsPlan from '@/components/techsPlan/TechsPlan';
 import PricingCardPlan from '@/components/PricingCardPlan/PricingCardPlan';
 import { cardData } from '@/components/Clients/ClientsData/clientData';
-import { ExternalLink } from 'lucide-react';
-import { Link } from 'next-view-transitions';
+import CategoryMatchProyects from '@/components/categoryMatchProyects/CategoryMatchProyects';
 
 
 type Props = {
@@ -101,39 +100,9 @@ const PlanPage = async ({
               />
             ))}
           </div>
-          <div className="mt-4">
-            {plan.techs.map((tech, i) => (
-              <div key={i} className="my-6">
-                <div className="flex gap-2 items-center">
-                  <p className="text-xl font-semibold text-primary border-b">{tech.title}:</p>
-                  <p className="mt-1 text-orange-200">{tech.for}</p>
-                </div>
-                <p>{tech.description}</p>
-              </div>
-            ))}
-          </div>
+         <TechsPlan plan={plan} />
         </div>
-        <div className='mt-2'>
-          <p className='text-4xl font-semibold'>Proyectos Realizados con este plan</p>
-          <div className='flex flex-col  md:flex-row items-center gap-6 mt-6'>
-            {CATEGORY_CLIENTS_MATCH.map((c) => (
-              <div key={c.name} className='hover:border p-2 rounded-xl'>
-              <Link target='_blank' href={c.web} className='  rounded-xl'>
-                <Image className='rounded-md ' src={c.webImg} width={600} height={400} alt={c.name} />
-                <div className='flex flex-col gap-1 '>
-                  <div className='flex justify-between items-center'>
-                  <p className='text-xl font-semibold mt-4'>{c.personRole}</p>
-                  <ExternalLink size={20} className='mr-2 mt-2'/>
-                  </div>
-                  <p className='text-primary'>{c.plan}</p>
-                  <p className='line-clamp-3'>{c.overview}</p>
-                  <p className='text-primary font-semibold hover:underline'>Visitar web</p>
-                </div>
-              </Link>
-              </div>
-            ))}
-          </div>
-        </div>
+        <CategoryMatchProyects CATEGORY_CLIENTS_MATCH={CATEGORY_CLIENTS_MATCH} />
       </div>
     </FadeInWrapper>
   );
