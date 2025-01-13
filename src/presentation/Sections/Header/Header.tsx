@@ -82,19 +82,32 @@ const Header = () => {
           
         <Arrow />
         </div>
-        <div className="relative bg-[#0E0E0E]  w-full rounded-[84px] h-[456px]">
-
-          <div className=" z-10 ">
-            <Image
-              className="object-cover  z-40 w-fit h-[480px] "
-              alt="Imagen código"
-              src={"/hombre-header.png"}
-              width={850}
-              height={500}
-              style={{ position: 'absolute', bottom: '1%', left: '45%', transform: 'translateX(-50%)', zIndex: 0 }}
-            />
-          </div>
-        </div>
+        <div className="z-10 relative">
+        <div
+  className="relative md:w-[460px] bg-[#0e0e0e] rounded-[84px] h-[480px]"
+  style={{
+    maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)',
+    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)',
+  }}
+>
+  <Image
+    className="object-cover z-40 w-full h-full"
+    alt="Imagen código"
+    src={"/hombre-header.png"}
+    width={850}
+    height={500}
+    style={{
+      position: 'absolute',
+      bottom: '1%',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      zIndex: 0,
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)', // Sombra suave
+      borderRadius: '8px', // Si quieres bordes redondeados
+    }}
+  />
+</div>
+</div>
 
       </div>
     </header>
