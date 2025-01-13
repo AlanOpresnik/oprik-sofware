@@ -17,7 +17,7 @@ export default function Home() {
       <section className="mt-44">
         <ClientSwiper />
       </section>
-      <div className="mt-6 ">
+      <div className="mt-12 ">
         <p className="text-3xl text-white font-semibold">
           Que vamos a conseguir
         </p>

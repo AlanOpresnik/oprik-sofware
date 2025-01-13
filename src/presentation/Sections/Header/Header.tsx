@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import Arrow from "@/components/arrowHeader/ArrowHeader";
 import TextHeaderDesktop from "@/components/TextHeader/TextHeaderDesktop";
 import TextHeaderMobile from "@/components/TextHeader/TextHeaderMobile";
+import { StarBorderOutlined } from "@mui/icons-material";
 
 const Header = () => {
   useEffect(() => {
@@ -29,7 +30,7 @@ const Header = () => {
         delay: .2,
         onComplete: () => {
           const code = document.querySelector("#code");
-          if (code) code.classList.add("");
+          if (code) code.classList.add("shake-animation");
         },
       }
     );
@@ -40,13 +41,20 @@ const Header = () => {
   return (
     <header className="text-white header md:flex header justify-between md:mt-16 items-center">
       <div id="header" className="mt-16">
-        <h1 className="text-xl text-[#FEF08A] font-semibold">Oprik Software</h1>
-      <div className="hidden md:block">
-        <TextHeaderDesktop/>
-      </div>
-      <div className="block md:hidden">
-        <TextHeaderMobile/>
-      </div>
+        <div className="flex items-center gap-1 glass_bg w-fit p-2 rounded-full">
+          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
+          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
+          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
+          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
+          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
+          <h1 className="  text-sm">+17 personas </h1>
+        </div>
+        <div className="hidden md:block">
+          <TextHeaderDesktop />
+        </div>
+        <div className="block md:hidden">
+          <TextHeaderMobile />
+        </div>
 
         <div className="flex gap-3 mb-2 mt-2">
           <button
@@ -79,35 +87,35 @@ const Header = () => {
           />
         </div>
         <div className="hidden md:block">
-          
-        <Arrow />
+
+          <Arrow />
         </div>
         <div className="z-10 relative">
-        <div
-  className="relative md:w-[460px] bg-[#0e0e0e] rounded-[84px] h-[480px]"
-  style={{
-    maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)',
-    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)',
-  }}
->
-  <Image
-    className="object-cover z-40 w-full h-full"
-    alt="Imagen código"
-    src={"/hombre-header.png"}
-    width={850}
-    height={500}
-    style={{
-      position: 'absolute',
-      bottom: '1%',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      zIndex: 0,
-      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)', // Sombra suave
-      borderRadius: '8px', // Si quieres bordes redondeados
-    }}
-  />
-</div>
-</div>
+          <div
+            className="relative md:w-[460px] bg-[#0e0e0e] rounded-[84px] h-[480px]"
+            style={{
+              maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)',
+            }}
+          >
+            <Image
+              className="object-cover z-40 w-full h-full"
+              alt="Imagen código"
+              src={"/hombre-header.png"}
+              width={850}
+              height={500}
+              style={{
+                position: 'absolute',
+                bottom: '1%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 0,
+                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)', // Sombra suave
+                borderRadius: '8px', // Si quieres bordes redondeados
+              }}
+            />
+          </div>
+        </div>
 
       </div>
     </header>

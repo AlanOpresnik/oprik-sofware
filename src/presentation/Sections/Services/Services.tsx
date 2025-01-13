@@ -10,44 +10,47 @@ import ServiceLink from "./ServiceLink";
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
-
-    useEffect(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '#text-service', // Elemento que dispara la animación
-          start: "top 75%", // Inicia cuando el elemento está al 80% de la ventana
-          end: "bottom 20%", // Termina al 20%
-        },
-      });
-  
-      // Animaciones simultáneas (texto e imagen)
-      tl.fromTo(
-        '#text-service', 
-        {
-          x: -100, // Estado inicial (desde la izquierda)
-          opacity: 0, // Estado inicial (invisible)
-        },
-        {
-          x: 0, // Estado final (sin desplazamiento)
-          opacity: 1, // Estado final (completamente visible)
-        },
-      ).fromTo(
-        '#image-service', 
-        {
-          x: 100, // Estado inicial (desde la derecha)
-          opacity: 0, // Estado inicial (invisible)
-        },
-        {
-          x: 0, // Estado final (sin desplazamiento)
-          opacity: 1, // Estado final (completamente visible)
-        },
-       
-      );
-    }, []);
-  
+  useEffect(() => {
+    // Timeline de GSAP para animaciones sincronizadas
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.service-container', // Contenedor que dispara la animación
+        start: "top 60%", // Inicia cuando el contenedor entra al 75% de la pantalla
+        toggleActions: "play none none none", // Solo se reproduce una vez
+      },
+    })
+    .fromTo(
+      '#text-service', 
+      {
+        x: -100, // Estado inicial (texto se desliza desde la izquierda)
+        opacity: 0, // Estado inicial (texto invisible)
+      },
+      {
+        x: 0, // Estado final (sin desplazamiento)
+        opacity: 1, // Estado final (completamente visible)
+        duration: 1, // Duración de la animación
+        ease: "power3.out", // Efecto de aceleración
+      },
+      0 // Offset 0 para sincronizar ambas animaciones
+    )
+    .fromTo(
+      '#image-service', 
+      {
+        x: 100, // Estado inicial (imagen se desliza desde la derecha)
+        opacity: 0, // Estado inicial (imagen invisible)
+      },
+      {
+        x: 0, // Estado final (sin desplazamiento)
+        opacity: 1, // Estado final (completamente visible)
+        duration: 1, // Duración de la animación
+        ease: "power3.out", // Efecto de aceleración
+      },
+      0 // Offset 0 para que ambos elementos aparezcan al mismo tiempo
+    );
+  }, []);
 
   return (
-    <div className="flex flex-col-reverse md:grid place-items-center md:h-[80vh] md:grid-cols-2">
+    <div className="service-container flex flex-col-reverse md:grid place-items-center md:h-[80vh] md:grid-cols-2">
       {/* Contenedor del texto */}
       <div id="text-service">
         <p className="text-white mb-2 text-4xl md:text-5xl font-semibold">
@@ -59,7 +62,7 @@ const Services = () => {
         </p>
         <div className="flex flex-col text-sm md:text-base gap-4">
           {serviceData.map((service) => (
-            <ServiceLink key={service.id} service={service}/>
+            <ServiceLink key={service.id} service={service} />
           ))}
           <button className="relative mt-2 md:w-[500px] p-2 py-3 flex justify-center bg-primary font-semibold rounded-xl hover:text-black">
             <span className="relative flex items-center gap-2">

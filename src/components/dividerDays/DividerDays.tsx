@@ -62,7 +62,7 @@ const DividerDays = () => {
   }, []);
 
   return (
-    <div id="DaysDivider" className="flex mt-32 py-6 mb-12 flex-col items-center justify-center">
+    <div id="DaysDivider" className="flex mt-12 md:mt-32 py-6 mb-12 flex-col items-center justify-center">
       <h2 className="invisible md:visible text-white text-4xl text-center md:text-5xl font-semibold">
         Obtene tu sitio web en 15 dias habiles
       </h2>
