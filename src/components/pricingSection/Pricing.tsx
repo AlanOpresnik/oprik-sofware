@@ -167,11 +167,11 @@ export const PricingCard = ({
   }, [type]);
 
   return (
-    <div data-view-transition={`card-${type}`} className={`${className1} relative  w-full md:px-4 md:w-1/2 lg:w-1/3`}>
+    <div data-view-transition={`card-${type}`} className={`${className1} relative   md:px-4 md:w-1/2 lg:w-1/3`}>
       <div className={`absolute ${recomended ? 'right-0 top-[-15px]  md:right-[-10px] md:top-[-95px] z-10 bg-primary' : ''} text-black p-2 rounded-full`}>
         <p className='font-semibold'>{recomended ? '¡Plan más elegido!' : ''}</p>
       </div>
-      <div className={`${className} relative  mb-10 overflow-hidden rounded-[10px] border-2 border-stroke px-8 py-10 shadow-pricing dark:border-dark-3 dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]`}>
+      <div className={`${className} relative glass_bg  mb-10 overflow-hidden rounded-[10px] border-2 border-stroke px-8 py-10 shadow-pricing dark:border-dark-3 dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]`}>
         <span className="mb-3 block text-lg font-semibold text-primary">{type}</span>
         <h2 className="mb-5 text-[40px] font-bold text-dark dark:text-white">
           {price}

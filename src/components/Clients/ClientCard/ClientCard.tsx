@@ -19,7 +19,7 @@ const ClientCard = ({
   founder,
 }: Props) => {
   return (
-    <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-white h-[420px]">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-12 glass_bg text-white h-[420px]">
       <div
         key={name}
         className="flex flex-col border p-4 rounded-xl text-center gap-4"

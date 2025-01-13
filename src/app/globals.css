@@ -4,8 +4,24 @@
 
 body {
   overflow-x: hidden;
+  background-image: url('/posible-header-2.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: overlay;
+
+
+
 }
 
+.glass_bg {
+  background: rgba(255, 255, 255, .1);
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+}
 
 @layer base {
   :root {
@@ -35,6 +51,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -67,27 +84,32 @@ body {
   * {
     @apply border-border;
   }
+
   body {
-   
-  
+
+
     overflow-x: hidden !important;
     @apply bg-background text-foreground;
   }
 }
 
 @keyframes shake {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-2px);
     transform: translateY(-12px);
   }
+
   50% {
     transform: translateX(3px);
     transform: translateY(3px);
   }
+
   75% {
     transform: translateX(-2px);
     transform: translateY(-5px);
@@ -103,6 +125,7 @@ body {
     transform: scale(0.7);
     opacity: 0.2;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -136,7 +159,7 @@ body {
 
 .hover-effect:hover::after {
   opacity: 1;
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .fade-out-image {
@@ -147,6 +170,7 @@ body {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+
 .shine-button {
   border-radius: 1px;
   padding: 5px 20px;
@@ -154,38 +178,37 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .shine-button:before {
   content: '';
   position: absolute;
   width: 100px;
   height: 100%;
-  background-image: linear-gradient(
-      120deg,
-      rgba(255,255,255, 0) 30%,
-      rgba(255,255,255, .8),
-      rgba(255,255,255, 0) 70%
-  );
+  background-image: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, .8),
+      rgba(255, 255, 255, 0) 70%);
   top: 0;
   left: -100px;
 }
+
 .shine-button::before {
   content: '';
-    position: absolute;
-    width: 100px;
-    height: 100%;
-    background-image: linear-gradient(
-        120deg,
-        rgba(255,255,255, 0) 30%,
-        rgba(255,255,255, .8),
-        rgba(255,255,255, 0) 70%
-    );
-    top: 0;
-    left: -100px;
-    animation: shine 3s infinite linear; /* Animation */
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, .8),
+      rgba(255, 255, 255, 0) 70%);
+  top: 0;
+  left: -100px;
+  animation: shine 3s infinite linear;
+  /* Animation */
 }
 
 
-.wsp-Logo-container{
+.wsp-Logo-container {
   width: 60px;
   position: fixed;
   bottom: .9rem;
@@ -194,10 +217,10 @@ body {
   padding: .5rem;
   border-radius: 50%;
   background-color: #43C653;
-  transition: right .5s ;
+  transition: right .5s;
 }
 
-.visible{
+.visible {
   width: 60px;
   position: fixed;
   bottom: .9rem;
@@ -208,20 +231,43 @@ body {
   background-color: #43C653;
 }
 
-@media (max-width:768px){
-  .wsp-Logo-container{
-      width: 55px;
+@media (max-width:768px) {
+  .wsp-Logo-container {
+    width: 55px;
   }
 }
 
-.wsp-logo-img{
+.wsp-logo-img {
   width: 100%;
   object-fit: cover;
-  
+
 }
 
 @keyframes shine {
-  0% {left: -100px}
-  20% {left: 100%}
-  100% {left: 100%}
+  0% {
+    left: -100px
+  }
+
+  20% {
+    left: 100%
+  }
+
+  100% {
+    left: 100%
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 6s linear infinite;
+  transform-origin: center;
 }
