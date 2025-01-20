@@ -92,10 +92,10 @@ export default function RootLayout({
         {/* Fondo con gradiente violeta */}
        
         <Providers>
-          <div className="max-w-[1580px] mx-auto px-2 md:px-0">
+          <div className="max-w-[1700px] mx-auto px-2 md:px-0">
             <Navbar />
           </div>
-          <div className="max-w-[1480px] mx-auto px-2 md:px-12">
+          <div className="max-w-[1620px] mx-auto px-2 md:px-12">
             {children}
           </div>
         

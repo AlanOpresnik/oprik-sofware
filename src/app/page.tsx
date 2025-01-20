@@ -12,49 +12,49 @@ import YourApp from "@/presentation/Sections/yourApp/YourApp";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden overflow-y-hidden">
+    <div className="overflow-x-hidden overflow-y-hidden ">
       <Header />
-      <section className="mt-44">
+      <section className="mt-44 px-2">
         <ClientSwiper />
       </section>
-      <div className="mt-12 ">
+      <div className="mt-12 px-2 ">
         <p className="text-3xl text-white font-semibold">
           Que vamos a conseguir
         </p>
         <Expectation />
       </div>
-      <div>
+      <div className="">
         <DividerDays />
       </div>
       <section id="precio" className="px-4 md:px-0 ">
         <Pricing />
       </section>
-      <section>
+      <section className="px-2">
         <Services />
       </section>
-      <section id="todo para tu app" className="mt-0 mb-24">
+      <section id="todo para tu app" className="mt-0 mb-24 px-2">
         <div>
           <YourApp />
         </div>
       </section>
-      <div>
-        <Experiencie/>
+      <div className="px-2">
+        <Experiencie />
       </div>
-      <section id="informacion-nuestra" className="max-w-[1280px] mx-auto">
+      <section id="informacion-nuestra" className=" mx-auto px-2">
         <div>
           <UsInformationSection />
         </div>
       </section>
       <section
         id="nos-diferenciamos"
-        className="mt-24 mb-24 max-w-[1280px] mx-auto"
+        className="mt-24 mb-24 mx-auto"
       >
-        <div>
+        <div className="px-2">
           <InovationSection />
         </div>
       </section>
       <section
-        className="mt-24 mb-24 max-w-[1280px] mx-auto"
+        className="mt-24 mb-24  mx-auto px-2"
       >
         <div className="flex flex-col justify-center items-center gap-2">
           <p className="text-4xl text-white font-bold text-center mb-2">

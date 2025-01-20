@@ -20,7 +20,7 @@ const serviceData: serviceInterface[] = [
       "https://icons-for-free.com/iff/png/512/mongodb+plain+wordmark-1324760553130770870.png",
       "https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png",
       "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
-      "https://seeklogo.com/images/M/mui-logo-56F171E991-seeklogo.com.png",
+      "https://mui.com/static/logo.png",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png",
       "https://elionshops.com/images/uploads/mercadopago.png",
     ],
@@ -30,7 +30,7 @@ const serviceData: serviceInterface[] = [
         title: "Next.js",
         for: "FrontEnd, diseño",
         description:
-          "Next.js es un framework de desarrollo web basado en React, creado por Vercel, que se utiliza para construir aplicaciones web modernas y rápidas. Ofrece características avanzadas que simplifican el desarrollo de aplicaciones web, tanto del lado del cliente (frontend) como del lado del servidor (backend).",
+          "Next.js es un framework de desarrollo web basado en React, creado por Vercel, que se utiliza para construir aplicaciones web modernas y rápidas.",
       },
       {
         title: "MongoDB",
@@ -125,7 +125,7 @@ const serviceData: serviceInterface[] = [
       "https://icons-for-free.com/iff/png/512/mongodb+plain+wordmark-1324760553130770870.png",
       "https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png",
       "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
-      "https://seeklogo.com/images/M/mui-logo-56F171E991-seeklogo.com.png",
+      "https://mui.com/static/logo.png",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png",
       "https://img.icons8.com/external-flat-juicy-fish/512/external-calendar-office-flat-flat-juicy-fish.png",
     ],

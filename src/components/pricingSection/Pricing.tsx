@@ -54,7 +54,7 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap justify-center">
+        <div className="-mx-4 flex flex-wrap justify-center px-4">
           {pricingPlans.map((plan, index) => (
             <PricingCard
               key={index}

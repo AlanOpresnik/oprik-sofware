@@ -1,12 +1,13 @@
 "use client";
-import { Globe } from "lucide-react";
+import { Check, Globe } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import Arrow from "@/components/arrowHeader/ArrowHeader";
 import TextHeaderDesktop from "@/components/TextHeader/TextHeaderDesktop";
 import TextHeaderMobile from "@/components/TextHeader/TextHeaderMobile";
-import { StarBorderOutlined } from "@mui/icons-material";
+import { Star } from "@mui/icons-material";
+import { redirect } from "next/navigation";
 
 const Header = () => {
   useEffect(() => {
@@ -28,10 +29,7 @@ const Header = () => {
         duration: 1.5,
         ease: "power3.out",
         delay: .2,
-        onComplete: () => {
-          const code = document.querySelector("#code");
-          if (code) code.classList.add("shake-animation");
-        },
+
       }
     );
 
@@ -40,14 +38,18 @@ const Header = () => {
 
   return (
     <header className="text-white header md:flex header justify-between md:mt-16 items-center">
-      <div id="header" className="mt-16">
-        <div className="flex items-center gap-1 glass_bg w-fit p-2 rounded-full">
-          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
-          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
-          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
-          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
-          <StarBorderOutlined sx={{ fontSize: 15, color: 'yellow' }} />
-          <h1 className="  text-sm">+17 personas </h1>
+      <div id="header" className="mt-6 md:mt-16">
+        <div className="flex justify-center md:justify-normal mb-2   gap-1 ">
+          <div className="  p-2 rounded-full flex items-center gap-1 glass_bg">
+            <Star sx={{ fontSize: 15, color: 'yellow' }} />
+            <Star sx={{ fontSize: 15, color: 'yellow' }} />
+            <Star sx={{ fontSize: 15, color: 'yellow' }} />
+            <Star sx={{ fontSize: 15, color: 'yellow' }} />
+            <Star sx={{ fontSize: 15, color: 'yellow' }} />
+            <div>
+              <h1 className="  text-sm">+17 personas </h1>
+            </div>
+          </div>
         </div>
         <div className="hidden md:block">
           <TextHeaderDesktop />
@@ -56,36 +58,53 @@ const Header = () => {
           <TextHeaderMobile />
         </div>
 
-        <div className="flex gap-3 mb-2 mt-2">
+        <div className="flex justify-center md:justify-normal gap-3 mb-2 mt-2">
           <button
             id="web"
-            className="mt-4 border px-2 py-4 text-sm flex items-center gap-1 hover:bg-slate-100 hover:text-black transition-colors rounded-xl"
+            onClick={() => redirect("/services/servicio-tienda-web-e-commerce-completo/1")}
+            className="mt-4  border px-5 py-5 md:px-5 md:py-4  flex items-center gap-1 font-semibold hover:bg-slate-100 hover:text-black transition-colors rounded-full"
           >
-            <Globe className="hover:rotate-180 transition-all" size={19} />
-            Empeza a conseguir mas clientes
+            <Globe className="hover:rotate-180  md:block transition-all" size={19} />
+            Empeza a vender en linea
           </button>
 
         </div>
       </div>
       <div id="code" className="relative px-5 md:px-0 md:w-[456px] mt-24 ">
-        <div className="absolute">
+      <div className="absolute bottom-0 left-[10px] md:bottom-auto md:left-[-120px] glass_bg flex flex-col gap-4  !rounded-full !rounded-bl-none md:!rounded-bl-full  md:!rounded-tr-none p-4  px-6 z-50  md:top-[-20px]">
+          <div className="flex gap-4 items-center   ">
+            <div className="bg-primary rounded-full  ">
+              <Check color="black" size={17} />
+            </div>
+            <span className="text-sm">Nueva compra desde el SITIO WEB</span>
+          </div>
+          <div className="flex gap-4 items-center">
+            <div className="bg-primary rounded-full  ">
+              <Check color="black" size={17} />
+            </div>
+            <span className="text-sm">Te calificaron 5 con estrellas !</span>
+          </div>
+        </div>
+        <div className="absolute right-[0px] bg-white/90 rounded-full w-[86px] p-2 flex justify-center items-center  z-50   h-fit  md:bottom-[-20px]">
           <Image
-            className="object-cover relative left-[-20px] shadow-lg shadow-primary/50  top-[-40px] z-40 w-[86px] rounded-full "
+            className="object-cover relative    z-40  rounded-full "
             alt="Imagen código"
-            src={"/tienda-flotante-header.jpg"}
+            src={"/compra-web.png"}
             width={150}
             height={480}
           />
         </div>
-        <div className="absolute right-[10px]  z-50  bottom-[-10px]">
+        
+        <div className="absolute left-[-30px] hidden  z-50  bottom-[-10px]">
           <Image
-            className="object-cover relative shadow-xl shadow-[#6963B0]/50 z-40 w-[86px] rounded-full "
+            className="object-cover relative top-12 mr-3   z-40 w-[126px] rounded-full "
             alt="Imagen código"
-            src={"/web-logo-flotante.jpg"}
+            src={"/cliente-feliz.png"}
             width={150}
             height={480}
           />
         </div>
+        
         <div className="hidden md:block">
 
           <Arrow />

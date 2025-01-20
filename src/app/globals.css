@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 body {
-  overflow-x: hidden;
+
   background-image: url('/posible-header-2.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: overlay;
-
-
 
 }
 

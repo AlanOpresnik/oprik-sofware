@@ -65,7 +65,7 @@ export default function ClientSwiper() {
         spaceBetween={30}
         breakpoints={{
           300: {
-            slidesPerView: 1
+            slidesPerView: 1.1
           },
           500: {
             slidesPerView: 1.2

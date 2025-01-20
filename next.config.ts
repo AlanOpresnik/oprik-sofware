@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
         hostname: 'static-00.iconduck.com',
       },{
         protocol: 'https',
-        hostname: 'seeklogo.com',
+        hostname: 'mui.com',
       },
       {
         protocol:'https',
@@ -53,6 +53,13 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'elionshops.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com'
+      },{
+        protocol: 'https',
+        hostname: 'res.cloudinary.com'
       }
     ]
   }

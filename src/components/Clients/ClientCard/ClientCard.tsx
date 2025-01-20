@@ -19,10 +19,10 @@ const ClientCard = ({
   founder,
 }: Props) => {
   return (
-    <div className="flex flex-col md:flex-row gap-6 md:gap-12 glass_bg text-white h-[420px]">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-12  text-white h-[420px]">
       <div
         key={name}
-        className="flex flex-col border p-4 rounded-xl text-center gap-4"
+        className="flex flex-col border p-4 rounded-xl text-center gap-4 glass_bg" 
       >
         <div className="flex justify-center items-center h-[120px]">
           <Image loading="eager" src={image} alt={name} width={200} height={300} />

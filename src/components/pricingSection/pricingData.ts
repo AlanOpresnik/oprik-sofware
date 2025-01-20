@@ -26,7 +26,7 @@ const pricingPlans: PricingPlan[] = [
         images: [
             'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/2078px-Vitejs-logo.svg.png',
             'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
-            'https://seeklogo.com/images/M/mui-logo-56F171E991-seeklogo.com.png',
+            'https://mui.com/static/logo.png',
             'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png'
 
         ],
@@ -61,7 +61,7 @@ const pricingPlans: PricingPlan[] = [
             'https://icons-for-free.com/iff/png/512/mongodb+plain+wordmark-1324760553130770870.png',
             'https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png',
             'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
-            'https://seeklogo.com/images/M/mui-logo-56F171E991-seeklogo.com.png',
+            'https://mui.com/static/logo.png',
             'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png'
         ],
         techs: [
@@ -99,7 +99,7 @@ const pricingPlans: PricingPlan[] = [
             'https://www.cdnlogo.com/logos/n/80/next-js.svg',
             'https://icons-for-free.com/iff/png/512/mongodb+plain+wordmark-1324760553130770870.png',
             'https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png',
-            'https://seeklogo.com/images/M/mui-logo-56F171E991-seeklogo.com.png',
+            'https://mui.com/static/logo.png',
             'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
             'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png'
         ],

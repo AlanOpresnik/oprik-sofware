@@ -67,7 +67,7 @@ const PlanPage = async ({
             <div className="flex max-w-[120px] gap-6 mt-4 py-4">
               {plan.images.map((img, i) => (
                 <Image
-                  className="w-[30px] md:w-[40px]"
+                  className="w-[30px] h-fit md:w-[40px]"
                   key={i}
                   src={img}
                   alt="tecnología usada"
