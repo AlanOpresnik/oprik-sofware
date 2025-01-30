@@ -3,7 +3,7 @@ import HeaderImage from '@/components/academy/coursePage/headerRigth/header-imag
 import Arrow from '@/components/arrowHeader/ArrowHeader'
 import { wspNum } from '@/constants/constants'
 import { CourseProps } from '@/interface/courseInterface'
-import { BookOpen, DollarSignIcon, Link2, Phone, SquareArrowOutUpRightIcon, UserRound, Wifi } from 'lucide-react'
+import { BookOpen, DollarSignIcon, SquareArrowOutUpRightIcon, UserRound, Wifi } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 

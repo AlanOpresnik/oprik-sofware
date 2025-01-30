@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Providers from "./Providers";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
 import WspLogo from "@/components/WspLogo/WspLogo";
-import { Link } from "next-view-transitions";
 import BannerAd from "@/components/bannerAd/BannerAd";
 import { NavBar } from "@/components/Navbar/Navbar_v0/Navbar_v0";
 

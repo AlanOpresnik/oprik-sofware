@@ -1,7 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
-import React, { useState } from 'react';
 
 const AboutUs = () => {
     return (

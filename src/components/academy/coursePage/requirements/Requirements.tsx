@@ -3,7 +3,14 @@ import { CalendarMonthOutlined } from "@mui/icons-material";
 import LaptopChromebookIcon from "@mui/icons-material/LaptopChromebook";
 import { DollarSignIcon, User } from "lucide-react";
 
-const Requirements = ({ requirements, price }: { requirements: any, price: number }) => {
+interface Requirement {
+  dedication: string;
+  prev_knowledge?: string;
+  duration: string;
+  pdf?: string | null;
+}
+
+const Requirements = ({ requirements, price }: { requirements: Requirement[], price: number }) => {
   // Transformamos los datos del mock al formato esperado
   const transformedRequirements = [
     {
@@ -23,7 +30,7 @@ const Requirements = ({ requirements, price }: { requirements: any, price: numbe
     {
       icon: <CalendarMonthOutlined />,
       title: `Duración: ${requirements[0].duration} - Clases sincrónicas virtuales`,
-      pdf: requirements[0].pdf ? requirements[0].pdf : null, // Aseguramos que pdf sea null si no existe
+      pdf: requirements[0].pdf ?? null, // Usa el operador de fusión nula (??) en lugar de `? : null`
     },
   ];
 

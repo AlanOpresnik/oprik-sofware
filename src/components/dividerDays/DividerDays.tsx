@@ -1,14 +1,11 @@
 'use client'
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+
 import React, { useEffect } from "react";
 import { animationLeft } from "./animation";
 
 const DividerDays = () => {
   useEffect(() => {
     animationLeft()
-   
-  
   }, []);
 
   return (
