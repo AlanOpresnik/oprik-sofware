@@ -12,11 +12,13 @@ const AboutUs = () => {
                     <div className="grid  grid-cols-1 mx-auto  lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-16">
                         <div>
                             <div className="text-center lg:text-left">
-                                <p>Un poco sobre nosotros</p>
+                                <p className='text-sm md:text-base text-primary'>Un poco sobre nosotros</p>
                                 <h1 className="text-4xl font-bold leading-tight  sm:text-5xl sm:leading-tight lg:leading-tight lg:text-7xl text-white" >Evolucionando la forma de <span className="text-primary">aprender</span></h1>
-                                <p className="mt-2 text-lg text-white sm:mt-8 font-inter"> Nuestra propuesta es modernizar el sistema de aprendizaje para que las personas puedan estudiar desde la comodidad de sus casas, simplemente con una conexión a internet y una computadora. </p>
-                                <div className='my-12 '>
+                                <p className="mt-2 text-lg hidden md:block text-white sm:mt-8 font-inter"> Nuestra propuesta es modernizar el sistema de aprendizaje para que las personas puedan estudiar desde la comodidad de sus casas, simplemente con una conexión a internet y una computadora. </p>
+                                <p className="mt-2 text-lg block md:hidden text-white sm:mt-8 font-inter"> Nuestra propuesta es modernizar el sistema de aprendizaje para hacerlo mas facil y adaptable </p>
+                                <div className='my-12 flex justify-center md:justify-start'>
                                     <Link className='bg-primary text-black flex items-center gap-2 w-fit font-semibold rounded-full p-4' href={'/academy'}>
+
 
                                         Ver nuestras cursadas
                                         <ArrowRight size={18} color='black' />
@@ -48,7 +50,7 @@ const AboutUs = () => {
                         </div>
 
                         <div>
-                            <Image width={1080} height={600} className="h-[800px] object-cover object-center rounded-xl" src="https://res.cloudinary.com/dbgt948uj/image/upload/v1738271661/woman-being-quarantined-home_1_lqe3kt.jpg" alt="" />
+                            <Image width={1080} height={600} className="md:h-[800px] object-cover object-center rounded-xl" src="https://res.cloudinary.com/dbgt948uj/image/upload/v1738271661/woman-being-quarantined-home_1_lqe3kt.jpg" alt="" />
                         </div>
                     </div>
                 </div>

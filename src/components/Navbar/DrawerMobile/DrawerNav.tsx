@@ -11,6 +11,7 @@ import { Twirl as Hamburger } from 'hamburger-react';
 import { Collapse } from '@mui/material';
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
+import { coursesDataMock } from '@/app/courses-data-mock/courses-data-mock';
 
 export default function DrawerNav() {
   const [open, setOpen] = React.useState(false);
@@ -28,8 +29,8 @@ export default function DrawerNav() {
   };
 
   const closeDrawer = () => {
-      setOpen(false);
-      setOpenHamburger(false);
+    setOpen(false);
+    setOpenHamburger(false);
   }
 
   const DrawerList = (
@@ -54,56 +55,46 @@ export default function DrawerNav() {
             </Link>
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={closeDrawer}>
-         
-            <Link href={'#clientes'}>
-              Clientes
-              </Link>
-          </ListItemButton>
-        </ListItem>
+       
 
         <ListItem disablePadding onClick={handleSubMenuToggle}>
           <ListItemButton>
-      
+
             <Link href={'#pricing'}>
-            Planes de desarrollo
+              Cursadas destacadas
             </Link>
             <ArrowDown />
           </ListItemButton>
         </ListItem>
         <Collapse in={openSubMenu} timeout="auto" unmountOnExit>
           <List component="div" disablePadding sx={{ pl: 2 }}>
-            <ListItem disablePadding>
-              <ListItemButton onClick={closeDrawer}>
-               
-                <Link href={'/plans/Personal'}>
-                Plan personal
-                </Link>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton onClick={closeDrawer}>
-              <Link href={'/plans/Emprendimiento'}>
-                Plan emprendimiento
-                </Link>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton onClick={closeDrawer}>
-              <Link href={'/plans/Personalizado'}>
-                Plan personalizado
-                </Link>
-              </ListItemButton>
-            </ListItem>
+            {coursesDataMock.map((course) => (
+              <ListItem disablePadding>
+                <ListItemButton  onClick={closeDrawer}>
+                  <Link className='text-white text-sm  py-2 border-b' href={`/academy/${course.slug}`}>
+                    {course.title}
+                  </Link>
+                </ListItemButton>
+              </ListItem>
+            ))}
           </List>
         </Collapse>
 
+        <ListItem disablePadding >
+          <ListItemButton>
+
+            <Link href={'/about-us'}>
+              Sobre nosotros
+            </Link>
+          </ListItemButton>
+
+        </ListItem>
+
         <ListItem disablePadding>
           <ListItemButton onClick={closeDrawer}>
-          <Link href={'https://wa.me/+541123498925'}>
-               Contacto
-                </Link>
+            <Link href={'https://wa.me/+541123498925'}>
+              Contacto
+            </Link>
           </ListItemButton>
         </ListItem>
       </List>
@@ -113,8 +104,8 @@ export default function DrawerNav() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)}>
-        <Hamburger color="white" size={26} toggled={isOpenHamburger} toggle={setOpenHamburger} />
+      <Button className='!p-0' onClick={toggleDrawer(true)}>
+        <Hamburger color="white" size={22} toggled={isOpenHamburger} toggle={setOpenHamburger} />
       </Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}

@@ -6,6 +6,7 @@ import { ChevronDown } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { coursesDataMock } from "@/app/courses-data-mock/courses-data-mock";
 import { useParams } from "next/navigation";
+import DrawerNav from "../DrawerMobile/DrawerNav";
 
 export function NavBar() {
     const [open, setOpen] = React.useState(false);
@@ -37,11 +38,14 @@ export function NavBar() {
 
     return (
         <nav className="text-white shadow">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16">
+            <div className="mx-auto lg:px-8">
+                <div className="flex left-[-10px] md:left-0 relative md:justify-between items-center gap-2 h-16">
+                <div className="md:hidden">
+                    <DrawerNav/>
+                </div>
                     <div className="flex justify-between items-center w-full">
                         <div className="flex-shrink-0 flex items-center">
-                            <Link href="/" className="text-xl font-bold text-white">
+                            <Link href="/" className="md:text-xl font-bold text-white">
                                 Oprik software
                             </Link>
                         </div>
