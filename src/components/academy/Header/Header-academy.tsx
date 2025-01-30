@@ -4,6 +4,7 @@ import { BookOpen, DollarSignIcon, SquareArrowOutUpRightIcon, UserRound, Wifi } 
 import Link from 'next/link'
 import React from 'react'
 import HeaderImage from './HeaderImage'
+import {ReactTyped} from "react-typed";  
 
 const items = [
     { icon: <Wifi size={24} color='yellow' />, title: 'Online, Clases en vivo ' },
@@ -16,13 +17,32 @@ const HeaderAcademy = () => {
     return (
         <div className='md:grid grid-cols-2 md:gap-20 md:place-items-center'>
             <div>
-                <h1 className='text-white hidden md:block text-center md:text-start text-4xl lg:text-7xl font-bold mb-8'>
-                    Estudia e impulsa tus conocimientos en Programacion
+                <h1 className="text-white hidden md:block text-center md:text-start text-4xl lg:text-5xl xl:text-7xl font-bold mb-8">
+                    Estudia e impulsa tus conocimientos en <br className='hidden 2xl:block' /> {" "}
+                    <ReactTyped
+                        strings={["Programación", "Marketing", "Informática"]}
+                        typeSpeed={80} // Velocidad de escritura
+                        backSpeed={50} // Velocidad de borrado
+
+                        loop
+                        className='text-primary'
+             
+                    />
                 </h1>
                 <h1 className='text-white md:hidden text-center md:text-start text-4xl pr-2 lg:text-7xl font-bold mb-8'>
-                    Impulsate al mundo Tecnologico
+                    Impulsate al mundo <br/> {''}
+                    <ReactTyped
+                        strings={["Informático", "De la programacion", "Tecnologico"]}
+                        typeSpeed={80} // Velocidad de escritura
+                        backSpeed={50} // Velocidad de borrado
+                        className='text-primary'
+                   
+                    />
+
+
+
                 </h1>
-                <p className='text-white text-center md:text-start md:text-xl lg:text-3xl mt-4'>
+                <p className='text-white text-center md:text-start md:text-xl lg:text-2xl mt-4'>
                     Estudia Desarrollo FullStack y programacion para impulsar tu futuro laboral
                 </p>
                 <div className='my-10'>
