@@ -7,10 +7,6 @@ const AboutUsPage = () => {
             <header>
                 <AboutUs />
             </header>
-
-            <div className='mt-36'>
-                <p className='text-5xl text-white font-semibold'>Quienes somos ?</p>
-            </div>
         </>
     )
 }
