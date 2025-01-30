@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import {Link} from "next-view-transitions";
 import { ChevronDown } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { coursesDataMock } from "@/app/courses-data-mock/courses-data-mock";
@@ -76,7 +76,7 @@ export function NavBar() {
                                                 <Link
                                                     onMouseEnter={() => setCursoActivo(curso.title)}
                                                     key={curso.title}
-                                                    href={curso.slug}
+                                                    href={`/academy/${curso.slug}`}
                                                     className="hover:bg-gray-100 transition-all hover:text-black p-2 rounded-md w-full py-4 font-semibold block"
                                                 >
                                                     {curso.title}
@@ -121,7 +121,7 @@ export function NavBar() {
                             <Link href="/about-us" className="text-white inline-flex items-center px-1 pt-1 text-base font-semibold">
                                 Acerca de
                             </Link>
-                            <Link href="/contact" className="text-white inline-flex items-center px-1 pt-1 text-base font-semibold">
+                            <Link href="https://wa.me/+541123498925" className="text-white inline-flex items-center px-1 pt-1 text-base font-semibold">
                                 Contacto
                             </Link>
                         </div>

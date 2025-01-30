@@ -10,8 +10,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import { Twirl as Hamburger } from 'hamburger-react';
 import { Collapse } from '@mui/material';
 import { ArrowDown } from 'lucide-react';
-import Link from 'next/link';
+import {Link} from 'next-view-transitions';
 import { coursesDataMock } from '@/app/courses-data-mock/courses-data-mock';
+
 
 export default function DrawerNav() {
   const [open, setOpen] = React.useState(false);
@@ -69,7 +70,7 @@ export default function DrawerNav() {
         <Collapse in={openSubMenu} timeout="auto" unmountOnExit>
           <List component="div" disablePadding sx={{ pl: 2 }}>
             {coursesDataMock.map((course) => (
-              <ListItem disablePadding>
+              <ListItem key={course.slug} disablePadding>
                 <ListItemButton  onClick={closeDrawer}>
                   <Link className='text-white text-sm  py-2 border-b' href={`/academy/${course.slug}`}>
                     {course.title}
