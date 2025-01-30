@@ -42,7 +42,7 @@ const WspLogo = () => {
 
   return (
     <div className={`wsp-Logo-container overflow-x-hidden ${visible ? 'visible' : ''}`} style={{ opacity: 0, right: '-10rem' }}>
-      <a href={"https://wa.me/+5491123498925"} target='_blank'>
+      <a href={'a'} target='_blank'>
         <Image width={300} height={300} className='wsp-logo-img' src={'/wspLogo.webp'} alt='Logo de WhatsApp' />
       </a>
     </div>

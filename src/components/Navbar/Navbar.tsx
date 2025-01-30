@@ -13,8 +13,12 @@ import { cn } from '@/lib/utils';
 import DrawerNav from './DrawerMobile/DrawerNav';
 import { useSession } from 'next-auth/react';
 import { Link } from 'next-view-transitions';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+    const pathname = usePathname();
+  
+ 
   const session = useSession()
   console.log(session)
   useEffect(() => {
@@ -32,7 +36,7 @@ const Navbar = () => {
     }
   ]
   return (
-    <nav className={`w-full h-[99px] py-6 ml-[-10px]   flex items-center justify-between md:px-24 `}>
+    <nav className={`w-full h-[99px] py-6 ml-[-10px] ${pathname === '/academy/next' ? 'pt-2' : 'pt-24'}  flex items-center justify-between md:px-24 `}>
       <div className='flex items-center '>
         <div className='md:hidden'>
           <DrawerNav />
@@ -89,10 +93,10 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href='https://wa.me/+541123498925'
+              href='/academy'
               className='text-white px-5 py-2 relative after:content-[""] after:absolute after:w-0 after:h-[1px] after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full'
             >
-              Contacto
+              ACADEMY
             </Link>
           </li>
         </ul>

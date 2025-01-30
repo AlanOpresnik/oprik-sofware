@@ -7,6 +7,9 @@ import Providers from "./Providers";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
 import WspLogo from "@/components/WspLogo/WspLogo";
+import { Link } from "next-view-transitions";
+import BannerAd from "@/components/bannerAd/BannerAd";
+import { NavBar } from "@/components/Navbar/Navbar_v0/Navbar_v0";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -88,18 +91,21 @@ export default function RootLayout({
             alt="Pixel tracking"
           />
         </noscript>
-        <Analytics/>
+        <Analytics />
         {/* Fondo con gradiente violeta */}
-       
+
         <Providers>
-          <div className="max-w-[1700px] mx-auto px-2 md:px-0">
-            <Navbar />
+          <div className="fixed w-full z-40">
+           <BannerAd/>
+          </div>
+          <div className="max-w-[1700px] mx-auto pt-16 px-2 md:px-0">
+            <NavBar />
           </div>
           <div className="max-w-[1620px] mx-auto px-2 md:px-12">
             {children}
           </div>
-        
-          <WspLogo/>
+
+          <WspLogo />
           <div className="max-w-[1580px] mx-auto px-2 md:px-0">
             <Footer />
           </div>

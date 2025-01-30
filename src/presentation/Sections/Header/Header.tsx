@@ -32,8 +32,6 @@ const Header = () => {
 
       }
     );
-
-
   }, []);
 
   return (

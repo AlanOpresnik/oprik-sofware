@@ -2,63 +2,13 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React, { useEffect } from "react";
+import { animationLeft } from "./animation";
 
 const DividerDays = () => {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
- 
-    gsap.fromTo(
-      '#DaysDivider',
-      { opacity: 0, y: 200 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '#pricing',
-          start: "top 75%", 
-          toggleActions: "play none none none", 
-        },
-      }
-    );
-
+    animationLeft()
    
-    gsap.fromTo(
-      '#text-left',
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        delay: .2,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '#pricing',
-          start: "top 75%", 
-          toggleActions: "play none none none", 
-        },
-      }
-    );
-
-
-    gsap.fromTo(
-      '#text-right',
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.5,
-        delay: .2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '#pricing',
-          start: "top 75%", 
-          toggleActions: "play none none none", 
-        },
-      }
-    );
+  
   }, []);
 
   return (

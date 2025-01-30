@@ -269,3 +269,47 @@ body {
   animation: orbit 6s linear infinite;
   transform-origin: center;
 }
+
+.grid-modify-2{
+    grid-template-columns: repeat(2, minmax(0, .4fr));
+
+}
+
+/* Personalización de las flechas de navegación */
+.custom-swiper-navigation .swiper-button-prev,
+.custom-swiper-navigation .swiper-button-next {
+  background-color: #3a3a3a; /* Fondo gris */
+  color: yellow; /* Color de la flecha */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Forma redonda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  
+  font-size: 12px;
+}
+
+/* Hover para las flechas */
+.custom-swiper-navigation .swiper-button-prev:hover,
+.custom-swiper-navigation .swiper-button-next:hover {
+  background-color: #555555; /* Más oscuro al pasar el cursor */
+  transform: scale(1.1);
+}
+
+.custom-swiper-navigation .swiper-button-prev::after,
+.custom-swiper-navigation .swiper-button-next::after {
+  font-size: 18px; /* Cambia el tamaño aquí */
+  font-weight: bold; /* Opcional: para hacerlas más gruesas */
+}
+
+/* Posicionamiento de las flechas */
+.custom-swiper-navigation .swiper-button-prev {
+  left: 10px;
+}
+
+.custom-swiper-navigation .swiper-button-next {
+  right: 20px;
+}

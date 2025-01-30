@@ -1,0 +1,6 @@
+export const why_us_data = [
+    { title: "Profesores expertos", img: 'https://res.cloudinary.com/dbgt948uj/image/upload/v1737768811/freepik__upload__80828_u4c5bv.png', description: "Nuestros profesores son expertos en la materia y tienen años de experiencia. siempre estan dispuestos a responder tus dudas " },
+    {title: 'Soporte 1:1', img: 'https://res.cloudinary.com/dbgt948uj/image/upload/v1737769733/freepik__upload__64894_uvlwmq.jpg', description: 'Contamos con un equipo de soporte que te ayudará en todo momento. Si tenes alguna duda, no dudes en contactarnos.'},
+    {title: 'Certificado final', img: 'https://res.cloudinary.com/dbgt948uj/image/upload/v1737769887/freepik__upload__64689_pvjicb.jpg', description: 'Al finalizar la cursada que estes haciendo, recibirás un certificado que acredita que completaste el curso entregaste el trabajo final'},
+    {title: 'Metodo educativo', img:'https://res.cloudinary.com/dbgt948uj/image/upload/v1737770051/freepik__upload__32916_hkcjpq.jpg', description: 'Nuestro método educativo está pensado para que puedas aprender de ON-LINE No importa tu nivel, siempre podrás aprender algo nuevo.'}
+]
