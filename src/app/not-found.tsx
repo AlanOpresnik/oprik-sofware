@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image"; // Si usas Next.js, usa el componente Image
 import { Link } from "next-view-transitions";
 
 const NotFoundPage = () => {
