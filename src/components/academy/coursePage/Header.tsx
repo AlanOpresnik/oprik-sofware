@@ -1,7 +1,7 @@
 'use client'
 import HeaderImage from '@/components/academy/coursePage/headerRigth/header-image'
 import Arrow from '@/components/arrowHeader/ArrowHeader'
-import { generateWhatsAppLink, wspNum } from '@/constants/constants'
+import { generateWhatsAppLink } from '@/constants/constants'
 import { CourseProps } from '@/interface/courseInterface'
 import { BookOpen, DollarSignIcon, SquareArrowOutUpRightIcon, UserRound, Wifi } from 'lucide-react'
 import Link from 'next/link'
