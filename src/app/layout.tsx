@@ -21,11 +21,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Oprik Software - Páginas Web y Aplicaciones para Teléfonos en Argentina",
-  description: "Diseñamos y desarrollamos soluciones digitales innovadoras para tu negocio.",
+  title: "Oprik Software ACADEMY - Cursos en vivo de Programación e informatica ",
+  description: "Aprende a programar y a usar la informática en un ambiente de aprendizaje práctico y efectivo.",
   icons: [
     {
       url: "/OSLOGO.jpeg",
+
       sizes: "192x192",
 
       type: "image/jpeg",
@@ -33,24 +34,27 @@ export const metadata: Metadata = {
 
   ],
   openGraph: {
-    title: "Oprik Software - Páginas Web y Aplicaciones para Teléfonos en Argentina",
-    description: "Diseñamos y desarrollamos soluciones digitales innovadoras para tu negocio.",
+    title: "Oprik Software ACADEMY - Cursos en vivo de Programación e informatica  ",
+    description: "Aprende a programar y a usar la informática en un ambiente de aprendizaje práctico y efectivo.",
     url: "https://www.opriksoftware.com", // Cambia por tu URL
-    siteName: "Oprik Software - Páginas Web y Aplicaciones para Teléfonos en Argentina",
+
+    siteName: "Oprik Software ACADEMY - Cursos en vivo de Programación e informatica  ",
+
     images: [
       {
         url: "/bannerOS.jpeg", // Cambia por la URL de tu imagen
         width: 1200,
         height: 630,
-        alt: "Oprik Software - Soluciones digitales a medida",
+        alt: "Oprik Software ACADEMY - Cursos en vivo de Programación e informatica  ",
+
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oprik Software - Páginas Web y Aplicaciones para Teléfonos",
-    description: "Soluciones digitales innovadoras en Argentina.",
+    title: "Oprik Software ACADEMY - Cursos en vivo de Programación e informatica ",
+    description: "Aprende a programar y a usar la informática en un ambiente de aprendizaje práctico y efectivo.",
     images: ["/bannerOS.jpeg"], // Ruta de la imagen
   },
 };
