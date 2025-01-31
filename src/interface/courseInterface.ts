@@ -17,11 +17,17 @@ export interface Course {
     description?:string;
     video_preview_url?: string[];
   }
+  start_date: string;
+  end_date: string;
+  days_course: string;
+  hours_course: string;
   movile_title: string;
   description: string;
   img?: string;
   slug: string;
+
   price: number;
+
   requirements: {
     dedication: string;
     prev_knowledge: string;

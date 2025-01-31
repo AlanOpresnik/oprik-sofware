@@ -1,7 +1,7 @@
 'use client'
 import HeaderImage from '@/components/academy/coursePage/headerRigth/header-image'
 import Arrow from '@/components/arrowHeader/ArrowHeader'
-import { wspNum } from '@/constants/constants'
+import { generateWhatsAppLink, wspNum } from '@/constants/constants'
 import { CourseProps } from '@/interface/courseInterface'
 import { BookOpen, DollarSignIcon, SquareArrowOutUpRightIcon, UserRound, Wifi } from 'lucide-react'
 import Link from 'next/link'
@@ -17,6 +17,15 @@ const items = [
 
 
 const Header = ({course}: CourseProps) => {
+    const wspLink = generateWhatsAppLink(
+        course.title,
+        course.price,
+        course.start_date,
+        course.end_date,
+        course.days_course,
+        course.hours_course
+    );
+
     return (
         <div className='md:grid grid-cols-2 md:gap-20 md:place-items-center'>
             <div>
@@ -41,7 +50,7 @@ const Header = ({course}: CourseProps) => {
                 <div className='flex flex-col lg:flex-row h-full lg:items-center gap-4'>
                     <p className=' text-center md:hidden text-white'>Proba dos clases Gratis! 🔥</p>
                     <Link
-                      className='bg-primary flex justify-center w-full md:w-fit items-center gap-2 text-black font-semibold text-lg p-3 rounded-full  mt-2 mb-12 md:mb-0' href={wspNum}>
+                      className='bg-primary flex justify-center w-full md:w-fit items-center gap-2 text-black font-semibold text-lg p-3 rounded-full  mt-2 mb-12 md:mb-0' href={wspLink}>
                         <SquareArrowOutUpRightIcon size={16} color='black' /> Inscribirme ahora
                     </Link>
                     <p className='mt-4 hidden md:block text-white'>Proba dos clases Gratis! 🔥</p>

@@ -35,7 +35,12 @@ export const coursesDataMock = [
             { title: "Mentoría personalizada" },
             { title: "Precios bajos para tu bolsillo" },
         ],
+        days_course: 'Lunes & Jueves',
+        hours_course: '19:00hs - 21:30hs',
+        start_date: '10/03/2025',
+        end_date: '17/07/2025',
         price: 32500,
+
     },
     {
         outstanding: false,
@@ -74,6 +79,10 @@ export const coursesDataMock = [
             { title: "Mentoría personalizada" },
             { title: "Precios bajos para tu bolsillo" },
         ],
+        days_course: 'Martes & Viernes',
+        hours_course: '19:00hs - 21:30hs',
+        start_date: '11/03/2025',
+        end_date: '18/07/2025',
         price: 42500,
     },
     {
@@ -96,6 +105,11 @@ export const coursesDataMock = [
             { title: "Mentoría personalizada" },
             { title: "Precios bajos para tu bolsillo" },
         ],
+        days_course: 'Miercoles & Sabado',
+        hours_course: '19:00hs - 21:30hs',
+        start_date: '14/03/2025',
+        end_date: '19/06/2025',
+
         icons: [
             {
                 icon: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png'
