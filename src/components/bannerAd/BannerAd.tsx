@@ -7,14 +7,14 @@ export default function BannerAd() {
   const pathname = usePathname();
 
   // Mostrar el cartel solo si no estamos en /academy
-  if (pathname === "/academy/next") {
+  if (pathname === "/academy/desarrollo-web-fullstack-con-nextjs") {
     return null;
   }
 
   return (
     <div className="w-full bg-[#222222] flex items-center justify-center h-[55px] text-white">
       <Link
-        href="/academy"
+        href="/academy/desarrollo-web-fullstack-con-nextjs"
         className="md:flex hidden justify-center items-center gap-1"
       >
         <p className="text-sm text-center">
@@ -23,7 +23,7 @@ export default function BannerAd() {
         <span className="font-bold text-sm text-center">CLICK AQUI</span> ✨
       </Link>
       <Link
-        href="/academy"
+        href="/academy/desarrollo-web-fullstack-con-nextjs"
         className="flex md:hidden justify-center items-center gap-1"
       >
         <p className="text-sm text-center">

@@ -80,7 +80,7 @@ export function NavBar() {
                                                     className="hover:bg-gray-100 transition-all hover:text-black p-2 rounded-md w-full py-4 font-semibold block"
                                                 >
                                                     {curso.title}
-                                                    <p className="text-sm font-normal mt-1 w-3/4">{curso.description}</p>
+                                                    <p className="text-sm line-clamp-2 font-normal mt-1 w-3/4">{curso.description}</p>
                                                 </Link>
                                             ))}
                                         </div>

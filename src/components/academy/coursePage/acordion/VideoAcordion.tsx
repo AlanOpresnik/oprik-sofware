@@ -15,6 +15,7 @@ export default function VideoSwiper({ videos }: Props) {
     const swiperRef = useRef<SwiperType | null>(null);
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
     const [showNavigation, setShowNavigation] = useState(false);
+    const [loadingStates, setLoadingStates] = useState<boolean[]>(videos.map(() => true)); // Estado de carga por video
 
     const handleSlideChange = () => {
         // Detener todos los videos
@@ -41,6 +42,8 @@ export default function VideoSwiper({ videos }: Props) {
         handleSlideChange();
     }, []);
 
+    if (videos.length === 0) return null;
+
     return (
         <>
             <p className="mb-2 border-t pt-2">
@@ -60,7 +63,7 @@ export default function VideoSwiper({ videos }: Props) {
                 }}
                 className={`mySwiper custom-swiper-navigation ${showNavigation ? "" : "hide-navigation"}`}
                 onInit={(swiper) => {
-                    swiperRef.current = swiper; // Guardamos la instancia de Swiper
+                    swiperRef.current = swiper;
                     setShowNavigation(swiper.slides.length > (swiper.params.slidesPerView as number));
                 }}
                 onUpdate={(swiper) => {
@@ -68,14 +71,26 @@ export default function VideoSwiper({ videos }: Props) {
                 }}
                 onSlideChange={handleSlideChange}
             >
-                {videos?.map((video, index) => (
-                    <SwiperSlide key={index}>
+                {videos.map((video, index) => (
+                    <SwiperSlide key={index} className="relative flex justify-center items-center">
+                        {loadingStates[index] && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white">
+                                Cargando video...
+                            </div>
+                        )}
                         <video
                             ref={(el) => {
                                 videoRefs.current[index] = el;
                             }}
                             className="max-h-[400px]"
                             muted
+                            onLoadedData={() => {
+                                setLoadingStates((prev) => {
+                                    const newStates = [...prev];
+                                    newStates[index] = false;
+                                    return newStates;
+                                });
+                            }}
                         >
                             <source src={video} type="video/mp4" />
                             Tu navegador no soporta videos.
