@@ -5,13 +5,16 @@ import {Link} from "next-view-transitions";
 import { ChevronDown } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { coursesDataMock } from "@/app/courses-data-mock/courses-data-mock";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import DrawerNav from "../DrawerMobile/DrawerNav";
 
 export function NavBar() {
     const [open, setOpen] = React.useState(false);
     const [cursoActivo, setCursoActivo] = React.useState<string | null>(null);
+    const pathname = usePathname();
 
+    // Mostrar el cartel solo si no estamos en /academy
+   
     const timeoutRef = React.useRef<NodeJS.Timeout | null>(null)
     const params = useParams()
 
@@ -37,7 +40,7 @@ export function NavBar() {
 
 
     return (
-        <nav className="text-white shadow">
+        <nav className={`text-white shadow ${pathname === "/academy/desarrollo-web-fullstack-con-nextjs" ? "pt-6" : "pt-16"}`}>
             <div className="mx-auto lg:px-8">
                 <div className="flex left-[-10px] md:left-0 relative md:justify-between items-center gap-2 h-16">
                 <div className="md:hidden">

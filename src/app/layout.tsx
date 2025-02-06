@@ -100,7 +100,7 @@ export default function RootLayout({
           <div className="fixed w-full z-40">
            <BannerAd/>
           </div>
-          <div className="max-w-[1700px] mx-auto pt-16 px-2 md:px-0">
+          <div className="max-w-[1700px] mx-auto  px-2 md:px-0">
             <NavBar />
           </div>
           <div className="max-w-[1620px] mx-auto px-2 md:px-12">
