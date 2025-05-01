@@ -30,11 +30,11 @@ const HeaderImage = ({course}: CourseProps) => {
                         }}
                     />
                 </div>
-                    <div className='absolute top-[-20px] left-0 md:left-[-40px]'>
-                        <Image src={course.icons? course.icons[0].icon : '/nextjs.png'} alt="Next.js" width={80} height={100} />
+                    <div className='absolute rounded-full top-[-20px] left-0 md:left-[-40px]'>
+                        <Image className='rounded-full' src={course.icons? course.icons[0].icon : '/nextjs.png'} alt="Next.js" width={80} height={100} />
                     </div>
-                    <div className='absolute bottom-[0px] right-0 lg:right-[-40px]'>
-                        <Image src={course.icons? course.icons[1].icon : 'https://res.cloudinary.com/dbgt948uj/image/upload/v1737825846/react_pycuqf.webp'} alt="React" width={80} height={100} />
+                    <div className='absolute bottom-[0px] right-0 lg:right-[-40px] rounded-full'>
+                        <Image className='rounded-full' src={course.icons?.[1]?.icon ? course.icons[1].icon : 'https://res.cloudinary.com/dbgt948uj/image/upload/v1737825846/react_pycuqf.webp'} alt="React" width={80} height={100} />
                     </div>
             </div>
 

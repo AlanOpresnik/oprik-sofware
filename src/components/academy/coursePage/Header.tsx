@@ -30,13 +30,13 @@ const Header = ({course}: CourseProps) => {
         <div className='md:grid grid-cols-2 md:gap-20 md:place-items-center'>
             <div>
                <span className='text-primary justify-center flex md:block  text-sm font-semibold text-center md:text-start'>{course.upTitle}</span>
-                <h1 className='text-white hidden md:block text-center md:text-start text-4xl lg:text-7xl font-bold mb-8'>
+                <h1 className='text-white max-w-[700px] hidden md:block text-center md:text-start text-4xl lg:text-6xl font-bold mb-8'>
                  {course.title}
                 </h1>
                 <h1 className='text-white md:hidden text-center md:text-start text-4xl pr-2 lg:text-7xl font-bold mb-8'>
                     {course.movile_title}
                 </h1>
-                <p className='text-white text-center md:text-start md:text-xl lg:text-3xl mt-4'>
+                <p className='text-white  text-center md:text-start md:text-xl lg:text-3xl mt-4'>
                     {course.description}
                 </p>
                 <div className='my-10'>

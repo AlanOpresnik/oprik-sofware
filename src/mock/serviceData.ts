@@ -212,5 +212,6 @@ const serviceData: serviceInterface[] = [
       },
     ],
   },
+  
 ];
 export default serviceData;
