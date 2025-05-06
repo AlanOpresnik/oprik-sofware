@@ -17,7 +17,7 @@ export default function CoursesPage() {
         <div className="flex px-2 min-h-screen flex-col">
             <main className="">
                 {/* Hero Section */}
-                <HeroCoursesSection onSearchChange={setSearchTerm} searchTerm={searchTerm} onReset={() => setSearchTerm('')} />
+                <HeroCoursesSection onSearchChange={setSearchTerm} searchTerm={searchTerm} />
                 {/* Courses Grid */}
                 <section className="py-16 relative">
                 <div className="">

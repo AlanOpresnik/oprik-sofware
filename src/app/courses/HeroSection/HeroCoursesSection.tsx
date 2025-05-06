@@ -1,14 +1,12 @@
-import { Button } from '@/components/ui/button'
 import { Search } from 'lucide-react'
 import React from 'react'
 
 interface HeroCoursesSectionProps {
     searchTerm: string
     onSearchChange: (value: string) => void
-    onReset: () => void
 }
 
-const HeroCoursesSection: React.FC<HeroCoursesSectionProps> = ({ searchTerm, onSearchChange, onReset }) => {
+const HeroCoursesSection: React.FC<HeroCoursesSectionProps> = ({ searchTerm, onSearchChange }) => {
     return (
         <section className="relative pt-32">
             <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"></div>
