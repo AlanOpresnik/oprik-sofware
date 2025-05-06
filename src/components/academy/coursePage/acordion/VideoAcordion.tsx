@@ -46,11 +46,15 @@ export default function VideoSwiper({ videos }: Props) {
 
     return (
         <>
-            <p className="mb-2 border-t pt-2">
+            <div className="mb-2 border-t pt-2">
                 {videos.length > 1
-                    ? "Estos son ejemplos BÁSICOS, NO son el proyecto final de la cursada"
-                    : "Este es un ejemplo BÁSICO, NO es el proyecto final de la cursada"}
-            </p>
+                    ? <div className="pt-6 pb-4">
+                        <p>Estos son ejemplos BÁSICOS, NO son el proyecto final de la cursada</p>
+                    </div>
+                    : <div>
+                        <p>Este es un ejemplo BÁSICO, NO es el proyecto final de la cursada</p>
+                    </div>}
+            </div>
             <Swiper
                 modules={[Navigation, Pagination]}
                 navigation={showNavigation}
@@ -82,7 +86,7 @@ export default function VideoSwiper({ videos }: Props) {
                             ref={(el) => {
                                 videoRefs.current[index] = el;
                             }}
-                            className="max-h-[400px]"
+                            className=""
                             muted
                             onLoadedData={() => {
                                 setLoadingStates((prev) => {

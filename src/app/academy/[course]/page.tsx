@@ -1,34 +1,63 @@
-import { AcorddionAcademy } from "@/components/academy/coursePage/acordion/Acordion"
 import Header from "@/components/academy/coursePage/Header"
 import OurPlans from "@/components/academy/coursePage/our-plans/OurPlans";
 import PaymentMethods from "@/components/academy/coursePage/payment_methods/Payment_methods";
-import Requirements from "@/components/academy/coursePage/requirements/Requirements";
 import StartCourseDate from "@/components/academy/coursePage/Start-Course-date/Start-courde-date";
 import TestCourseCartel from "@/components/academy/coursePage/TestCourseCartel";
 import WhyUsCard from "@/components/academy/coursePage/Why-us/Why-us-card";
 import { why_us_data } from '@/components/academy/coursePage/Why-us/why-us-data'
 import { coursesDataMock } from "@/app/courses-data-mock/courses-data-mock";
+import CourseContent from "@/components/academy/coursePage/CourseContent/CourseContent";
+
+
+
+export async function generateMetadata({ params }: { params: Promise<{ course: string }> }) {
+    const { course: slug } = await params;
+    const course = coursesDataMock.find((course) => course.slug === slug);
+
+    if (!course) {
+        return {
+            title: 'Curso no encontrado | Oprik software Academy',
+            description: 'El curso que buscas no existe.',
+        };
+    }
+
+    return {
+        title: `${course.title} | Oprik software Academy`,
+        description: course.description,
+        openGraph: {
+            title: `${course.title} | Oprik software Academy`,
+            description: course.description,
+            images: [
+                {
+                    url: course.banner || '/default-course.png',
+                    width: 1200,
+                    height: 630,
+                    alt: course.title,
+                },
+            ],
+        },
+    };
+}
 
 
 const CorusePage = async ({ params }: { params: Promise<{ course: string }> }) => {
-    const slug = (await params).course
-    const course = coursesDataMock.find((course) => course.slug === slug)
-    if (!course) return 'No hay curso con ese slug'
+    const { course: slug } = await params;
+    const course = coursesDataMock.find((course) => course.slug === slug);
+    if (!course) return 'No hay curso con ese slug';
+
 
     return (
         <div className='py-16'>
             <header>
-                <Header course={course}/>
+                <Header course={course} />
             </header>
-            <main className="text-white mt-32 md:grid grid-cols-2 gap-11">
-                <div className="flex flex-col gap-6">
-                    <p className="text-5xl font-bold">Acerca de la cursada</p>
-                    <div>
-                        <AcorddionAcademy course={course} />
+            <main className="text-white mt-32  gap-11">
+                <div className=" ">
+                    <p className="text-5xl font-bold">Sobre de la cursada</p>
+                    <div className="">
+                        <CourseContent course={course} />
+
                     </div>
-                </div>
-                <div className="mt-12 md:mt-24">
-                    <Requirements price={course.price} requirements={course.requirements} />
                 </div>
             </main>
             <section>

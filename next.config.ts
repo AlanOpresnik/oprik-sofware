@@ -60,7 +60,10 @@ const nextConfig: NextConfig = {
       },{
         protocol: 'https',
         hostname: 'res.cloudinary.com'
-      }
+      },{
+        protocol: 'https',
+        hostname: 'd2uolguxr56s4e.cloudfront.net'
+      },
     ]
   }
 };

@@ -10,14 +10,16 @@ import ListItemButton from '@mui/material/ListItemButton';
 import { Twirl as Hamburger } from 'hamburger-react';
 import { Collapse } from '@mui/material';
 import { ArrowDown } from 'lucide-react';
-import {Link} from 'next-view-transitions';
+import { Link } from 'next-view-transitions';
 import { coursesDataMock } from '@/app/courses-data-mock/courses-data-mock';
+import { useParams } from 'next/navigation';
 
 
 export default function DrawerNav() {
   const [open, setOpen] = React.useState(false);
   const [isOpenHamburger, setOpenHamburger] = React.useState(false);
   const [openSubMenu, setOpenSubMenu] = React.useState(false);
+  const params = useParams()
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -33,6 +35,13 @@ export default function DrawerNav() {
     setOpen(false);
     setOpenHamburger(false);
   }
+
+ React.useEffect(() => {
+    setOpen(false)
+    setOpenHamburger(false)
+    setOpenSubMenu(false)
+  }, [params]) 
+  
 
   const DrawerList = (
     <Box
@@ -56,13 +65,22 @@ export default function DrawerNav() {
             </Link>
           </ListItemButton>
         </ListItem>
-       
 
+
+        <ListItem disablePadding >
+          <ListItemButton>
+
+            <Link href={'/courses'}>
+              Todas las cursadas
+            </Link>
+          </ListItemButton>
+
+        </ListItem>
         <ListItem disablePadding onClick={handleSubMenuToggle}>
           <ListItemButton>
 
             <Link href={'#pricing'}>
-              Cursadas destacadas
+              Cursos destacadas
             </Link>
             <ArrowDown />
           </ListItemButton>
@@ -70,17 +88,21 @@ export default function DrawerNav() {
         <Collapse in={openSubMenu} timeout="auto" unmountOnExit>
           <List component="div" disablePadding sx={{ pl: 2 }}>
             {coursesDataMock.map((course) => (
-              <ListItem key={course.slug} disablePadding>
-                <ListItemButton  onClick={closeDrawer}>
-                  <Link className='text-white text-sm  py-2 border-b' href={`/academy/${course.slug}`}>
-                    {course.title}
-                  </Link>
-                </ListItemButton>
-              </ListItem>
+              
+                course.outstanding && (
+                  <ListItem key={course.slug} disablePadding>
+                    <ListItemButton onClick={closeDrawer}>
+                      <Link className='text-white text-sm  py-2 border-b' href={`/academy/${course.slug}`}>
+                        {course.title}
+                      </Link>
+                    </ListItemButton>
+                  </ListItem>
+                )    
+              
+           
             ))}
           </List>
         </Collapse>
-
         <ListItem disablePadding >
           <ListItemButton>
 

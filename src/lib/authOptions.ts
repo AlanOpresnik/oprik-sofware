@@ -1,4 +1,4 @@
-import CredentialsProvider from "next-auth/providers/credentials";
+{/*import CredentialsProvider from "next-auth/providers/credentials";
 import bcryptjs from "bcryptjs";
 import { connectDB } from "@/lib/mongodb";
 import Client from "@/models/Client";
@@ -59,3 +59,4 @@ export const authOptions: NextAuthOptions = {
     signIn: "/login",
   },
 };
+*/}

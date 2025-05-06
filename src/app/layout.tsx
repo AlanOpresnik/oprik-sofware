@@ -6,7 +6,6 @@ import Providers from "./Providers";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
 import WspLogo from "@/components/WspLogo/WspLogo";
-import BannerAd from "@/components/bannerAd/BannerAd";
 import { NavBar } from "@/components/Navbar/Navbar_v0/Navbar_v0";
 
 const geistSans = localFont({
@@ -112,9 +111,7 @@ export default function RootLayout({
         {/* Fondo con gradiente violeta */}
 
         <Providers>
-          <div className="fixed w-full z-40">
-            <BannerAd />
-          </div>
+     
           <div className="max-w-[1700px] mx-auto  px-2 md:px-0">
             <NavBar />
           </div>

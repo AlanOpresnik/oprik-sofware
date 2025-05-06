@@ -37,19 +37,19 @@ const CourseCard = ({course}: Props) => {
             <div className=''>
                 <Link
                     href={`/academy/${course.slug}`}
-                    className="bg-primary flex w-full text-center justify-center items-center gap-2 text-black font-semibold text-lg p-2 rounded-xl mt-6"
+                    className="bg-secondary flex w-full text-center justify-center items-center gap-2 text-black font-semibold text-lg p-2 rounded-xl mt-6"
                 >
                     Ver mas informacion
                 </Link>
 
             </div>
             {course.outstanding && (
-                <div className="absolute top-[-5px] right-0 md:right-[-5px] bg-primary p-2 rounded-lg shadow-primary rounded-bl-lg">
+                <div className="absolute top-[-5px] right-0 md:right-[-5px] bg-secondary p-2 rounded-lg shadow-secondary rounded-bl-lg">
                     <p className="text-sm font-bold">DESTACADO</p>
                 </div>
             )}
             {course.new && (
-                <div className="absolute top-[-5px] right-0 md:right-[-5px] bg-primary p-2 rounded-lg shadow-primary rounded-bl-lg">
+                <div className="absolute top-[-5px] right-0 md:right-[-5px] bg-secondary p-2 rounded-lg shadow-secondary rounded-bl-lg">
                     <p className="text-sm font-bold">RECIÉN AGREGADO</p>
                 </div>
             )}

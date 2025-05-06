@@ -5,37 +5,29 @@ import React from 'react'
 const Footer = () => {
     const LINKS = [
         {
-          title: "Inicio",
-          items: [
-            { label: "Acerca de nosotros", href: "#informacion-nuestra" },
-            { label: "Nos diferenciamos", href: "#nos-diferenciamos" },
-          ],
+            title: "Inicio",
+            items: [
+                { label: "Acerca de nosotros", href: "/about-us" },
+                { label: "Nuestras cursadas", href: "/courses" },
+            ],
         },
         {
-          title: "Clientes",
-          items: [
-            { label: "Quiero ser cliente", href: "/clientes/quiero-ser-cliente" },
-            { label: "Panel de administración de cliente", href: "/clientes/panel-administracion" },
-          ],
+            title: "Cursadas destacadas",
+            items: [
+                { label: "Full Stack con Next.js", href: "/academy/desarrollo-web-fullstack-con-nextjs" },
+                { label: "Desarrollo web con React.js", href: "/academy/aprende-desarrollo-web-con-reactjs" },
+            ],
         },
         {
-          title: "Servicios",
-          items: [
-            { label: "Tiendas web", href: "/servicios/tiendas-web" },
-            { label: "Web Gestión de turnos", href: "/servicios/web-gestion-turnos" },
-            { label: "Marketing y Anuncios", href: "/servicios/marketing-anuncios" },
-          ],
+            title: "Formas de pago",
+            items: [
+                { label: "Visa / Mastercard", href: "" },
+                { label: "Mercado Pago", href: "" },
+                { label: "Transferencias", href: "" },
+            ],
         },
-        {
-          title: "Planes de desarrollo",
-          items: [
-            { label: "Personal", href: "/planes-desarrollo/personal" },
-            { label: "Emprendimiento", href: "/planes-desarrollo/emprendimiento" },
-            { label: "Personalizado", href: "/planes-desarrollo/personalizado" },
-          ],
-        },
-      ];
-      
+    ];
+
 
 
 
@@ -50,15 +42,15 @@ const Footer = () => {
                         <div className='flex gap-1'>
                             <p>Telefono:</p>
                             <p>+54 9 11 2349-8925</p>
-                            
+
                         </div>
                         <div className='flex gap-1'>
                             <p>Correo:</p>
                             <p>opriksoftware@gmail.com</p>
-                            
+
                         </div>
                     </div>
-                    <div className="grid col-span-2 w-full md:grid-cols-4 justify-between gap-12">
+                    <div className="grid col-span-2 w-full md:grid-cols-3 justify-between gap-12">
                         {LINKS.map(({ title, items }) => (
                             <ul key={title}>
                                 <Link
@@ -70,13 +62,19 @@ const Footer = () => {
                                 </Link>
                                 {items?.map((link) => (
                                     <li className='py-0.5' key={link.label}>
-                                        <Link
-                                            href={link.href}
-                                            color="gray"
-                                            className="mb-2 font-normal transition-colors hover:opacity-75"
-                                        >
-                                            {link.label}
-                                        </Link>
+                                        {link.href === '' ? (
+                                            <p>
+                                                {link.label}
+                                            </p>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                color="gray"
+                                                className="mb-2 font-normal transition-colors hover:opacity-75"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -88,20 +86,11 @@ const Footer = () => {
                         href={'/'}
                         className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
                     >
-                       @ 2024 Oprik Software.
+                        @ 2024 Oprik Software.
                         derechos reservados.
                     </Link>
                     <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
-                        <Link href="#" className="opacity-80 transition-opacity hover:opacity-100">
-                            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-
-                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-
-                                />
-                            </svg>
-                        </Link>
-                        <Link href="#" className="opacity-80 transition-opacity hover:opacity-100">
+                        <a target='_BLANK' href="https://www.instagram.com/oprik_software/" className="opacity-80 transition-opacity hover:opacity-100">
                             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
 
@@ -109,8 +98,8 @@ const Footer = () => {
 
                                 />
                             </svg>
-                        </Link>
-                    
+                        </a>
+
                     </div>
                 </div>
             </div>

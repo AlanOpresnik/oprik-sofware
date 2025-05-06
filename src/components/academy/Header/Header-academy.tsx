@@ -17,13 +17,13 @@ const HeaderAcademy = () => {
     return (
         <div className='md:grid grid-cols-2 md:gap-20 md:place-items-center'>
             <div>
-                <h1 className="text-white hidden md:block text-center md:text-start text-4xl lg:text-5xl xl:text-7xl font-bold mb-8">
+                <h1 className="text-white hidden md:block text-center md:text-start text-4xl lg:text-5xl xl:text-6xl text-balance  font-bold mb-8">
                     Estudia e impulsa tus conocimientos en <br className='hidden 2xl:block' /> {" "}
                     <ReactTyped
                         strings={["Programación", "Marketing", "Informática"]}
                         typeSpeed={80} // Velocidad de escritura
                         backSpeed={50} // Velocidad de borrado
-
+                        backDelay={2000} // Tiempo de espera antes de borrar
                         loop
                         className='text-primary'
              
@@ -42,7 +42,7 @@ const HeaderAcademy = () => {
 
 
                 </h1>
-                <p className='text-white text-center md:text-start md:text-xl lg:text-2xl mt-4'>
+                <p className='text-white text-center md:text-start md:text-xl lg:text-2xl mt-4 max-w-[600px]'>
                     Estudia Desarrollo FullStack y programacion para impulsar tu futuro laboral
                 </p>
                 <div className='my-10'>

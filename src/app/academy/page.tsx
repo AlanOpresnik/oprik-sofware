@@ -6,6 +6,7 @@ import WhyUsCard from "@/components/academy/coursePage/Why-us/Why-us-card";
 import { why_us_data } from '@/components/academy/coursePage/Why-us/why-us-data'
 import DividerCTA from "@/components/academy/dividerCTA/DividerCTA";
 import HeaderAcademy from "@/components/academy/Header/Header-academy";
+import HeroMain from "@/components/HeroMain/HeroMain";
 
 
 
@@ -31,6 +32,9 @@ const AcademyPage = () => {
                 </div>
             </div>
             <PaymentMethods />
+            <div className="mt-32 mb-12">
+                <HeroMain/>
+            </div>
             <DividerCTA/>
             <section className="mt-0">
                 <div className="mb-12">

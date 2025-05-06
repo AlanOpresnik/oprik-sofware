@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+{/*import { NextResponse } from "next/server";
 import Client from "@/models/Client"
 import bcrypt from 'bcryptjs'
 import { connectDB } from "@/lib/mongodb";
@@ -32,3 +32,4 @@ export async function POST(request: Request) {
     }
 
 }
+*/}

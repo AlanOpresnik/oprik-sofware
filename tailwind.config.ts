@@ -62,9 +62,12 @@ export default {
     				DEFAULT: '#FEF08A'
     			},
     			secondary: {
-    				DEFAULT: 'hsl(var(--secondary))',
+    				DEFAULT: '#EAB308',
     				foreground: 'hsl(var(--secondary-foreground))'
     			},
+				terciary: {
+					default: '#F59E0B'
+				},
     			muted: {
     				DEFAULT: 'hsl(var(--muted))',
     				foreground: 'hsl(var(--muted-foreground))'

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {Link} from "next-view-transitions";
+import { Link } from "next-view-transitions";
 import { ChevronDown } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { coursesDataMock } from "@/app/courses-data-mock/courses-data-mock";
@@ -13,8 +13,9 @@ export function NavBar() {
     const [cursoActivo, setCursoActivo] = React.useState<string | null>(null);
     const pathname = usePathname();
 
+
     // Mostrar el cartel solo si no estamos en /academy
-   
+
     const timeoutRef = React.useRef<NodeJS.Timeout | null>(null)
     const params = useParams()
 
@@ -40,19 +41,19 @@ export function NavBar() {
 
 
     return (
-        <nav className={`text-white shadow ${pathname === "/academy/desarrollo-web-fullstack-con-nextjs" ? "pt-6" : "pt-16"}`}>
+        <nav className={`text-white shadow ${pathname === "/academy/desarrollo-web-fullstack-con-nextjs" ? "pt-6" : "pt-6"}`}>
             <div className="mx-auto lg:px-8">
                 <div className="flex left-[-10px] md:left-0 relative md:justify-between items-center gap-2 h-16">
-                <div className="md:hidden">
-                    <DrawerNav/>
-                </div>
+                    <div className="md:hidden">
+                        <DrawerNav />
+                    </div>
                     <div className="flex justify-between items-center w-full">
                         <div className="flex-shrink-0 flex items-center">
                             <Link href="/" className="md:text-xl font-bold text-white">
                                 Oprik software
                             </Link>
                         </div>
-                        <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <div className="hidden md:ml-6 md:flex sm:space-x-8">
                             <Link href="/" className="text-white inline-flex items-center px-1 pt-1 text-base font-semibold">
                                 Inicio
                             </Link>
@@ -63,7 +64,7 @@ export function NavBar() {
                                         onMouseLeave={() => setOpen(false)}
                                         className="text-white inline-flex items-center px-1 pt-1 text-base font-semibold"
                                     >
-                                        Cursasadas destacadas
+                                        Cursos destacados
                                         <ChevronDown className="ml-1 h-4 w-4" />
                                     </button>
                                 </PopoverTrigger>
@@ -76,15 +77,17 @@ export function NavBar() {
                                     <div className="grid grid-cols-5 gap-4 p-6">
                                         <div className="col-span-2 space-y-4">
                                             {coursesDataMock.map((curso) => (
-                                                <Link
-                                                    onMouseEnter={() => setCursoActivo(curso.title)}
-                                                    key={curso.title}
-                                                    href={`/academy/${curso.slug}`}
-                                                    className="hover:bg-gray-100 transition-all hover:text-black p-2 rounded-md w-full py-4 font-semibold block"
-                                                >
-                                                    {curso.title}
-                                                    <p className="text-sm line-clamp-2 font-normal mt-1 w-3/4">{curso.description}</p>
-                                                </Link>
+                                                curso.outstanding && (
+                                                    <Link
+                                                        onMouseEnter={() => setCursoActivo(curso.title)}
+                                                        key={curso.title}
+                                                        href={`/academy/${curso.slug}`}
+                                                        className="hover:bg-gray-100 transition-all hover:text-black p-2 rounded-md w-full py-4 font-semibold block"
+                                                    >
+                                                        {curso.title}
+                                                        <p className="text-sm line-clamp-2 font-normal mt-1 w-3/4">{curso.description}</p>
+                                                    </Link>
+                                                )
                                             ))}
                                         </div>
                                         <div className="col-span-3 glass_bg p-6 rounded-lg">
@@ -121,6 +124,9 @@ export function NavBar() {
                                     </div>
                                 </PopoverContent>
                             </Popover>
+                            <Link href={'/courses'} className="text-white inline-flex items-center px-1 pt-1 text-base font-semibold">
+                                Todas las cursadas
+                            </Link>
                             <Link href="/about-us" className="text-white inline-flex items-center px-1 pt-1 text-base font-semibold">
                                 Acerca de
                             </Link>
