@@ -27,7 +27,7 @@ export function CourseModuleAccordion({ module, index }: CourseModuleAccordionPr
             <div className="h-8 w-8 p-2 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-500 font-bold">
               {index + 1}
             </div>
-            <h3 className="font-bold  text-white">{module.title}</h3>
+            <h3 className="font-bold text-sm md:text-base text-white">{module.title}</h3>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-zinc-400">{module.lessons} lecciones</span>
@@ -44,7 +44,7 @@ export function CourseModuleAccordion({ module, index }: CourseModuleAccordionPr
           <div className="h-8 w-8 p-2 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-500 font-bold">
             {index + 1}
           </div>
-          <h3 className="font-bold  text-white">{module.title}</h3>
+          <h3 className="font-bold text-xs md:text-base text-white">{module.title}</h3>
         </div>
         <div className="flex items-center gap-4">
           <span className="text-sm text-zinc-400">{module.lessons} lecciones</span>

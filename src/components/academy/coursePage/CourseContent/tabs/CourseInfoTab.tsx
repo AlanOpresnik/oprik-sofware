@@ -15,11 +15,11 @@ const CourseInfoTab = ({ course }: Props) => {
             <div className='mb-6 flex gap-12 items-center'>
                 <div className="flex items-start gap-3">
                     <CalendarMonthOutlined className="h-5 w-5 text-yellow-500 mt-0.5" />
-                    <span className="text-zinc-300">Duracion de la cursada: {course.requirements[0].duration}</span>
+                    <span className="text-zinc-300 text-sm md:text-base">Duracion: {course.requirements[0].duration}</span>
                 </div>
                 <div className="flex items-start gap-3">
                     <ClockIcon className="h-5 w-5 text-yellow-500 mt-0.5" />
-                    <span className="text-zinc-300">{course.days_course} de {course.hours_course}</span>
+                    <span className="text-zinc-300 text-sm md:text-base">{course.days_course} de {course.hours_course}</span>
                 </div>
             </div>
             <p className="text-zinc-300 mb-8">
