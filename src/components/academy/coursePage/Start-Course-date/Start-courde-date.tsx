@@ -23,27 +23,27 @@ const StartCourseDate = ({ course }: CourseProps) => {
             <div className="md:flex justify-between">
                 <div className="md:grid grid-cols-4 justify-evenly w-full mb-4">
                     <div className="mb-6">
-                        <p className="text-primary">Comienza</p>
+                        <p className="text-secondary">Comienza</p>
                         <p>{course.start_date}</p>
                     </div>
                     <div className="mb-6">
-                        <p className="text-primary">Termina</p>
+                        <p className="text-secondary">Termina</p>
                         <p>{course.end_date}</p>
                     </div>
                     <div className="mb-6">
-                        <p className="text-primary">Duracion</p>
+                        <p className="text-secondary">Duracion</p>
                         <p>{course.requirements[0].duration}</p>
 
 
                     </div>
                     <div className="mb-6">
-                        <p className="text-primary">Horario</p>
+                        <p className="text-secondary">Horario</p>
                         <p>{course.days_course} de {course.hours_course}</p>
                     </div>
                 </div>
 
                 <div className="w-full flex justify-center text-centr md:h-fit md:w-fit md:justify-end md:text-start">
-                    <Link className="text-black w-full bg-primary font-bold text-center p-4 rounded-xl" href={wspLink}>Inscribirse</Link>
+                    <Link className="text-black w-full bg-secondary font-bold text-center p-4 rounded-xl" href={wspLink}>Inscribirse</Link>
                 </div>
             </div>
         </div>

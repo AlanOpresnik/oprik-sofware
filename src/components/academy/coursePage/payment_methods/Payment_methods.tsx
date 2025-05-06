@@ -19,11 +19,7 @@ const PaymentMethods = () => {
         src="https://coder-ui-static-content.coderhouse.com/ecommerce-statics/imagesV2/methods/master.svg"
         alt="master"
       />
-      <img
-        className="h-12 lg:h-20"
-        src="https://www.voolkia.com/wp-content/uploads/2021/08/xmercado-pago.png.pagespeed.ic.dzWA-I2nRZ.png"
-        alt="american"
-      />
+
     </div>
   );
 };
