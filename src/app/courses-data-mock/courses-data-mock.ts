@@ -290,8 +290,8 @@ export const coursesDataMock = [
         ],
         days_course: "Martes & Viernes",
         hours_course: "19:00hs - 21:30hs",
-        start_date: "8/07/2025",
-        end_date: "10/10/2025",
+        start_date: "10/06/2025",
+        end_date: "12/9/2025",
         price: 35500,
         modules: [
             {
